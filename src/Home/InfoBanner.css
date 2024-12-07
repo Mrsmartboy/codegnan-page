@@ -1,0 +1,98 @@
+.info-banner-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('../images/info-bg.png');
+    color: #fff; 
+    padding: 20px;
+    text-align: center;
+    max-height: 25vh;
+    background-size: cover;
+  }
+  
+  .info-card {
+    margin: 5px;
+  }
+  
+  .info-heading {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    letter-spacing: 5px;
+
+
+    font-family: 'Afacad';
+  }
+  
+  .info-subtext {
+    font-size: 22px;
+    margin: 0;
+    font-family: 'Afacad';
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  }
+
+  @media screen and (min-width:576px) and (max-width:976px){
+    .info-heading{
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .info-subtext{
+      font-size: 16px;
+    }
+    .info-banner-container{
+      padding: 30px;
+    }
+  }
+
+  
+  @media screen and (max-width:576px){
+    .info-heading{
+      font-size: 13px;
+      margin-bottom: 5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .info-subtext{
+      font-size: 10px;
+      font-weight: 400;
+
+    }
+    .info-banner-container{
+      padding: 30px;
+    }
+    .info-banner-container{
+      max-height: 15vh;
+    }
+  }
+
+
+
+
+  @media screen and (min-width:1500px){
+    .info-banner-container{
+       padding: 80px;
+    }
+    .info-heading{
+      font-size: 3rem;
+      margin-bottom: 5px;
+    }
+    .info-subtext{
+      font-size: 2rem;
+    }
+  }
+
+  
+  @media screen and (min-width:976px) and (max-width:1500px){
+    .info-banner-container{
+       padding: 20px;
+    }
+    .info-heading{
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+    .info-subtext{
+      font-size: 1.5rem;
+    }
+  }

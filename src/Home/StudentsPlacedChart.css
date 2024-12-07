@@ -1,0 +1,80 @@
+.students-placed-calendar {
+  text-align: center;
+}
+
+.students-placed-calendar  {
+  font-size: 20px;
+  color: black;
+}
+
+.calendar-table {
+  border-collapse: separate; /* Using separate for spacing between cells */
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-spacing: 0; /* Adjust spacing between cells */
+  min-height: 210px;
+}
+
+.calendar-table td {
+  padding: 2px 5px;
+  /* Remove vertical borders by setting no border */
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #dddddd; /* Only top border for row separation */
+}
+
+.calendar-cell {
+  background-color: #132EE0;
+  transition: background-color 0.3s ease;
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+.cell-content:hover {
+  color: #ffffff;
+}
+
+.month-name {
+  font-size: 10px;
+  color: #ffffff;
+  font-family: 'Afacad';
+  letter-spacing: 1px;
+
+}
+
+.month-count {
+  color: #ffffff;
+  font-family: 'Afacad';
+  font-size: 20px;
+  letter-spacing: 1px;
+
+}
+
+.placed-text{
+  font-family:'Afacad';
+  font-size: 25px;
+  font-weight: 600;
+ color: #000000; 
+ margin-top: 10px;
+ letter-spacing: 2px;
+
+}
+.home-year{
+  color: #ED1334;
+  font-size: 30px
+}
+
+@media screen and (max-width:576px){
+  .placed-text{
+   font-size: 18px;
+  }
+ }

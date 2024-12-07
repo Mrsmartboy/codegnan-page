@@ -1,0 +1,309 @@
+.student-head {
+    color: #000;
+    text-align: center;
+}
+
+.job-list-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+}
+
+.loading {
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+
+}
+
+.job-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 80%;
+    margin: 0px;
+}
+
+@media screen and (max-width:576px){
+    .job-list-container{
+        max-width: 90%;
+    }
+}
+
+
+.job-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.job-header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #cc3366;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+}
+
+.company-name {
+    font-size: 1rem;
+    color: #1f1c1c;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.job-info .sub-info {
+    font-size: 1rem;
+    color: #110f0f;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.strong {
+    font-weight: bold;
+    color: #000;
+    font-size: 1rem;
+}
+
+.job-info span {
+    font-weight: bold;
+    color: #000;
+}
+
+.job-description {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e6f4f1;
+    color: #00796b;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.posted-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.closed-job {
+    background-color: #f8f8f8;
+}
+
+
+
+.apply-btn {
+    background-color: #071ff8;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.view-button-student {
+    background-color: transparent;
+    color: black;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.view-button-student:hover {
+    color: blue;
+}
+
+
+.apply-btn:hover {
+    background-color: #2a306b;
+}
+
+.closed-btn {
+    background-color: #ccc;
+    color: black;
+    font-size: 0.8rem;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+.job-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 30px;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+
+@media screen and (max-width:676px) {
+    .modal-content {
+        overflow-y: auto;
+        margin: 20px;
+    }
+
+    .job-modal {
+        height: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-modal:hover {
+    color: #ff0000;
+}
+
+.special-note {
+    margin-top: 20px;
+    padding: 8px;
+    border-left: 4px solid #ecc440;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.special-note h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.special-note p {
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.job-role {
+    color: #cc3366;
+    font-weight: 600;
+}
+
+.strong {
+    color: #000;
+}
+
+.pop-up-item {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 6px;
+
+}
+
+.apply-job-list-btn {
+    background-color: green;
+    cursor: pointer;
+    margin-top: auto;
+    /* Ensures button is at the end of the card */
+    align-self: flex-start;
+    /* Aligns button to the end of the card */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.apply-job-list-btn.applied {
+    background-color: #ecc440;
+    /* Gray background color for inactive button */
+    color: black;
+    font-weight: 700;
+    cursor: not-allowed;
+}

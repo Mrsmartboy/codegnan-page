@@ -1,0 +1,66 @@
+
+.anchor-app-bar {
+    text-decoration: none;
+    border: none !important;
+    outline: none !important;
+}
+
+.scroll-container {
+    background-color: #132EE0;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.home-scroll-text {
+    font-family: 'Afacad';
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.home-scroll-text:hover {
+    color: #FDFA01;
+    font-weight: 400;
+    animation-play-state: paused;
+
+}
+
+.home-arrow {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.home-new {
+    background-color: #FDFA01;
+    color: #000000;
+    border-radius: 20px;
+    padding: 0px 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.home-100-days {
+    color: #FDFA01;
+}
+
+@media screen and (min-width: 1300px) {
+    .home-scroll-text{
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .home-new{
+        font-size: 1.5rem;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 500;
+        margin-right: 15px;
+       
+    }
+}

@@ -1,0 +1,35 @@
+.copyright-section {
+    background-color: #f9f9f9; 
+    text-align: center;        
+    padding: 10px 20px;        
+    font-size: 14px;           
+    color: #020031;  
+    font-weight: bold;             
+  }
+
+  .copyright-section p{
+    color: #020031;
+    font-weight: bold;
+  }
+  
+  .copyright-link {
+    color: #1a1a8a;            
+    text-decoration: none;     
+    margin: 0 5px;             
+  }
+  
+  .copyright-link:hover {
+    text-decoration: underline; 
+  }
+  
+  @media screen and (min-width:1300px){
+    .copyright-section{
+      font-size: 20px;
+    }
+    
+  .copyright-section p{
+    color: #020031;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  }

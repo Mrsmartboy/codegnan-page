@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'CustomFont', 'Afacad';
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  *{
+    margin: 0px;
+  }
