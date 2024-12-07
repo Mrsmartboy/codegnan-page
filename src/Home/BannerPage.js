@@ -1,7 +1,7 @@
 
 import React from 'react';
 import bannerGirl from '../images/banner-girl.webp';
-import Youtube from '../images/youtube.png'
+import Youtube from '../images/youtube.webp'
 import { Helmet } from 'react-helmet';
 import './BannerPage.css'
 import StatsChart from './StatsChart'
