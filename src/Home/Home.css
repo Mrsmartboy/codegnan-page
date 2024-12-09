@@ -9,6 +9,11 @@
     background-color: #132EE0;
     padding: 10px;
     text-align: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
@@ -19,7 +24,7 @@
     text-decoration: none;
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: center;
+   
 }
 
 .home-scroll-text:hover {
@@ -32,6 +37,8 @@
 .home-arrow {
     color: #ffffff;
     font-weight: bold;
+    margin-left: 5px;
+    margin-top: 2px;
 }
 
 .home-new {
@@ -46,6 +53,7 @@
 
 .home-100-days {
     color: #FDFA01;
+    font-weight: 500;
 }
 
 @media screen and (min-width: 1300px) {

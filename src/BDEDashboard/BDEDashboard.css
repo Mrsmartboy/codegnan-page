@@ -78,7 +78,7 @@
   font-weight: 500;
 }
 
-span {
+.job-card-info.span {
   color: black;
   font-weight: bold;
 }

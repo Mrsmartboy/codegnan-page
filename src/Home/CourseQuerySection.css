@@ -12,8 +12,8 @@
 .callback-button-query {
   background-color: #FDFA01; /* Bright yellow */
   color: #000;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.5rem;
+  padding: 5px 10px;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -25,7 +25,6 @@
   justify-content: space-around;
   align-items: center;
   letter-spacing: 1px;
-  font-size: 1.5rem;
 }
 
 .callback-button-query:hover {
@@ -80,6 +79,7 @@
   font-weight: 550;
   letter-spacing: 1px;
   align-self: flex-start;
+  max-width: 80%;
 
 }
 
@@ -103,7 +103,7 @@
     align-items: center;
   }
   .query-content h1{
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: 2px;
     font-weight: 600;
     color: #ffffff;
@@ -134,8 +134,8 @@
 .callback-button-query {
   background-color: #FDFA01; /* Bright yellow */
   color: #000;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 2rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -147,28 +147,30 @@
   justify-content: space-around;
   align-items: center;
   letter-spacing: 1px;
-  font-size: 3rem;
 }
+
+  .call {
+      width: 45px;
+      height: 45px;
+      margin-right: 15px;
+  }
   
 
 
 }
 
-@media screen and  (min-width:976px) and (max-width:1500px){
+@media screen and  (min-width:1200px) and (max-width:1500px){
   .query-content h1{
     font-size: 2.5rem;
-    align-self: flex-start;
-     max-width:85%
+     max-width:100%
   }
   .query-content p{
     font-size: 1.1rem;
     font-weight: 500;
-    max-width:80% ;
   }
   .query-content {
     position: relative;
     z-index: 2;
-    max-width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,6 +179,43 @@
   }
   
 
+}
+
+@media screen and (min-width:976px) and (max-width:1200px){
+  .student-img{
+    display: none;
+  }
+  .query-content{
+    min-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .query-content p{
+    min-width: 100%;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+
+  }
+  .query-background{
+    padding: 50px;
+  }
+  .query-background{
+    min-height: 400px;
+    margin-top: 0px;
+  }
+  .query-section{
+    margin-top: 0px;
+  }
+  .query-content h1{
+    margin-bottom: 20px;
+    align-self: center;
+    text-align: center;
+
+  }
 }
 
 @media screen and (min-width:576px) and (max-width:976px){
@@ -195,6 +234,7 @@
     min-width: 100%;
     margin-bottom: 20px;
     font-weight: 500;
+    align-self: center;
   }
   .query-background{
     padding: 50px;
@@ -208,6 +248,7 @@
   }
   .query-content h1{
     margin-bottom: 20px;
+    align-self:center ;
   }
 }
 
@@ -215,11 +256,14 @@
 .query-content p{
   font-size: 1.1rem;
   margin-bottom: 10px;
+  text-align: center;
+  align-self: center;
 }
 .query-content h1{
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 20px;
+  align-self: center;
 }
 .query-background{
   min-height: 400px;
@@ -240,7 +284,7 @@
   background-color: #FDFA01; /* Bright yellow */
   color: #000;
  padding: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;

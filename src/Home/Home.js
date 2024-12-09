@@ -1,5 +1,7 @@
 import React from 'react';
 import './Home.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { AppBar } from "@mui/material";
 import Dashboard from './Dashboard';
 import InfoBanner from './InfoBanner';
@@ -26,9 +28,9 @@ export default function Home() {
           >
             <p className='home-scroll-text' >
               <span className='home-new'>New</span>  
-                 "Codegnan's Job Accelerator Program (JAP) offers a 
-              <span className='home-100-days'> 100-days</span> intensive training"
-              <span className='home-arrow'>&rarr;</span>
+                 " Codegnan's Job Accelerator Program (JAP) offers a 
+              <span className='home-100-days'> 100-days</span> intensive training "
+              <FontAwesomeIcon icon={faArrowRight} className='home-arrow' />
             </p>
           </AppBar>
         

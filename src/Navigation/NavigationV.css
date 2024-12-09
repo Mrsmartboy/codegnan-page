@@ -23,7 +23,7 @@
 
 #nav-link, #nav-link-login {
   font-family: 'Lexend', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
   border: none;
   outline: none;
@@ -38,8 +38,7 @@
 
 #nav-link.active {
   text-decoration: underline;
-  text-decoration-thickness: 3px; /* Adjust thickness as needed */
-  font-weight: bold;
+  font-weight: 500;
   color: #ED1334;
 }
 
@@ -48,7 +47,8 @@
   background-color: #ED1334;
   border-radius: 8px;
   padding: 5px 10px;
-  margin-left: 10px;
+  margin-left: 15px;
+  font-weight: 500 !important;
 }
 
 .nav-links.show {
@@ -137,12 +137,14 @@
   #nav-link-login {
     font-size: 1.5rem;
     margin-top: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
   }
 }
 
 @media screen and (min-width: 1300px) {
   .logo {
-    width: 300px;
+    width: 250px;
   }
 
   .navigation-container {
@@ -154,6 +156,6 @@
   }
 
   #nav-link, #nav-link-login {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }

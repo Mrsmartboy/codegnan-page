@@ -28,7 +28,7 @@ const NavigationV = () => {
 
   return (
     <div className={`navigation-container ${showNavLinks ? 'blur' : ''}`}>
-      <AppBar position="static" className="navbar" elevation={0} sx={{ height: 60, flexGrow: 1 }}>
+      <AppBar position="static" className="navbar" elevation={0} sx={{ height: 60, flexGrow: 1,backgroundColor: 'transparent', boxShadow: 'none', textTransform: 'none' }}>
         <Toolbar className="tool">
           <img
             src={codegnanLogo}

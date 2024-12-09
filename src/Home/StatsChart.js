@@ -12,10 +12,14 @@ const StatsChart = () => {
       if (window.innerWidth < 576) {
         setBarHeightMultiplier(18);  
       } else if (window.innerWidth >= 576 && window.innerWidth < 796) {
-        setBarHeightMultiplier(15);  
+        setBarHeightMultiplier(16);  
       } else if (window.innerWidth >= 796 && window.innerWidth < 1024) {
-        setBarHeightMultiplier(18);  
-      } else {
+        setBarHeightMultiplier(21); 
+      } 
+      else if (window.innerWidth >= 1024 && window.innerWidth < 1500) {
+        setBarHeightMultiplier(21); 
+        }
+       else {
         setBarHeightMultiplier(18);  
       }
     };

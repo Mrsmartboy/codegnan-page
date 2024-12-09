@@ -31,10 +31,10 @@ const RotatingCarousel = () => {
     if (window.innerWidth < 576) return 180;
     if (window.innerWidth < 796) return 200;
     if (window.innerWidth < 1025) return 230;
-    if (window.innerWidth < 1285) return 200;
-    if (window.innerWidth < 1580) return 260; // Mobile
-    if (window.innerWidth <1850) return 280;
-    if (window.innerWidth > 1850) return 380;
+    if (window.innerWidth < 1285) return 190;
+    if (window.innerWidth < 1580) return 240; // Mobile
+    if (window.innerWidth <1850) return 230;
+    if (window.innerWidth > 1850) return 300;
     return 200; // Desktops
   };
   const [translationDistance, setTranslationDistance] = useState(getTranslationDistance());

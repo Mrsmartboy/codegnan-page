@@ -31,8 +31,10 @@ return(
   <div className="placement-card">
   <h1 className="student-count">
     3407<span className="plus-sign ">+</span>
+
   </h1>
-  <span className="students-placed">Students Placed</span>
+  <p className="students-placed">Students Placed</p>
+
 
   <p className="counting"><span className='blinking'>&gt;&gt;&gt; Still Counting...!</span></p>   
     </div>

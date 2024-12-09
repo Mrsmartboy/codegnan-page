@@ -15,17 +15,18 @@
   align-items: center;
   width: 100%;
   justify-content: space-around;
+  flex-wrap: wrap;
   
 }
 
 .mark{
-  width: 100px;
+  width: 70px;
   margin-right: 10px;
   height: auto;
 }
 
 .team-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #000000;
   margin: 0;
   letter-spacing: 2px;
@@ -42,7 +43,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 900;
   letter-spacing: 1px;
   font-family: 'Afacad';
@@ -61,6 +62,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .team-members {
@@ -68,8 +70,9 @@
   gap: 40px;
   margin-top: 60px;
   margin-bottom: 20px;
-  width: 50%; 
   padding-left: 20px;
+  margin-right: 40px;
+  flex-wrap: wrap;
 }
 
 .sairam{
@@ -125,13 +128,13 @@
 }
 
 .team-card h2 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 
 }
 
 .team-card p {
-  font-size: 18px;
+  font-size: 16px;
   color: #020031;
   padding-left: 10px;
   padding-right: 10px;
@@ -151,8 +154,8 @@
 }
 
 .social-icons-team img {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s ease;
   object-fit: contain;
 }
@@ -164,16 +167,17 @@
 .description {
   display: flex;
   flex-direction: column;
-  text-align: left;
   letter-spacing: 1px;
   font-family: 'Afacad';
   justify-content: center;
-  align-items: center;
+  width: 40%;
+  max-width: 100%;
 
 }
 
+
 .description h2 {
-  font-size: 46px;
+  font-size: 2rem;
   color: #000000;
   margin-top: 30px;
   letter-spacing: 2px;
@@ -184,7 +188,7 @@
 }
 
 .description h3 {
-  font-size: 45px;
+  font-size: 2rem;
   color: #EE1E3D;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -204,14 +208,14 @@ letter-spacing: 1px;
   color: #000000;
   font-family: 'Afacad';
   font-weight: 600;
-  text-align: center;
   width: 100%;
+  padding-left: 0px;
 
 }
 
 .tick-mark{
-  width: 50px;
-  height: 50px;
+  width: 2rem;
+  height: 2rem;
   margin-right: 4px;
 }
 
@@ -221,483 +225,58 @@ letter-spacing: 1px;
   color: #000000;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  width: 100%;
+  padding-left: 0px;
 
 }
 
 
-
-@media (max-width: 796px) {
-  .section-container {
-    flex-direction: column; 
-    align-items: center;
-    padding: 0px;
-  }
-
-  .team-members,
-  .description {
-    width: 100%; 
-   justify-content: center; 
-   align-items: center;
-  }
-
-  .description h2,
-  .description h3 {
-    text-align: center; 
-  }
-  .header{
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .mark{
-    width: 40px;
-    margin-right: 10px;
-    height: auto;
-  }
-
-  .team-heading{
-    font-size: 1.2rem;
-    padding-left: 0px;
-    margin-top: 30px;
-    width: 100%;
-    padding: 10px;
-  }
-  .all-team-btn {
-    background-color: #ED1334;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-family: 'Afacad';
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
-  
-  }
-  .description li {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #000000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-  
-  }
-  .tick-mark{
-    width: 30px;
-    height: 30px;
-    margin-right: 4px;
-  }
-}
-
-
-
-@media screen and (max-width:1200px){
-   .section-container{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-   }
-   .team-members{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-   }
-   .description{
-    text-align: center;
-    padding: 10px;
-   }
-   .team-card{
-    width: 300px;
-    min-height: 500px;
-  }
-  .profile-pic{
-    width: 180px;
-    height: 180px;
-    margin-top: 5px;
-  }
-  .team-card h2{
-    font-size: 2rem;
-  }
-  .team-card p{
-    font-size: 1.8rem;
-  }
-  .social-icons-team img{
-    width: 55px;
-    height: 60px;
-    transition: transform 0.2s ease;
-  }
-  
-  .description h2{
-    font-size: 3rem;
-  }
-  .description h3{
-    font-size: 2.5rem;
-  }
-  .description li{
-    font-size: 1.5rem;
-    align-self: center;
-  }
-  .tick-mark{
-    width: 50px;
-    height: 50px;
-  }
-
-  .header{
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-  .all-team-btn {
-    background-color: #ED1334;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-family: 'Afacad';
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
-  
-  }
-  
-  .team-heading{
-    font-size: 3rem;
-  }
-  .mark{
-    width: 100px;
-    height: 30px;
-  }
+@media screen and (max-width:796px){
   .description{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-  }
-   
-}
-
-@media screen and (max-width:576px){
-  .section-container{
-    padding: 0px;
-  }
-  .team-members{
-    gap: 20px;
-    padding-left: 0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-    margin: 0px;
-    flex-wrap: wrap;
-  }
-  .header{
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .mark{
-    width: 80px;
-    margin-right: 10px;
-    height: auto;
-    display: none;
-  }
-
-  .team-heading{
-    font-size: 2rem;
-    padding-left: 0px;
-    margin-top: 30px;
-    width: 100%;
-  }
-  .all-team-btn {
-    background-color: #ED1334;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-family: 'Afacad';
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
-    margin-bottom: 10px;
-  
-  }
-  .team-card {
-    background: #ffffff;
-    border-radius: 10px;
-    width: 300px; /* Set width for each card */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    align-items: center;
+    padding-left: 30px;
   }
-
-  .team-card p{
+  .all-team-btn{
     font-size: 20px;
+    padding: 5px;
+    margin-top: 20px;
   }
-
-  .team-card h2{
-    font-size: 25px;
+  .team-heading{
+    text-align: center;
+  }
+  .header{
+    flex-direction: column;
   }
 
  
-  .profile-pic{
-   width: 160px;
-   height: 160px;
-   margin-top: 5px;
-  }
 
-  .description ul li{
-    width: 100%;
-  text-align: center;
+  .team-members{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
-  .description h2{
-    font-size: 2rem;
-    margin-top: 0px;
+  .mark{
+    width: 50px;
+    height: auto;
   }
   .description h3{
-    font-size: 2rem;
-  }
-  .description span{
-    font-size: 2rem;
-  }
-
-  .description ul{
     text-align: center;
   }
+}
 
-  .description li {
+@media screen and (max-width:576px){
+  .team-heading{
+    font-size: 20px;
+  }
+ 
+  .all-team-btn{
     font-size: 15px;
-    margin-bottom: 10px;
-    color: #000000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-  }
-  .tick-mark{
-    width: 30px;
-    height: 30px;
-    margin-right: 4px;
-  }
-  .social-icons-team img {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-  }
-  .tick-mark{
-    display: none;
-  }
-
-}
-@media screen and (min-width: 1700px) {
-  .team-page {
-    min-height: 100vh;
-    padding: 40px;
-  }
-  .section-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .team-card {
-    min-width: 350px;
-    min-height: 600px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-  }
-
-  .profile-pic {
-    width: 250px;
-    height: 250px;
-    border: 3px solid #ffffff;
-    margin-bottom: 10px;
-  }
-
-  .team-card h2 {
-    font-size: 2.2rem;
-  }
-
-  .team-card p {
-    font-size: 1.8rem;
-    padding: 10px;
-  }
-
-  .social-icons-team img {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-  }
-
-  .header{
-    margin-bottom: 60px;
-    justify-content: space-between;
-
-  }
-
-  .team-heading {
-    font-size: 4rem;
-    letter-spacing: 3px;
-  }
-
-  .description {
-    align-self: flex-start;
-    width: 60%;
-    margin-left: 50px;
-  }
-
-  .description h2 {
-    font-size: 4rem;
-  }
-
-  .description h3 {
-    font-size: 4rem;
-  }
-
-  .description span {
-    font-size: 4rem;
-  }
-
-  .description li {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-top: 10px;
-  }
-
-  .tick-mark {
-    width: 70px;
-    height: 70px;
-  }
-
-  .mark {
-    width: 150px;
-    height: auto;
-    margin-right: 10px;
-  }
-
-  .all-team-btn {
-    font-size: 26px;
-    padding: 15px 20px;
-    letter-spacing: 2px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 25px rgba(0, 0, 0, 0.2);
-  }
-
-  
-
-  .team-members {
-    gap: 100px;
-    margin: 0px;
+    padding: 5px;
+    margin-top: 20px;
   }
 }
 
-@media screen and (min-width:1300px) and (max-width: 1700px) { 
-  .team-page {
-    padding: 30px 20px;
-  }
 
-  .team-heading {
-    font-size: 3rem;
-    letter-spacing: 2px;
-  }
 
-  .mark {
-    width: 130px;
-    height: auto;
-  }
-
-  .all-team-btn {
-    font-size: 25px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .section-container {
-    gap: 30px;
-    flex-direction: row;
-  
-    padding-bottom: 20px;
-  }
-
-  .team-members {
-    gap: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .team-card {
-    width: 350px;
-    min-height: 450px;
-  }
-
-  .profile-pic {
-    width: 180px;
-    height: 180px;
-    border: 2px solid #ffffff;
-  }
-
-  .team-card h2 {
-    font-size: 1.9rem;
-  }
-
-  .team-card p {
-    font-size: 1.9rem;
-  }
-
-  .social-icons-team img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .description {
-    margin-left: 10px;
-    align-self: flex-start;
-    width: 50%;
-    margin-top: 30px;
-  }
-  .description h2 {
-    font-size: 4rem;
-  }
-
-  .description h3 {
-    font-size: 3rem;
-  }
-
-  .description li {
-    font-size: 1.8rem;
-  }
-
-  .tick-mark {
-    width: 45px;
-    height: 45px;
-  }
-}

@@ -22,6 +22,7 @@ import StudentProfile from './StudentProfile/StudentProfile';
 import EmailApplyJob from './EmailApplyJob/EmailApplyJob';
 import AdminLogin from './Login/AdminLogin';
 import ForgotPassword from './ForgotPassword/ForgotPassword';
+import BdeForgotPassword from './ForgotPassword/BdeForgotPassword'
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const userType = localStorage.getItem('userType');
@@ -54,6 +55,8 @@ export default function App() {
           <Route path="/adminlogin" element={<AdminLogin />} />
           {/* <Route path="/companylogin" element={<CompanyLogin />} /> */}
           <Route path='/forgotPassword' element={<ForgotPassword/>}/>
+          <Route path='/bdeforgotPassword' element={<BdeForgotPassword/>}/>
+
           <Route 
             path="/addjob" 
             element={

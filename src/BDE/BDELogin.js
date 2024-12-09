@@ -97,7 +97,7 @@ export default function BDELogin() {
                 </button>
               </div>
               <div className="student-login-form-remember-forgot">
-                <Link to="/forgotPassword" className="student-login-form-forgot-link">
+                <Link to="/bdeforgotPassword" className="student-login-form-forgot-link">
                   Forgot Password?
                 </Link>
               </div>

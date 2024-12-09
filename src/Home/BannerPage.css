@@ -17,8 +17,7 @@
     background-image: url('../images/cover-bg.webp');
     background-size: cover;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+ 
     width: 100%;
 }
 
@@ -27,17 +26,14 @@
     margin-bottom: 20px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+  
 }
 
 .home-cover-text-container {
     display: flex;
     flex-direction: column;
-    width: 70%;
     justify-content: space-around;
     align-items: center;
-    padding-left: 20px;
 }
 
 .placement-card {
@@ -55,15 +51,11 @@
 
 .student-count {
     color: #ED1334;
-    font-size: 3rem;
-    margin-right: 2px;
-    letter-spacing: 4px;
+   
 }
 
 .plus-sign {
-    font-size: 36px;
     color: #ED1334;
-    opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -170,6 +162,10 @@
     }
     .home-text-container{
         padding-left: 4px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
     }
   
 
@@ -179,18 +175,22 @@
 
     .tag-line {
         font-size: 1rem;
+        text-align: end;
     }
 
 
     .student-count {
-        font-size: 20px;
+        font-size: 2rem;
         letter-spacing: 2px;
     }
 
     .students-placed {
-        font-size: 10px;
-        text-align: center;
+        font-size: 11px;
+        text-align: end;
+        font-weight: 600;
+
     }
+    
 
     .counting {
         font-size: 10px;
@@ -198,11 +198,99 @@
         padding-right: 5px;
     }
     .plus-sign{
-        font-size: 16px;
+        font-size: 1.4rem;
     }
 
     .placement-card {
-        max-width: 80px;
+        min-width: 120px;
+        margin: 0px;
+    }
+    .student-count{
+        margin-right: 0px;
+    }
+
+    .banner-girl{
+        display: none;
+    }
+
+    .stats-studentplaced-container {
+        gap: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+   
+    .image-container{
+       display: none;
+    }
+
+    .banner-girl {
+        width: 100%;
+        display: block;
+        display: none;
+    }
+    .custom-player{
+        max-width: 90%;
+        display: block;
+    }
+    
+}
+
+@media screen and  (max-width:430px) {
+    .home-cover-text-container{
+        width: 100%;
+    }
+    .coverpage-container {
+        padding: 10px;
+        width: 100%;
+
+    }
+    .home-text-container{
+        padding-left: 4px;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-top: 20px;
+    }
+  
+
+    .home-title {
+        font-size: 1.5rem;
+    }
+
+    .tag-line {
+        font-size: 0.8rem;
+        text-align: end;
+    }
+
+
+    .student-count {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .students-placed {
+        font-size: 9px;
+        text-align: end;
+        font-weight: 600;
+
+    }
+    
+
+    .counting {
+        font-size: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .plus-sign{
+        font-size: 1rem;
+    }
+
+    .placement-card {
+        max-width: 100px;
         margin: 0px;
     }
     .student-count{
@@ -254,41 +342,48 @@
         background-size: cover;
     }
     .home-text-container{
-        padding-left: 4px;
+        margin-top: 20px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
   
 
     .home-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .tag-line {
         font-size: 1.5rem;
+        text-align: end;
     }
 
 
     .student-count {
-        font-size: 2.5rem;
+        font-size: 3rem;
         letter-spacing: 2px;
     }
 
     .students-placed {
         font-size: 1rem;
-        text-align: center;
+        text-align: end;
         padding: 2px;
+        font-weight: 600;
+
     }
 
     .counting {
-        font-size: 10px;
+        font-size: 14px;
         padding-left: 5px;
         padding-right: 5px;
     }
     .plus-sign{
-        font-size: 16px;
+        font-size: 2rem;
     }
 
     .placement-card {
-        min-width: 80px;
+        min-width: 150px;
         margin: 0px;
     }
     .student-count{
@@ -300,12 +395,11 @@
     }
 
     .stats-studentplaced-container {
-        gap: 30px;
+        gap: 60px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
     }
 
    
@@ -337,26 +431,40 @@
 
     }
 
+    .home-text-container{
+        margin-top: 20px;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .home-cover-text-container {
         width: 100%;
     }
 
     .home-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .tag-line {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         margin-left: 80px;
     }
 
     .student-count {
-        font-size: 2.4rem;
+        font-size: 3rem;
         letter-spacing: 5px;
     }
 
     .students-placed {
         font-size: 16px;
+        font-weight: 600;
+        text-align: end;
+    }
+
+    .plus-sign{
+        font-size: 2.4rem;
     }
 
     .counting {
@@ -366,15 +474,16 @@
     }
 
     .placement-card {
-        min-width: 140px;
+        min-width: 160px;
     }
 
     .stats-studentplaced-container {
-        gap: 30px;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+
         align-items: center;
+        margin-bottom: 20px;
     }
 
     .home-cards-container {
@@ -395,7 +504,7 @@
         
     }
     .custom-player{
-        width: 46%;
+        width: 40%;
         height: auto;
         display: block;
     }
@@ -406,13 +515,14 @@
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .coverpage-container {
         display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-height: 100vh;
     }
     .home-text-container{
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
     }
 
     .home-cover-text-container {
@@ -444,6 +554,8 @@
 
     .students-placed {
         font-size: 1rem;
+        font-weight: 600;
+        text-align: end;
     }
 
     .counting {
@@ -458,14 +570,14 @@
         padding-bottom: 0px;
     }
     .plus-sign{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .stats-studentplaced-container {
-        gap: 60px;
-        justify-content: space-around;
-        margin-left: 30px;
-        margin-top: 50px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
     }
 
     .home-cards-container {
@@ -487,7 +599,7 @@
         display: block;
     }
     .custom-player{
-        width: 100%;
+        width: 40%;
         height: auto;
         display: block;
     }
@@ -498,16 +610,15 @@
 /* For devices larger than 1300px (Extra-Large Screens) */
 @media screen and (min-width: 1300px) and (max-width:1500px) {
     .coverpage-container {
-        padding: 10px;
         display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-height: 100vh;
-    padding-top: 40px;
     }
     .home-text-container{
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
     }
 
     .home-cover-text-container {
@@ -520,17 +631,17 @@
     }
 
     .home-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .tag-line {
-        font-size: 2.1rem;
+        font-size: 1.7rem;
         text-align: end;
         letter-spacing: 0.6px;
     }
 
     .student-count {
-        font-size: 4rem;
+        font-size: 3.5rem;
         letter-spacing: 6px;
         padding-left: 5px;
         padding-right: 5px;
@@ -538,6 +649,8 @@
 
     .students-placed {
         font-size: 1.5rem;
+        text-align: end;
+        font-weight: 600;
     }
 
     .counting {
@@ -549,14 +662,18 @@
     .placement-card {
         padding-top: 0px;
         padding-bottom: 0px;
+        min-width: 210px;
     }
     .plus-sign{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .stats-studentplaced-container {
-        gap: 20px;
-        justify-content: space-around;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+
     }
 
     .home-cards-container {
@@ -578,7 +695,7 @@
         display: block;
     }
     .custom-player{
-        width: 50%;
+        width: 40%;
         height: auto;
         display: block;
     }
@@ -590,15 +707,17 @@
 @media screen and (min-width: 1500px) {
     .coverpage-container {
         display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-height: 100vh;
     padding-top: 40px;
+    gap: 40px;
     
     }
     .home-text-container{
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
     }
 
     .home-cover-text-container {
@@ -612,24 +731,29 @@
     }
 
     .home-title {
-        font-size: 5.9rem;
+        font-size: 4.5rem;
     }
 
     .tag-line {
-        font-size: 2.8rem;
+        font-size: 2rem;
         text-align: end;
         letter-spacing: 0.6px;
     }
 
     .student-count {
-        font-size: 5rem;
+        font-size: 4rem;
         letter-spacing: 6px;
         padding-left: 5px;
         padding-right: 5px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 
     .students-placed {
         font-size: 2rem;
+        font-weight: 600;
+        text-align: end;
+        margin-top: 0px;
     }
 
     .counting {
@@ -644,15 +768,14 @@
         padding-bottom: 0px;
     }
     .plus-sign{
-        font-size: 5rem;
+        font-size: 3.7rem;
     }
 
     .stats-studentplaced-container {
-        gap: 60px;
-        justify-content: space-around;
+        justify-content:center;
         margin-top: 100px;
         margin-bottom: 40px;
-        margin-left: 30px;
+        align-items: center;
     }
 
     .home-cards-container {
@@ -670,7 +793,7 @@
     
    
     .banner-girl{
-        width: 90%;
+        width: 100%;
         display: block;
     }
     .custom-player{
