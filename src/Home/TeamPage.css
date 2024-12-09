@@ -255,6 +255,7 @@ letter-spacing: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   .mark{
     width: 50px;
