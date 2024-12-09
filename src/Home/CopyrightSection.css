@@ -10,12 +10,14 @@
   .copyright-section p{
     color: #020031;
     font-weight: bold;
+    margin-bottom: 5px;
   }
   
   .copyright-link {
-    color: #1a1a8a;            
+    color: #020031;            
     text-decoration: none;     
-    margin: 0 5px;             
+    margin: 0 5px;   
+              
   }
   
   .copyright-link:hover {

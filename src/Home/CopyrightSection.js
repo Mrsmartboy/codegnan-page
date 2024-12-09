@@ -5,7 +5,7 @@ function CopyrightSection() {
   return (
     <div className="copyright-section">
       <p>
-        © Copyright 2018-2024 | Codegnan IT Solutions PVT LTD
+        © Copyright 2018-{new Date().getFullYear()} | Codegnan IT Solutions PVT LTD
       </p>
       <p>
         <a href="/privacy-policy" className="copyright-link">Privacy Policy</a> | 

@@ -20,7 +20,7 @@ export default function ForgotPassword() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/forgotpassword`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/bdeforgotpwd`,
         { email }
       );
       if (response.status === 200 ) {
@@ -42,7 +42,7 @@ export default function ForgotPassword() {
     setLoading(true);
     const OTP = parseInt(otp)
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifystudentotp`, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifybdeotp`, {
         email,
         otp:OTP,
       });
@@ -70,13 +70,13 @@ export default function ForgotPassword() {
       return;
     }
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/updatepassword`, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/bdeupdatepwd`, {
         email,
         password:newPassword,
       });
       if (response.status === 200) {
         Swal.fire('Success', 'Your password has been reset. Please log in with your new password.', 'success');
-        navigate('/login');
+        navigate('/bdelogin');
       }
     } catch (error) {
       console.error('Error resetting password:', error);

@@ -1,6 +1,7 @@
 // data.js
 export const fetchDashboardData = async () => {
-    const apiUrl = "https://newjobportal.codegnan.com/api/v1/refreshdashboard";
+    const apiUrl =`${process.env.REACT_APP_BACKEND_URL}/api/v1/refreshdashboard`;
+
   
     try {
       const response = await fetch(apiUrl);

@@ -75,24 +75,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footer-right">
-          <div className="branches">
-            <h4>OUR BRANCHES</h4>
-            <p>
-              <strong>Vijayawada</strong>
-              <br />
-              40-5-19/16, Prasad Naidu Complex, P.B. Siddhartha Busstop,
-              Moghalrajpuram, Vijayawada, Andhra Pradesh, 520010.
-            </p>
-            <p>
-              <strong>Hyderabad</strong>
-              <br />
-              Kothwal Madhava Reddy Plaza, Beside Indian Oil Petrol Bunk, JNTUH
-              Metro Station, Nizampet X Roads, Hyderabad, 500072.
-            </p>
-          </div>
-          
-        </div>
+        
         <div className="footer-end">
         <div className="courses">
             <h4>OUR COURSES</h4>
@@ -110,6 +93,30 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+ {/* Branches Section */}
+ <div className="footer-branches">
+ <span>OUR BRANCHES</span>
+ <div className="branches-list">
+   <div>
+     <strong>Vijayawada</strong>
+     <p>40-5-19/16, Prasad Naidu Complex, P.B.Siddhartha Busstop, Moghalrajpuram, Vijayawada, Andhra Pradesh, 520010.</p>
+   </div>
+   <div>
+     <strong>Hyderabad: JNTUH</strong>
+     <p>Kothwal Madhava Reddy Plaza, Beside Indian Oil Petrol Bunk, JNTUH Metro Station, Nizampet X Roads, Hyderabad, 500072.</p>
+   </div>
+   <div>
+     <strong>Hyderabad: Ameerpet</strong>
+     <p>First Floor, 101, PANCOM Business Center, opp. to Chennai Shopping Mall, Nagarjuna Nagar colony, Ameerpet, Hyderabad, Telangana 500073</p>
+   </div>
+   <div>
+     <strong>Bengaluru</strong>
+     <p>#951, 16th Main, BTM 2nd Stage, Bengaluru, Karnataka - 560076.</p>
+   </div>
+ </div>
+</div>
+
     </footer>
     <CopyrightSection/>
     </>
@@ -117,3 +124,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
