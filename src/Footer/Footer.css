@@ -22,7 +22,6 @@
 .footer-left {
   flex: 1;
   max-width: 400px;
-  align-self: center;
 }
 
 .footer-logo {
@@ -31,7 +30,7 @@
 }
 
 .footer-text {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 10px;
   font-family: 'Afacad';
@@ -41,6 +40,7 @@
 .social-icons-footer {
   display: flex;
   gap: 10px;
+  margin-top: 30px;
 }
 
 .social-icons-footer img {
@@ -71,16 +71,19 @@
   margin: 0;
 }
 
-.footer-middle ul li {
-  margin-bottom: 20px;
+.footer-middle ul li{
+  padding-bottom: 30px;
 }
+
+
 
 .footer-middle ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
   font-family: 'Afacad';
+  
 }
 
 .footer-middle,.courses ul li a:hover {
@@ -126,7 +129,7 @@
 
 
 .courses ul li a{
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
   text-decoration: none;
@@ -242,8 +245,8 @@
   .footer-middle ul li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     font-family: 'Afacad';
   }
   
@@ -297,9 +300,12 @@
 .footer-branches {
   margin-top: 20px;
   text-align: center;
-  border: 4px solid #FDFA01; /* Yellow border for the entire section */
+  border: 2px solid #FDFA01; /* Yellow border for the entire section */
   padding: 20px;
   border-radius: 10px; /* Rounded corners */
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer-branches span {
