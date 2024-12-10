@@ -2,12 +2,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: url('../images/info-bg.png');
+    background-image: url('../images/info-bg.webp');
     color: #fff; 
     padding-top: 90px;
     padding-bottom: 90px;
     text-align: center;
-    max-height: 40vh;
     background-size: cover;
   }
   
@@ -63,9 +62,7 @@
       padding-top: 90px;
       padding-bottom: 90px;
     }
-    .info-banner-container{
-      max-height: 15vh;
-    }
+  
   }
 
 

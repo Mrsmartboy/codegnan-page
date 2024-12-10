@@ -52,6 +52,8 @@ return(
     alt="Banner Girl" 
     className="banner-girl" 
     loading="lazy"
+    width="1200" 
+     height="500" 
     />
 </div>
 </div>

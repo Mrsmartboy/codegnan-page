@@ -3,7 +3,7 @@
   padding: 30px 10px 10px 20px;
   font-family: 'Afacad';
   letter-spacing: 1px;
-  background-image: url('../images/footer-bgg.webp');
+  background-image: url('../images/footer-bg.webp');
   background-size: cover;
   font-family: 'Afacad';
   width: 100%;
@@ -166,8 +166,6 @@
     padding: 30px 10px 10px 20px;
     font-family: 'Afacad';
     letter-spacing: 1px;
-    background-image: url('../images/footer-bg.png');
-    background-size: cover;
     font-family: 'Afacad';
     margin-top: -2%;
 
