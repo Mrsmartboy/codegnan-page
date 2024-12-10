@@ -20,7 +20,7 @@ const StatsChart = () => {
         setBarHeightMultiplier(21); 
         }
        else {
-        setBarHeightMultiplier(12);  
+        setBarHeightMultiplier(17);  
       }
     };
 

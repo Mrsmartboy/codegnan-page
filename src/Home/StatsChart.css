@@ -15,7 +15,6 @@
   height: 210px;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .chart {
@@ -395,6 +394,10 @@
 @media screen and (min-width: 1500px) {
   .stats-chart-container {
     width: 50%;
+  }
+
+  .chart-container{
+    margin-top: 100px;
 
   }
 
