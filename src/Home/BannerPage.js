@@ -2,7 +2,6 @@
 import React from 'react';
 import bannerGirl from '../images/banner-girl.webp';
 import Youtube from '../images/youtube.webp'
-import { Helmet } from 'react-helmet';
 import './BannerPage.css'
 import StatsChart from './StatsChart'
 
@@ -11,11 +10,8 @@ const BannerPage =()=>{
 
 
 return(
-    <div>
-       <Helmet>
-        <link rel="preload" href="../images/cover-bg.webp" as="image" />
-        <link rel="preload" href={bannerGirl} as="image" />
-      </Helmet>
+  
+       
 <div className='coverpage-container'>
 <div className='home-cover-text-container'>
   <div className='home-text-container'>
@@ -59,7 +55,7 @@ return(
     />
 </div>
 </div>
-</div>    
+  
     )
 }
 
