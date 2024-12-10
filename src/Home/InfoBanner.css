@@ -4,9 +4,10 @@
     align-items: center;
     background-image: url('../images/info-bg.png');
     color: #fff; 
-    padding: 20px;
+    padding-top: 90px;
+    padding-bottom: 90px;
     text-align: center;
-    max-height: 25vh;
+    max-height: 40vh;
     background-size: cover;
   }
   
@@ -35,14 +36,15 @@
 
   @media screen and (min-width:576px) and (max-width:976px){
     .info-heading{
-      font-size: 20px;
+      font-size: 1.8rem;
       margin-bottom: 5px;
     }
     .info-subtext{
-      font-size: 16px;
+      font-size: 1.2rem;
     }
     .info-banner-container{
-      padding: 30px;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
 
@@ -60,7 +62,8 @@
 
     }
     .info-banner-container{
-      padding: 30px;
+      padding-top: 90px;
+      padding-bottom: 90px;
     }
     .info-banner-container{
       max-height: 15vh;
@@ -72,21 +75,24 @@
 
   @media screen and (min-width:1500px){
     .info-banner-container{
-       padding: auto;
+      padding-top: 90px;
+      padding-bottom: 90px;
+       width: 100%;
     }
     .info-heading{
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 5px;
     }
     .info-subtext{
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
   }
 
 
   @media screen and (min-width:1200px) and (max-width:1500px){
     .info-banner-container{
-       padding: auto;
+      padding-top: 90px;
+      padding-bottom: 90px;
     }
     .info-heading{
       font-size: 2rem;
@@ -100,7 +106,8 @@
   
   @media screen and (min-width:976px) and (max-width:1200px){
     .info-banner-container{
-       padding: 20px;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
     .info-heading{
       font-size: 2rem;

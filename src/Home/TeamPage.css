@@ -298,7 +298,6 @@ letter-spacing: 1px;
   .team-card {
     width: 250px; /* Larger card width */
     min-height: 350px; /* Adjusted height */
-    padding: 20px; /* More spacing */
   }
 
   .profile-pic {

@@ -122,7 +122,6 @@
 }
 
 .custom-player {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: auto;
     display: block;
@@ -704,7 +703,7 @@
 
 
 /* For devices larger than 1500px (Extra-Large Screens) */
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1500px) and (max-width: 1800px) {
     .coverpage-container {
         display: flex;
     justify-content: center;
@@ -741,34 +740,133 @@
     }
 
     .student-count {
-        font-size: 5rem;
+        font-size: 6rem;
         letter-spacing: 6px;
         padding-left: 5px;
         padding-right: 5px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+     
     }
 
     .students-placed {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
         font-weight: 600;
         text-align: end;
         margin-top: 0px;
     }
 
     .counting {
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .placement-card {
-        min-width: 250px;
+        min-width: 300px;
         padding-top: 0px;
         padding-bottom: 0px;
     }
     .plus-sign{
         font-size: 4rem;
+    }
+
+    .stats-studentplaced-container {
+        justify-content:center;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    .home-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .image-container {
+        width: 25%;
+        margin-top: 20px;
+        padding: 0;
+        display: block;
+        display: flex;
+        align-self: flex-end;
+    }
+    
+   
+    .banner-girl{
+        width: 100%;
+        display: block;
+    }
+    .custom-player{
+        width: 50%;
+        height: auto;
+        display: block;
+    }
+
+}
+
+
+@media screen and (min-width: 1800px) {
+    .coverpage-container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 100vh;
+    padding-top: 40px;
+    gap: 40px;
+    
+    }
+    .home-text-container{
+        justify-content: end;
+        align-items: center;
+    }
+
+    .home-cover-text-container {
+        width: 66%;
+        justify-content: space-between;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+    }
+
+    .home-title {
+        font-size: 5.4rem;
+    }
+
+    .tag-line {
+        font-size: 2.5rem;
+        text-align: end;
+        letter-spacing: 0.6px;
+    }
+
+    .student-count {
+        font-size: 7rem;
+        letter-spacing: 6px;
+        padding-left: 5px;
+        padding-right: 5px;
+     
+    }
+
+    .students-placed {
+        font-size: 1.9rem;
+        font-weight: 600;
+        text-align: end;
+        margin-top: 0px;
+    }
+
+    .counting {
+        font-size: 1.9rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .placement-card {
+        min-width: 300px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .plus-sign{
+        font-size: 5rem;
     }
 
     .stats-studentplaced-container {
