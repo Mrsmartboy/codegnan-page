@@ -16,7 +16,8 @@
     background-image: url('../images/cover-bg.webp');
     background-size: cover;
     display: flex;
-    min-height: 100vh;
+min-height: 100vh;
+ 
     width: 100%;
 }
 
@@ -244,7 +245,6 @@
     .coverpage-container {
         padding: 10px;
         width: 100%;
-        min-height: 100vh;
 
     }
     .home-text-container{
