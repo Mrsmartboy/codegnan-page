@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 import './RotatingCarousel.css';
 import questionImage from '../images/question-mark.webp';
 import call from '../images/call.webp';
-import spiral from '../images/spiral-bg.png'
+import spiral from '../images/spiral-bg.webp'
 
- import sathupatiPreethi from '../images/sathupati_preethi.png';
- import sathupatiPreethi1 from '../images/sathupati_preethi_1.png';
- import anuRajN from '../images/anu_raj_n.png';
- import varuniBr from '../images/varuni_br.png';
- import morampudiAnuSri from '../images/morampudu_anu_sri.png';
- import kavyaC from '../images/kavya_c.png';
- import mVijayaKrishna from '../images/m_vijaya_krishna.png';
-import bhargaviGHegde from '../images/bhargavi_g_hegde.png';
- import sharathS from '../images/sharath_s.png';
- import manuN from '../images/manu_n.png';
-import tShivani from '../images/t_shivani.png';
-import suhas from '../images/suhas.png'
+ import sathupatiPreethi from '../images/sathupati_preethi.webp';
+ import sathupatiPreethi1 from '../images/sathupati_preethi_1.webp';
+ import anuRajN from '../images/anu_raj_n.webp';
+ import varuniBr from '../images/varuni_br.webp';
+ import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
+ import kavyaC from '../images/kavya_c.webp';
+ import mVijayaKrishna from '../images/m_vijaya_krishna.webp';
+import bhargaviGHegde from '../images/bhargavi_g_hegde.webp';
+ import sharathS from '../images/sharath_s.webp';
+ import manuN from '../images/manu_n.webp';
+import tShivani from '../images/t_shivani.webp';
+import suhas from '../images/suhas.webp'
 
 const profiles = [
    { id: 1, package: '18.2 LPA', company: 'Infosys', image: sathupatiPreethi, alt: 'sathupati_preethi' },

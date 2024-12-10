@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./TestimonialsV.css"; 
 import smileIcon from "../images/smile.webp"; 
-import sathupatiPreethi from '../images/sathupati_preethi.png';
-import anuRajN from '../images/anu_raj_n.png';
-import venukrithikBr from '../images/venu_krithik_b.png';
-import morampudiAnuSri from '../images/morampudu_anu_sri.png';
-import shreeshaMs from '../images/shreesha_ms.png';
-import suhas from '../images/suhas.png'
-
+import sathupatiPreethi from '../images/sathupati_preethi.webp';
+import anuRajN from '../images/anu_raj_n.webp';
+import venukrithikBr from '../images/venu_krithik_b.webp';
+import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
+import shreeshaMs from '../images/shreesha_ms.webp';
+import suhas from '../images/suhas.webp'
+ 
 const testimonials = [
   {
     id: 1,
