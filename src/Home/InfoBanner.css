@@ -50,12 +50,12 @@
   
   @media screen and (max-width:576px){
     .info-heading{
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 1px;
     }
     .info-subtext{
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 400;
 
     }

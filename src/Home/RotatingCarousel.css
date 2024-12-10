@@ -806,6 +806,7 @@
 @media screen and  (max-width:476px) {
   .main-container {
     flex-direction: column;
+    max-height: 60vh;
   }
 
   .carousel-container {
@@ -823,12 +824,12 @@
     justify-content: center;
     background-size: cover;
     z-index: 1;
-    left: 30%;
+    left: 25%;
   }
 
   .profile {
     width: 50px;
-    height: 75px;
+    height: 80px;
   }
 
   .center-text span{
@@ -842,7 +843,7 @@
     text-align: center;
     width: 130px;
     height: 130px;
-    left: 30%;
+    left: 25%;
   }
 
   .text-content p {

@@ -150,7 +150,7 @@
 }
 
 
-@media screen and  (max-width:576px) {
+@media screen and (min-width:430px) and (max-width:576px) {
     .home-cover-text-container{
         width: 100%;
     }
@@ -201,7 +201,7 @@
     }
 
     .placement-card {
-        min-width: 120px;
+        min-width: 100px;
         margin: 0px;
     }
     .student-count{
