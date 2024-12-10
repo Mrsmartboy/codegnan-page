@@ -5,20 +5,34 @@ import questionImage from '../images/question-mark.webp';
 import call from '../images/call.webp';
 import spiral from '../images/spiral-bg.png'
 
+ import sathupatiPreethi from '../images/sathupati_preethi.png';
+ import sathupatiPreethi1 from '../images/sathupati_preethi_1.png';
+ import anuRajN from '../images/anu_raj_n.png';
+ import varuniBr from '../images/varuni_br.png';
+ import morampudiAnuSri from '../images/morampudu_anu_sri.png';
+ import kavyaC from '../images/kavya_c.png';
+ import mVijayaKrishna from '../images/m_vijaya_krishna.png';
+import bhargaviGHegde from '../images/bhargavi_g_hegde.png';
+ import sharathS from '../images/sharath_s.png';
+ import manuN from '../images/manu_n.png';
+import tShivani from '../images/t_shivani.png';
+import suhas from '../images/suhas.png'
+
 const profiles = [
-  { id: 1, package: '12 LPA', company: 'HCL', image: '/download.jpeg', alt: 'Image 1' },
-  { id: 2, package: '12 LPA', company: 'Infosys', image: '/image1.jpeg', alt: 'Image 2' },
-  { id: 3, package: '12 LPA', company: 'HCL', image: '/image2.jpeg', alt: 'Image 3' },
-  { id: 4, package: '12 LPA', company: 'Infosys', image: '/image3.jpeg', alt: 'Image 4' },
-  { id: 5, package: '12 LPA', company: 'HCL', image: '/image4.jpeg', alt: 'Image 5' },
-  { id: 6, package: '12 LPA', company: 'Infosys', image: '/image5.jpeg', alt: 'Image 6' },
-  { id: 7, package: '12 LPA', company: 'HCL', image: '/image6.jpeg', alt: 'Image 7' },
-  { id: 8, package: '12 LPA', company: 'Infosys', image: '/image7.jpeg', alt: 'Image 8' },
-  { id: 9, package: '12 LPA', company: 'HCL', image: '/image8.jpeg', alt: 'Image 9' },
-  { id: 10, package: '12 LPA', company: 'HCL', image: '/image6.jpeg', alt: 'Image 7' },
-  { id: 11, package: '12 LPA', company: 'Infosys', image: '/image7.jpeg', alt: 'Image 8' },
-  { id: 12, package: '12 LPA', company: 'HCL', image: '/image8.jpeg', alt: 'Image 9' },
+   { id: 1, package: '18.2 LPA', company: 'Infosys', image: sathupatiPreethi, alt: 'sathupati_preethi' },
+   { id: 2, package: '9.5 LPA', company: 'Infosys', image: sathupatiPreethi1, alt: 'sathupati_preethi_1' },
+   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: anuRajN, alt: 'anu_raj_n' },
+   { id: 4, package: '7 LPA', company: 'Healthsyst', image: varuniBr, alt: 'varuni-br' },
+   { id: 5, package: '7 LPA', company: 'TCS', image: morampudiAnuSri, alt: 'morampudi_anu_sri' },
+   { id: 6, package: '7 LPA', company: 'Healthsyst', image: kavyaC, alt: 'kavya_c' },
+  { id: 7, package: '6.8 LPA', company: 'Berkshire', image: mVijayaKrishna, alt: 'm_vijaya_krishna' },
+   { id: 8, package: '6.5 LPA', company: 'Aptean', image: bhargaviGHegde, alt: 'bhargavi_g_hegde' },
+   { id: 9, package: '6.5 LPA', company: 'Aptean', image: sharathS, alt: 'sharath_s' },
+   { id: 10, package: '6.5 LPA', company: 'Aptean', image: manuN, alt: 'manu_n' },
+   { id: 11, package: '6.5 LPA', company: 'Aptean', image: tShivani, alt: 't_shivani' },
+  { id: 12, package: '6.5 LPA', company: 'Aptean', image: suhas, alt: 'suhas' }
 ];
+
 
 const RotatingCarousel = () => {
   const [angle, setAngle] = useState(0);

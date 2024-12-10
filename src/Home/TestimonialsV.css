@@ -330,8 +330,8 @@
   }
 
   .card-title {
-    font-size: 1.8rem;
-    letter-spacing: 10px;
+    font-size: 1rem;
+    letter-spacing: 4px;
   }
 
   .card-description {
@@ -398,7 +398,7 @@
     left: -50px;
   }
   .card-rating{
-    font-size: 25px;
+    font-size: 1rem;
   }
   .smile-icon{
     width: 30px;

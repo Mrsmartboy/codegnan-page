@@ -1,58 +1,64 @@
 import React, { useState, useEffect } from "react";
 import "./TestimonialsV.css"; 
 import smileIcon from "../images/smile.webp"; 
+import sathupatiPreethi from '../images/sathupati_preethi.png';
+import anuRajN from '../images/anu_raj_n.png';
+import venukrithikBr from '../images/venu_krithik_b.png';
+import morampudiAnuSri from '../images/morampudu_anu_sri.png';
+import shreeshaMs from '../images/shreesha_ms.png';
+import suhas from '../images/suhas.png'
 
 const testimonials = [
   {
     id: 1,
-    name: "PRIYAKA",
+    name: "SATHUPATI PREETHI",
     review:
-      "I completed a Python course at Codegnan under the guidance of Saketh sir, and his teaching style is so effective. He is explaining concepts so clearly. I highly recommend Codegnan for their excellent training. Thanks to Saketh sir and the entire Codegnan team!",
-    image: "/image1.jpeg",
-    className: "top-left", 
+      "I completed a Python course at Codegnan under the guidance of Saketh sir, and his teaching style is so effective. He explains concepts so clearly. I highly recommend Codegnan for their excellent training. Thanks to Saketh sir and the entire Codegnan team!",
+    image: sathupatiPreethi, 
+    className: "top-left",
   },
+
   {
     id: 2,
-    name: "JOHN",
+    name: "SUHAS",
     review:
-      "The web development course at Codegnan has been life-changing! The instructors are incredibly knowledgeable, and the hands-on projects made learning so much more effective. Highly recommended!",
-    image: "/image2.jpeg",
+      "The Java course at Codegnan helped me gain a deep understanding of object-oriented programming and backend development. The projects were challenging but rewarding, and the mentorship I received was invaluable. Highly recommend Codegnan for Java enthusiasts!",
+    image: suhas,
     className: "middle-left", 
   },
+ 
   {
     id: 3,
-    name: "SARAH",
+    name: "ANU RAJ N",
     review:
       "I’ve learned so much in the Data Science course. The content is well-structured, and the support I received was amazing. I now feel confident pursuing a career in data science. Thank you, Codegnan!",
-    image: "/image3.jpeg",
+    image: anuRajN, 
     className: "bottom-left",
   },
   {
     id: 4,
-    name: "MICHAEL",
+    name: "VENUKRITHIK Br",
     review:
       "Codegnan’s course on machine learning gave me the perfect foundation for my career. The instructors were always available to help, and the practical exercises helped me build a strong skill set.",
-    image: "/image4.jpeg",
-    className: "top-right", 
+    image: venukrithikBr, 
+    className: "top-right",
   },
   {
     id: 5,
-    name: "EMILY",
+    name: "MORAMPUDU ANU SRI",
     review:
       "I took the full-stack development course at Codegnan, and I’m now working at a tech company! The curriculum was comprehensive and up-to-date, and the support team was always there to guide me.",
-    image: "/image5.jpeg",
-    className: "middle-right", 
+    image: morampudiAnuSri, 
+    className: "middle-right",
   },
   {
     id: 6,
-    name: "DAVID",
+    name: "SHREESHA MS",
     review:
       "The Python programming course was amazing. I learned so much and was able to apply the knowledge immediately. Codegnan’s teaching approach is very hands-on, which I loved.",
-    image: "/image6.jpeg",
-    className: "bottom-right", 
-  },
-  
-  
+    image: shreeshaMs, 
+    className: "bottom-right",
+  }
 ];
 
 const TestimonialsV = () => {
