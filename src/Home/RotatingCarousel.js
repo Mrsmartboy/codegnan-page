@@ -124,7 +124,7 @@ const RotatingCarousel = () => {
             <p>
               After <span className="highlight">3281+</span> <br /> Successful Placed <br /> Students
             </p>
-            <h1>WHO IS <br /> NEXT...?</h1>
+            <h1>WHO IS <br /> NEXT...</h1>
           </div>
           <img src={questionImage} alt="Question Mark" className="question-mark" max-height={120} width={250} />
           </div>
