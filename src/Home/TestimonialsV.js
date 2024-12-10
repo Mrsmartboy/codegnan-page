@@ -118,6 +118,7 @@ const TestimonialsV = () => {
               <img
                 src={testimonial.image} 
                 alt={testimonial.name}
+                 width="300" height="300"
               />
             </div>
             <div className="card-content">

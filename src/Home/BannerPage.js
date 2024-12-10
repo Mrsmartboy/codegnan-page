@@ -45,7 +45,8 @@ return(
 
      <StatsChart />
 
-   <img src={Youtube} alt='youtube' className='custom-player' loading="lazy" />
+   <img src={Youtube} alt='youtube' className='custom-player' loading="lazy"   width="400" 
+    height="225"/>
 
   </div>
 </div>
