@@ -202,8 +202,8 @@
 }
 
 .call {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -343,7 +343,6 @@
 
   .text-content p {
     font-size: 4rem;
-    letter-spacing: 4px;
     font-weight: 400;
     margin-bottom: 10px;
   }
@@ -351,7 +350,7 @@
   .text-content h1 {
     font-size: 5rem;
     font-weight: 600;
-    letter-spacing: 10px;
+    letter-spacing: 20px;
     margin-bottom: 50px;
   }
 
@@ -390,6 +389,10 @@
     align-items: center;
     letter-spacing: 1px;
   }
+
+  .carousel-container{
+    width: 40%;
+  }
   
 
   .call {
@@ -408,6 +411,10 @@
   .center-text.package{
     font-size: 40px;
   }
+  .highlight{
+    font-size: 6rem;
+    letter-spacing: 10px;
+  }
 }
 
 @media screen and (min-width: 1300px) and (max-width:1500px) {
@@ -419,8 +426,8 @@
   }
 
   .profile {
-    width: 100px;
-    height: 130px;
+    width: 60px;
+    height: 100px;
   }
 
   .center-text{
@@ -444,14 +451,14 @@
   }
 
   .text-content p {
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: 3px;
     font-weight: 400;
     margin-bottom: 10px;
   }
 
   .text-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 15px 0;
     font-weight: 600;
     letter-spacing: 14px;
