@@ -136,16 +136,19 @@
   position: relative;
   padding: 10px;
   z-index: 2;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .card-image img {
-
+ margin: 30px;
   border-radius: 5px;
   object-fit: cover;
   border: 2px solid #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .card-content {
@@ -227,6 +230,7 @@
     max-width: 250px;
     height: 350px;
     margin-right: 15px;
+    margin: 40px;
   }
 
   .card-title {
