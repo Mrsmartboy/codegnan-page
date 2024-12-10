@@ -4,8 +4,8 @@ import './BDEStudentsAppliedJobsList.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import * as XLSX from 'xlsx';
-import MultipleSelect from './MultipleSelect'; // Import the MultipleSelect component for departments
-import SkillsSelect from './SkillsSelect'; // Import the SkillsSelect component
+import MultipleSelect from './MultipleSelect'; 
+import SkillsSelect from './SkillsSelect'; 
 const BDEStudentsAppliedJobsList = () => {
   const { jobId } = useParams();
   const [appliedStudents, setAppliedStudents] = useState([]);

@@ -23,6 +23,8 @@ const Footer = () => {
               src={codegnanLogo}
               alt="Codegnan Logo"
               className="footer-logo"
+              width="150" 
+              height="50"
             />
           </div>
           <p className="footer-text">
