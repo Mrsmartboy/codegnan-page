@@ -1,0 +1,108 @@
+
+  
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+  }
+  
+  .form-select {
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .form-inline {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-button {
+    padding: 5px;
+    font-size: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .form-submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit:hover {
+    background-color: #0056b3;
+  }
+
+  .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 15px;
+    }
+  
+    .form-inline {
+      flex-direction: column;
+    }
+  
+    .form-button {
+      width: 100%;
+    }
+  }
+  

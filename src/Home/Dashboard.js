@@ -132,7 +132,7 @@ export default function Dashboard() {
                 {currentCompanies.map(([company, count]) => (
                   <tr key={company}>
                     <td>{company}</td>
-                    <td>{count}</td>
+                    <td className="dashboard-count">{count}</td>
                   </tr>
                 ))}
               </tbody>
@@ -167,7 +167,7 @@ export default function Dashboard() {
                 {currentColleges.map(([college, count]) => (
                   <tr key={college}>
                     <td>{college}</td>
-                    <td>{count}</td>
+                    <td className="dashboard-count">{count}</td>
                   </tr>
                 ))}
               </tbody>

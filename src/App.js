@@ -23,6 +23,7 @@ import EmailApplyJob from './EmailApplyJob/EmailApplyJob';
 import AdminLogin from './Login/AdminLogin';
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import BdeForgotPassword from './ForgotPassword/BdeForgotPassword'
+import RequestForm from './RequestForm/Requestform'
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const userType = localStorage.getItem('userType');
@@ -56,7 +57,7 @@ export default function App() {
           {/* <Route path="/companylogin" element={<CompanyLogin />} /> */}
           <Route path='/forgotPassword' element={<ForgotPassword/>}/>
           <Route path='/bdeforgotPassword' element={<BdeForgotPassword/>}/>
-
+          <Route path='/talk-to-career-expert' element={<RequestForm/>}/>
           <Route 
             path="/addjob" 
             element={

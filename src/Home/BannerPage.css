@@ -716,7 +716,7 @@
     
     }
     .home-text-container{
-        justify-content: center;
+        justify-content: end;
         align-items: center;
     }
 
@@ -731,17 +731,17 @@
     }
 
     .home-title {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 
     .tag-line {
-        font-size: 2rem;
+        font-size: 2.5rem;
         text-align: end;
         letter-spacing: 0.6px;
     }
 
     .student-count {
-        font-size: 4rem;
+        font-size: 5rem;
         letter-spacing: 6px;
         padding-left: 5px;
         padding-right: 5px;
@@ -750,14 +750,14 @@
     }
 
     .students-placed {
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 600;
         text-align: end;
         margin-top: 0px;
     }
 
     .counting {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -768,7 +768,7 @@
         padding-bottom: 0px;
     }
     .plus-sign{
-        font-size: 3.7rem;
+        font-size: 4rem;
     }
 
     .stats-studentplaced-container {

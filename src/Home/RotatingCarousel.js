@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './RotatingCarousel.css';
 import questionImage from '../images/question-mark.webp';
 import call from '../images/call.webp';
@@ -128,9 +129,11 @@ const RotatingCarousel = () => {
           <img src={questionImage} alt="Question Mark" className="question-mark" max-height={120} width={250} />
           </div>
           <div className="callback-section">
+            <Link to='/talk-to-career-expert' className='request-callback'>
             <button className="callback-button-rotating">
               <img src={call} alt="call" className='call' /> Request A Callback
             </button>
+            </Link>
           </div>
         </div>
       </div>

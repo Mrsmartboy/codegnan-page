@@ -31,7 +31,9 @@ export default function Home() {
                  " Codegnan's Job Accelerator Program (JAP) offers a 
               <span className='home-100-days'> 100-days</span> intensive training "
               <FontAwesomeIcon icon={faArrowRight} className='home-arrow' />
+
             </p>
+
           </AppBar>
         
       </a>

@@ -6,6 +6,7 @@
   background-image: url('../images/footer-bgg.webp');
   background-size: cover;
   font-family: 'Afacad';
+  width: 100%;
 
 }
 
@@ -299,7 +300,6 @@
   border: 4px solid #FDFA01; /* Yellow border for the entire section */
   padding: 20px;
   border-radius: 10px; /* Rounded corners */
-  background-color: #0d0b27; /* Same as footer background */
 }
 
 .footer-branches span {
