@@ -877,7 +877,7 @@
   .right-section-container {
     flex-direction: row;
     padding: 10px;
-    margin-bottom: 160px;
+    margin-bottom: 10px;
     display: flex;
   }
 
