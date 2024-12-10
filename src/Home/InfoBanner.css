@@ -4,8 +4,7 @@
     align-items: center;
     background-image: url('../images/info-bg.webp');
     color: #fff; 
-    padding-top: 90px;
-    padding-bottom: 90px;
+   
     text-align: center;
     background-size: cover;
   }
@@ -49,7 +48,7 @@
   
   @media screen and (max-width:576px){
     .info-heading{
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 600;
       letter-spacing: 1px;
     }
@@ -59,8 +58,8 @@
 
     }
     .info-banner-container{
-      padding-top: 90px;
-      padding-bottom: 90px;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
   
   }
