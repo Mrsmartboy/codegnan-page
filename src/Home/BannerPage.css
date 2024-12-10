@@ -45,7 +45,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Afacad';
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     min-width: 100px;
 }
 
@@ -367,7 +367,6 @@
     .students-placed {
         font-size: 1rem;
         text-align: end;
-        padding: 2px;
         font-weight: 600;
 
     }
@@ -744,6 +743,7 @@
         letter-spacing: 6px;
         padding-left: 5px;
         padding-right: 5px;
+        padding-top: -2px;
      
     }
 
@@ -755,7 +755,7 @@
     }
 
     .counting {
-        font-size: 1.9rem;
+        font-size: 1.4rem;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -764,6 +764,7 @@
         min-width: 300px;
         padding-top: 0px;
         padding-bottom: 0px;
+
     }
     .plus-sign{
         font-size: 4rem;
@@ -860,18 +861,14 @@
         padding-right: 10px;
     }
 
-    .placement-card {
-        min-width: 300px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
+  
     .plus-sign{
         font-size: 5rem;
     }
 
     .stats-studentplaced-container {
         justify-content:center;
-        margin-top: 100px;
+        margin-top: 90px;
         margin-bottom: 40px;
         align-items: center;
     }
