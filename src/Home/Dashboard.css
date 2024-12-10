@@ -81,7 +81,7 @@
   .styled-table thead th {
     background-color: #132EE0;
     color: #ffffff;
-    text-align: center;
+    text-align: left;
     padding: 12px;
   }
   
@@ -110,7 +110,6 @@
   
   .page-number {
     padding: 8px 12px;
-    border: 1px solid #132EE0;
     background-color: #EDEDED;
     color: #132EE0;
     border-radius: 4px;
@@ -123,7 +122,7 @@
     border: 1px solid #132EE0;
     background-color: #132EE0;
     color: #132EE0;
-    border-radius: 25px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
     color: #ffffff;
@@ -178,7 +177,7 @@
       font-size: 1rem;
       padding: 12px;
       margin-bottom: 30px;
-      box-shadow: 0px 4px 4px 0px #00000040;
+      box-shadow: 0px 4px 4px 0px #00000030;
 
     }
     .custom-pagination {
@@ -199,15 +198,22 @@
     }
   
     .page-number {
-      font-size: 1.5rem;
-      padding: 8px;
+      font-size: 1rem;
+      padding: 4px;
       border-radius: 8px;
+      color: #000000;
+      box-shadow: 0px 4px 4px 0px #00000040;
+
     }
 
     .prev-next{
-      font-size: 1.3rem;
-      padding: 10px;
+      font-size: 1rem;
       border-radius: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
     }
 
     .dots {
@@ -273,16 +279,22 @@
   
     .page-number {
       font-size: 1rem;
-      padding: 8px;
-      border-radius: 9px;
+      padding: 4px;
+      border-radius: 8px;
+      color: #000000;
+      box-shadow: 0px 4px 4px 0px #00000040;
+
     }
 
     .prev-next{
       font-size: 1rem;
-      padding: 1p;
       border-radius: 20px;
-    }
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 
+    }
     .dots {
       color: #aaa;
       font-size: 2rem;
@@ -329,7 +341,7 @@
       justify-content: space-around;
       align-items: center;
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
   
     .styled-table thead th,
@@ -339,16 +351,24 @@
     }
   
     .page-number {
-      font-size: 1.5rem;
-      padding: 5px;
-      border-radius: 9px;
+      font-size: 1.3rem;
+      padding: 4px;
+      border-radius: 8px;
+      color: #000000;
+      box-shadow: 0px 4px 4px 0px #00000040;
+
     }
 
     .prev-next{
-      font-size: 1.32rem;
-      padding: 1p;
+      font-size: 1.2rem;
       border-radius: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
     }
+
 
     .dots {
       color: #aaa;
@@ -366,7 +386,7 @@
     }
   
     .dashboard-title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 40px;
       margin-top: 30px;
     }
@@ -396,26 +416,38 @@
       justify-content: space-around;
       align-items: center;
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 30px;
     }
   
-    .styled-table thead th,
+   
     .styled-table tbody td {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       padding: 14px;
+    }
+
+    .styled-table thead th{
+      text-align: center;
     }
   
     .page-number {
-      font-size: 1.5rem;
-      padding: 5px;
-      border-radius: 9px;
+      font-size: 1.3rem;
+      padding: 4px;
+      border-radius: 8px;
+      color: #000000;
+      box-shadow: 0px 4px 4px 0px #00000040;
+
     }
 
     .prev-next{
-      font-size: 1.32rem;
-      padding: 1p;
+      font-size: 1.2rem;
       border-radius: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
     }
+
 
     .dots {
       color: #aaa;

@@ -66,7 +66,7 @@ export default function Dashboard() {
           1
         </button>
 
-        {visiblePages[0] > 2 && <span className="dots">...</span>}
+        {visiblePages[0] > 2 && <span className="dots">.....</span>}
 
         {visiblePages.map(
           (page) =>
@@ -83,7 +83,7 @@ export default function Dashboard() {
         )}
 
         {visiblePages[visiblePages.length - 1] < totalPages - 1 && (
-          <span className="dots">...</span>
+          <span className="dots">.....</span>
         )}
 
         <button

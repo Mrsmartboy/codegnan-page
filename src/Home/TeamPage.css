@@ -280,4 +280,60 @@ letter-spacing: 1px;
 }
 
 
+@media screen and (min-width: 1500px) {
+  .team-page {
+    min-height: 80vh; /* Adjusting for larger screens */
+  }
+
+  .team-heading {
+    font-size: 3rem; /* Larger heading for better visibility */
+    letter-spacing: 3px;
+  }
+
+  .all-team-btn {
+    font-size: 1.2rem; /* Slightly larger button text */
+    padding: 15px 20px;
+  }
+
+  .team-card {
+    width: 250px; /* Larger card width */
+    min-height: 350px; /* Adjusted height */
+    padding: 20px; /* More spacing */
+  }
+
+  .profile-pic {
+    width: 150px; /* Larger profile picture */
+    height: 150px;
+  }
+
+  .description {
+    width: 50%; /* Adjust description width */
+    padding: 20px; /* Add padding */
+  }
+
+  .description h2,
+  .description h3 {
+    font-size: 2.5rem; /* Larger fonts for headings */
+  }
+
+  .description li {
+    font-size: 1.5rem; /* Larger list items */
+  }
+
+  .team-members {
+    gap: 60px; /* Increased gap between team members */
+  }
+
+  .social-icons-team img {
+    width: 25px; /* Larger social icons */
+    height: 25px;
+  }
+  .mark{
+    width: 90px;
+    height: auto;
+  }
+}
+
+
+
 
