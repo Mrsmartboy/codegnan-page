@@ -19,7 +19,6 @@
     font-size: 40px;
     font-weight: 600;
     margin: 0 0 10px 0;
-    letter-spacing: 5px;
 
 
     font-family: 'Afacad';
@@ -37,7 +36,6 @@
   @media screen and (min-width:576px) and (max-width:976px){
     .info-heading{
       font-size: 1.8rem;
-      margin-bottom: 5px;
     }
     .info-subtext{
       font-size: 1.2rem;
@@ -52,7 +50,6 @@
   @media screen and (max-width:576px){
     .info-heading{
       font-size: 1rem;
-      margin-bottom: 5px;
       font-weight: 600;
       letter-spacing: 1px;
     }
