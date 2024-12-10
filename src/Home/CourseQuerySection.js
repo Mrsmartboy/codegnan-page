@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CourseQuerySection.css"; 
-import studentImg from "../images/student.webp"; // Replace with your path
+import studentImg from "../images/student.png"; // Replace with your path
 import call from '../images/call.webp';
 
 const CourseQuerySection = () => {
