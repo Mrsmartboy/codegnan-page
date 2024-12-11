@@ -11,12 +11,12 @@ import spiral from '../images/spiral-bg.webp'
  import varuniBr from '../images/varuni_br.webp';
  import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
  import kavyaC from '../images/kavya_c.webp';
- import mVijayaKrishna from '../images/m_vijaya_krishna.webp';
 import bhargaviGHegde from '../images/bhargavi_g_hegde.webp';
  import sharathS from '../images/sharath_s.webp';
  import manuN from '../images/manu_n.webp';
 import tShivani from '../images/t_shivani.webp';
 import suhas from '../images/suhas.webp'
+import manojNaidu from '../images/manoj_naidu_m.webp'
 
 const profiles = [
    { id: 1, package: '18.2 LPA', company: 'Akamai', image: sathupatiPreethi, alt: 'sathupati_preethi' },
@@ -25,7 +25,7 @@ const profiles = [
    { id: 4, package: '7 LPA', company: 'Healthsyst', image: varuniBr, alt: 'varuni-br' },
    { id: 5, package: '7 LPA', company: 'TCS', image: morampudiAnuSri, alt: 'morampudi_anu_sri' },
    { id: 6, package: '7 LPA', company: 'Healthsyst', image: kavyaC, alt: 'kavya_c' },
-  { id: 7, package: '6.8 LPA', company: 'Berkshire', image: mVijayaKrishna, alt: 'm_vijaya_krishna' },
+   {id:7,package:'6.5 LPA', company:'Mastech',image:manojNaidu,alt:'manoj_naidu'},
    { id: 8, package: '6.5 LPA', company: 'Aptean', image: bhargaviGHegde, alt: 'bhargavi_g_hegde' },
    { id: 9, package: '6.5 LPA', company: 'Aptean', image: sharathS, alt: 'sharath_s' },
    { id: 10, package: '6.5 LPA', company: 'Aptean', image: manuN, alt: 'manu_n' },

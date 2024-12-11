@@ -1,65 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import Select from "react-select";
-import axios from "axios";
-import "./RequestForm.css";
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import Select from 'react-select';
+import axios from 'axios';
+import { IndiaStatesCities } from '../IndiaStatesCities/IndiaStatesCities';
+import './RequestForm.css'
+import cartoonStudent from '../images/cartoon_student.webp'
 
 const RequestForm = () => {
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
   const [otpSent, setOtpSent] = useState(false);
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [otpTimer, setOtpTimer] = useState(0);
+  const [cityOptions, setCityOptions] = useState([]);
 
-  const mobileNumber = watch("mobileNumber"); // Watch mobile number field for changes
+  const email = watch("email"); 
+  const selectedState = watch("state"); // Watch for state changes
 
-  // Qualification options
-  const qualifications = [
-    { value: "graduation_completed", label: "Graduation (Completed)" },
-    { value: "graduation_ongoing", label: "Graduation (Ongoing)" },
-    { value: "post_graduation_completed", label: "Post Graduation (Completed)" },
-    { value: "post_graduation_ongoing", label: "Post Graduation (Ongoing)" },
-    { value: "12th", label: "12th / Intermediate" },
-    { value: "diploma", label: "Diploma" },
-  ];
+  // Sort states alphabetically
+  const states = Object.keys(IndiaStatesCities)
+    .sort((a, b) => a.localeCompare(b)) // Sort state keys alphabetically
+    .map(stateKey => ({
+      value: stateKey,
+      label: stateKey.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
+    }));
 
-  // State options
-  const states = [
-    { value: "andhra_pradesh", label: "Andhra Pradesh" },
-    { value: "arunachal_pradesh", label: "Arunachal Pradesh" },
-    { value: "assam", label: "Assam" },
-    { value: "bihar", label: "Bihar" },
-    { value: "chhattisgarh", label: "Chhattisgarh" },
-    { value: "goa", label: "Goa" },
-    { value: "gujarat", label: "Gujarat" },
-    { value: "haryana", label: "Haryana" },
-    { value: "himachal_pradesh", label: "Himachal Pradesh" },
-    { value: "jharkhand", label: "Jharkhand" },
-    { value: "karnataka", label: "Karnataka" },
-    { value: "kerala", label: "Kerala" },
-    { value: "madhya_pradesh", label: "Madhya Pradesh" },
-    { value: "maharashtra", label: "Maharashtra" },
-    { value: "manipur", label: "Manipur" },
-    { value: "meghalaya", label: "Meghalaya" },
-    { value: "mizoram", label: "Mizoram" },
-    { value: "nagaland", label: "Nagaland" },
-    { value: "odisha", label: "Odisha" },
-    { value: "punjab", label: "Punjab" },
-    { value: "rajasthan", label: "Rajasthan" },
-    { value: "sikkim", label: "Sikkim" },
-    { value: "tamil_nadu", label: "Tamil Nadu" },
-    { value: "telangana", label: "Telangana" },
-    { value: "tripura", label: "Tripura" },
-    { value: "uttar_pradesh", label: "Uttar Pradesh" },
-    { value: "uttarakhand", label: "Uttarakhand" },
-    { value: "west_bengal", label: "West Bengal" },
-  ];
+  // Handle state change and update the city options
+  useEffect(() => {
+    if (selectedState) {
+      const cities = IndiaStatesCities[selectedState] || [];
+      setCityOptions(cities.map(city => ({ value: city, label: city })));
+    }
+  }, [selectedState]);
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -67,17 +39,16 @@ const RequestForm = () => {
   };
 
   const sendOtp = async () => {
-    if (!mobileNumber) {
-      alert("Please enter a valid mobile number");
+    if (!email) {
+      alert("Please enter a valid email");
       return;
     }
-    setIsSubmitting(true);
 
+    setIsSubmitting(true);
     try {
-      // Replace with your backend OTP sending API
-      const response = await axios.post("/api/send-otp", { mobile: mobileNumber });
+      const response = await axios.post("/api/send-otp", { email });
       setOtpSent(true);
-      setOtpTimer(60); // Set timer to 60 seconds (1 minute)
+      setOtpTimer(60);
       alert("OTP sent successfully!");
     } catch (error) {
       console.error(error);
@@ -87,114 +58,105 @@ const RequestForm = () => {
     }
   };
 
-  const verifyOtp = () => {
-    if (otp === "123456") {
-      alert("OTP Verified!");
-    } else {
-      alert("Invalid OTP");
-    }
-  };
-
-  // Countdown Timer Effect
-  useEffect(() => {
-    let timer;
-    if (otpTimer > 0) {
-      timer = setTimeout(() => setOtpTimer(otpTimer - 1), 1000);
-    } else if (otpSent && otpTimer === 0) {
-      setOtpSent(false); // Expire OTP after 1 minute
-      setOtp(""); // Clear OTP input
-      alert("OTP expired. Please request a new OTP.");
-    }
-    return () => clearTimeout(timer);
-  }, [otpTimer, otpSent]);
-
   return (
-    <div className="form-container">
-      <h2 className="form-title">Talk to Our Career Expert</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
-          <label className="form-label">Name</label>
-          <input
-            type="text"
-            {...register("name", { required: "Name is required" })}
-            className="form-input"
-            placeholder="Enter your name"
-          />
-          {errors.name && <p className="error-text">{errors.name.message}</p>}
-        </div>
+    <div className='min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 request-form-container'>
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-8 md:space-y-0 md:space-x-8">
+      
 
-        <div className="form-group">
-          <label className="form-label">Mobile Number</label>
-          <div className="form-inline">
-            <input
-              type="number"
-              {...register("mobileNumber", {
-                required: "Mobile number is required",
-                pattern: {
-                  value: /^[6-9]\d{9}$/,
-                  message: "Enter a valid 10-digit mobile number",
-                },
-              })}
-              className="form-input"
-              placeholder="Mobile number"
-            />
-            <button
-              type="button"
-              onClick={sendOtp}
-              className="form-button"
-              disabled={!mobileNumber || mobileNumber.length < 10 || isSubmitting}
-            >
-              {otpSent ? "Resend OTP" : "Get OTP"}
-            </button>
+        <div className="flex justify-center items-center w-full md:w-1/3">
+          <div className="bg-gray-100 p-6 rounded-lg w-full max-w-4xl mx-auto mb-4">
+            <h2 className="text-center text-2xl font-bold mb-6">Talk to Our Career Expert</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">Name</label>
+                <input 
+                  type="text" 
+                  {...register("name", { required: "Name is required" })} 
+                  className="w-full p-1 border border-gray-300 rounded-md" 
+                  placeholder="Enter your name" 
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+              </div>
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">Email</label>
+                <div className="flex gap-2">
+                  <input 
+                    type="email" 
+                    {...register("email", { required: "Email is required" })} 
+                    className="flex-1 p-1 border border-gray-300 rounded-md" 
+                    placeholder="Enter your email" 
+                  />
+                  <button 
+                    type="button" 
+                    onClick={sendOtp} 
+                    className={`p-2 text-white ${!email || isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'} rounded-md`}
+                    disabled={!email || isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send OTP'}
+                  </button>
+                </div>
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+              </div>
+
+              {otpSent && (
+                <div className="mb-3">
+                  <label className="block text-gray-700 font-medium mb-0">OTP</label>
+                  <input 
+                    type="text" 
+                    value={otp} 
+                    onChange={(e) => setOtp(e.target.value)} 
+                    className="w-full p-1 border border-gray-300 rounded-md" 
+                    placeholder="Enter OTP" 
+                  />
+                </div>
+              )}
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">Mobile Number</label>
+                <input 
+                  type="number" 
+                  {...register("mobileNumber", { required: "Mobile number is required" })} 
+                  className="w-full p-1 border border-gray-300 rounded-md" 
+                  placeholder="Enter your mobile number" 
+                />
+                {errors.mobileNumber && <p className="text-red-500 text-sm mt-1">{errors.mobileNumber.message}</p>}
+              </div>
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">State</label>
+                <Select 
+                  options={states} 
+                  onChange={(selectedOption) => setValue("state", selectedOption.value, { shouldValidate: true })} 
+                  placeholder="Select your state" 
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">City</label>
+                <Select 
+                  options={cityOptions} 
+                  onChange={(selectedOption) => setValue("city", selectedOption.value, { shouldValidate: true })} 
+                  placeholder="Select your city" 
+                  isDisabled={!cityOptions.length} 
+                />
+                {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
+              </div>
+
+              <button 
+                type="submit" 
+                className="w-full bg-blue-500 text-[#ffffff] font-semibold p-1 rounded-md hover:bg-blue-600 transition duration-300"
+              >
+                Submit
+              </button>
+            </form>
           </div>
-          {errors.mobileNumber && <p className="error-text">{errors.mobileNumber.message}</p>}
         </div>
-
-        {otpSent && (
-          <div className="form-group">
-            <label className="form-label">Enter OTP</label>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              className="form-input"
-              placeholder="Enter OTP"
-            />
-            <button type="button" onClick={verifyOtp} className="form-button">
-              Verify OTP
-            </button>
-            <p className="timer-text">OTP expires in: {otpTimer}s</p>
-          </div>
-        )}
-
-        <div className="form-group">
-          <label className="form-label">Highest Qualification</label>
-          <Select
-            options={qualifications}
-            onChange={(selectedOption) => setValue("qualification", selectedOption.value, { shouldValidate: true })}
-            placeholder="Select your qualification"
-            className="form-select"
-          />
+        <div className='w-full md:w-1/3 hidden md:block'>
+          <img src={cartoonStudent} alt="Cartoon Student" className="w-4/3 h-auto" />
         </div>
-
-        <div className="form-group">
-          <label className="form-label">Native State</label>
-          <Select
-            options={states}
-            onChange={(selectedOption) => setValue("nativeState", selectedOption.value, { shouldValidate: true })}
-            placeholder="Select your state"
-            className="form-select"
-          />
-        </div>
-
-        
-
-        <div className="form-group">
-          <button type="submit" className="form-submit" disabled={isSubmitting}>
-            Submit
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
