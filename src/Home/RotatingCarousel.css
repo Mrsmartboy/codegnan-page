@@ -895,7 +895,7 @@
 
 @media (min-width: 1800px) {
   .spiral-bg {
-    left: 9%;
+    left: 10%;
     width: 760px;
     top: 11%;
   }
@@ -904,7 +904,7 @@
 
 @media (min-width: 1500px) and (max-width: 1800px) {
   .spiral-bg {
-    left: 2%;
+    left: 24%;
     width: 700px;
     top: 11%;
   }
