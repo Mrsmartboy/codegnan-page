@@ -84,12 +84,14 @@
     color: #ffffff;
     text-align: left;
     padding: 12px;
+
   }
   
   .styled-table tbody td {
     text-align: left;
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    font-weight: bold;
 
   }
 
@@ -116,6 +118,8 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    font-weight: bold;
+
   }
 
   .prev-next {
@@ -189,7 +193,7 @@
   
     .styled-table thead th,
     .styled-table tbody td {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding: 14px;
       letter-spacing: 1px;
     }
@@ -197,7 +201,7 @@
     .section{
       min-width: 650px;
       max-width: 700px;
-      min-height: 500px;
+      min-height: 400px;
 
     }
   
@@ -211,6 +215,7 @@
       padding-bottom: 1px;
       padding-left: 4px;
       padding-right: 4px;
+      font-weight: bold;
     }
 
     .prev-next{
@@ -334,7 +339,7 @@
   
     
     .section{
-      min-width: 400px;
+      min-width: 500px;
       max-width: 500px;
 
     }
@@ -363,8 +368,8 @@
     }
   
     .page-number {
-      font-size: 1rem;
-      padding: 2px;
+      font-size: 1.2rem;
+      padding: 10px;
       border-radius: 8px;
       color: #000000;
       box-shadow: 0px 4px 4px 0px #00000040;
@@ -429,7 +434,7 @@
     .section{
       min-height: 200px;
       max-height: 500px;
-     width: 400px;
+     max-width: 500px;
 
     }
     .card-wrapper{

@@ -1,5 +1,6 @@
 import React from "react";
 import CopyrightSection from "../Home/CopyrightSection";
+import { CgPlayButton } from "react-icons/cg";
 import "./Footer.css";
 
 
@@ -101,19 +102,27 @@ const Footer = () => {
  <span>OUR BRANCHES</span>
  <div className="branches-list">
    <div>
-     <strong>Vijayawada</strong>
+     <strong>
+     <CgPlayButton  className="play-icon" /> 
+      Vijayawada</strong>
      <p>40-5-19/16, Prasad Naidu Complex, P.B.Siddhartha Busstop, Moghalrajpuram, Vijayawada, Andhra Pradesh, 520010.</p>
    </div>
    <div>
-     <strong>Hyderabad: JNTUH</strong>
+     <strong>
+     <CgPlayButton  className="play-icon"/>
+      Hyderabad: JNTUH</strong>
      <p>Kothwal Madhava Reddy Plaza, Beside Indian Oil Petrol Bunk, JNTUH Metro Station, Nizampet X Roads, Hyderabad, 500072.</p>
    </div>
    <div>
-     <strong>Hyderabad: Ameerpet</strong>
+     <strong>
+     <CgPlayButton  className="play-icon"/>
+      Hyderabad: Ameerpet</strong>
      <p>First Floor, 101, PANCOM Business Center, opp. to Chennai Shopping Mall, Nagarjuna Nagar colony, Ameerpet, Hyderabad, Telangana 500073</p>
    </div>
    <div>
-     <strong>Bengaluru</strong>
+     <strong>
+     <CgPlayButton className="play-icon"/>
+      Bengaluru</strong>
      <p>#951, 16th Main, BTM 2nd Stage, Bengaluru, Karnataka - 560076.</p>
    </div>
  </div>

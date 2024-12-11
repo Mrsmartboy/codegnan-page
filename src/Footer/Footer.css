@@ -334,11 +334,23 @@
 
 .branches-list strong {
   color: #FDFA01;
-  font-size: 25px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.play-icon{
+  font-size: 40px;
+  margin-right: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .branches-list p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #ffffff; /* Text color for better contrast */
 }
