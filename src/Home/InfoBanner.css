@@ -4,7 +4,6 @@
     align-items: center;
     background-image: url('../images/info-bg.webp');
     color: #fff; 
-   padding: 30px;
     text-align: center;
     background-size: cover;
   }
@@ -45,12 +44,12 @@
   
   @media screen and (max-width:576px){
     .info-heading{
-      font-size: 1rem;
+      font-size: 13px;
       font-weight: 600;
       letter-spacing: 1px;
     }
     .info-subtext{
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
 
     }
