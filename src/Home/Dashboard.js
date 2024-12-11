@@ -56,7 +56,7 @@ export default function Dashboard() {
           disabled={currentPage === 1}
           onClick={() => setPage(currentPage - 1)}
         >
-          &lt; Prev
+          &lt; <span className="prev-next_1">Prev</span>
         </button>
 
         <button
@@ -98,7 +98,7 @@ export default function Dashboard() {
           disabled={currentPage === totalPages}
           onClick={() => setPage(currentPage + 1)}
         >
-          Next &gt;
+          <span className="prev-next_1">Next</span> &gt;
         </button>
       </div>
     );
