@@ -73,10 +73,12 @@
 @media (max-width: 576px) {
   .collaboration-container {
     padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
   }
 
   .collaboration-title {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .collaboration-item {
