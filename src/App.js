@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import StudentSignup from './Signup/StudentSignup';
 import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
@@ -44,6 +45,7 @@ export default function App() {
     <div>
       <NavigationV />
       <div>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />}>
