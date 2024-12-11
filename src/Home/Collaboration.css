@@ -10,6 +10,7 @@
   font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
+  font-weight: 600;
 }
 
 .collaboration-carousel {
@@ -75,7 +76,7 @@
   }
 
   .collaboration-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 
   .collaboration-item {
@@ -84,7 +85,7 @@
   }
 
   .collaboration-image {
-    width: 40px;
+    width: 60px;
     height: 60px;
   }
 }
@@ -131,6 +132,7 @@
   .collaboration-title {
     font-size: 2rem;
     margin-bottom: 30px;
+    font-weight: 600;
   }
 
   .collaboration-carousel {

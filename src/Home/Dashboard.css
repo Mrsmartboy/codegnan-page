@@ -195,8 +195,8 @@
     }
 
     .section{
-      min-width: 600px;
-      max-width: 600px;
+      min-width: 650px;
+      max-width: 700px;
       min-height: 500px;
 
     }
@@ -204,20 +204,22 @@
   
     .page-number {
       font-size: 1rem;
-      padding: 4px;
-      border-radius: 8px;
+      border-radius: 2px;
       color: #000000;
-      box-shadow: 0px 4px 4px 0px #00000040;
-
+      box-shadow: 0px 4px 4px 0px #00000030;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 4px;
+      padding-right: 4px;
     }
 
     .prev-next{
       font-size: 1rem;
       border-radius: 20px;
-      padding-left: 25px;
-      padding-right: 25px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 2px;
+      padding-bottom: 2px;
 
     }
 
@@ -285,21 +287,23 @@
     }
   
     .page-number {
-      font-size: 1rem;
-      padding: 4px;
-      border-radius: 8px;
+      font-size: 15px;
+      border-radius: 2px;
       color: #000000;
-      box-shadow: 0px 4px 4px 0px #00000040;
-
+      box-shadow: 0px 4px 4px 0px #00000030;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 4px;
+      padding-right: 4px;
     }
 
     .prev-next{
       font-size: 1rem;
       border-radius: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 2px;
+      padding-bottom: 2px;
 
     }
     .dots {

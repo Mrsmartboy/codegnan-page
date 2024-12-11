@@ -88,99 +88,111 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="student-login-container">
-      <div className="cartoon-image-container">
-        <img src={CartoonLogo} alt="Cartoon logo" className="cartoon-image" />
+    <div className="min-h-screen flex row items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 student-login-container">
+    <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-8 md:space-y-0 md:space-x-8">
+      <div className="flex  justify-center items-center w-full md:w-1/2">
+        <img src={CartoonLogo} alt="Cartoon logo" className="w-full max-w-lg" />
       </div>
-      <div className="student-login-container-1">
-        <div className="student-login-form">
-          <h2 className="student-login-form-title">
-            {step === 1 && 'Forgot Password'}
-            {step === 2 && 'Enter OTP'}
-            {step === 3 && 'Reset Password'}
-          </h2>
+      <div className="w-full  md:w-1/3 bg-white shadow-lg rounded-lg p-8 border border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+          {step === 1 && 'Forgot Password'}
+          {step === 2 && 'Enter OTP'}
+          {step === 3 && 'Reset Password'}
+        </h2>
 
-          {step === 1 && (
-            <form onSubmit={handleEmailSubmit}>
-              <div className="student-login-form-input-group">
-                <label htmlFor="email" className="student-login-form-label">
-                  Enter Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="student-login-form-input"
-                  placeholder="Enter your registered email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <button type="submit" className="student-login-form-submit" disabled={loading}>
+        {step === 1 && (
+          <form onSubmit={handleEmailSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Enter Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="block w-full p-3 text-lg border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                placeholder="Enter your registered email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 text-lg font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              disabled={loading}
+            >
               {loading ? 'Sending...' : 'Send OTP'}
-              </button>
-            </form>
-          )}
+            </button>
+          </form>
+        )}
 
-          {step === 2 && (
-            <form onSubmit={handleOtpSubmit}>
-              <div className="student-login-form-input-group">
-                <label htmlFor="otp" className="student-login-form-label">
-                  Enter OTP
-                </label>
-                <input
-                  type='number'
-                  id="otp"
-                  className="student-login-form-input"
-                  placeholder="Enter the OTP sent to your email"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  required
-                />
-              </div>
-              <button type="submit" className="student-login-form-submit" disabled={loading}>
+        {step === 2 && (
+          <form onSubmit={handleOtpSubmit}>
+            <div className="mb-4">
+              <label htmlFor="otp" className="block text-sm font-medium text-gray-700 mb-2">
+                Enter OTP
+              </label>
+              <input
+                type="number"
+                id="otp"
+                className="block w-full p-3 text-lg border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                placeholder="Enter the OTP sent to your email"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 text-lg font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              disabled={loading}
+            >
               {loading ? 'Verifying OTP...' : 'Verify OTP'}
-              </button>
-            </form>
-          )}
+            </button>
+          </form>
+        )}
 
-          {step === 3 && (
-            <form onSubmit={handlePasswordSubmit}>
-              <div className="student-login-form-input-group">
-                <label htmlFor="newPassword" className="student-login-form-label">
-                  New Password
-                </label>
-                <input
-                  type="password"
-                  id="newPassword"
-                  className="student-login-form-input"
-                  placeholder="Enter your new password"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="student-login-form-input-group">
-                <label htmlFor="confirmPassword" className="student-login-form-label">
-                  Confirm New Password
-                </label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  className="student-login-form-input"
-                  placeholder="Confirm your new password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <button type="submit" className="student-login-form-submit" disabled={loading}>
+        {step === 3 && (
+          <form onSubmit={handlePasswordSubmit}>
+            <div className="mb-4">
+              <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                New Password
+              </label>
+              <input
+                type="password"
+                id="newPassword"
+                className="block w-full p-3 text-lg border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                placeholder="Enter your new password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                Confirm New Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                className="block w-full p-3 text-lg border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                placeholder="Confirm your new password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 text-lg font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              disabled={loading}
+            >
               {loading ? 'Resetting Password...' : 'Reset Password'}
-              </button>
-            </form>
-          )}
-        </div>
+            </button>
+          </form>
+        )}
       </div>
     </div>
+  </div>
   );
 }

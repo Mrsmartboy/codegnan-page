@@ -142,7 +142,7 @@ const NavigationV = () => {
                   <button
                     id="nav-link"
                     className={isActive("/signup") ? 'active' : ''}
-                    onClick={() => handleClick("/signup")}
+                    onClick={() => handleClick("/signup/student")}
                   >
                     Signup
                   </button>
