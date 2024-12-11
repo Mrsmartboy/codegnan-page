@@ -516,8 +516,9 @@
     font-size: 20px;
   }
   .card-title{
-    font-size: 20px;
-    letter-spacing: 5px;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-top: 10px;
   }
 
   .gradient.bottom-left {
@@ -542,6 +543,8 @@
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 0px;
+    width: 70%;
+    height: auto;
 
   }
   .card-image{
@@ -577,7 +580,7 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
   }
   .smile-icon{

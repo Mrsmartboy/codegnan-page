@@ -71,7 +71,7 @@ const TestimonialsV = () => {
       if (!paused && hovered === null) {
         setCurrent((prev) => (prev + 1) % testimonials.length); 
       }
-    }, 3000); 
+    }, 10000); 
 
     return () => clearInterval(interval); 
   }, [paused, hovered]);
