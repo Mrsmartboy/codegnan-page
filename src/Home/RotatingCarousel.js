@@ -19,7 +19,7 @@ import tShivani from '../images/t_shivani.webp';
 import suhas from '../images/suhas.webp'
 
 const profiles = [
-   { id: 1, package: '18.2 LPA', company: 'Infosys', image: sathupatiPreethi, alt: 'sathupati_preethi' },
+   { id: 1, package: '18.2 LPA', company: 'Akamai', image: sathupatiPreethi, alt: 'sathupati_preethi' },
    { id: 2, package: '9.5 LPA', company: 'Infosys', image: sathupatiPreethi1, alt: 'sathupati_preethi_1' },
    { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: anuRajN, alt: 'anu_raj_n' },
    { id: 4, package: '7 LPA', company: 'Healthsyst', image: varuniBr, alt: 'varuni-br' },
