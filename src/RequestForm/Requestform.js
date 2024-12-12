@@ -3,52 +3,63 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import axios from 'axios';
 import { IndiaStatesCities } from '../IndiaStatesCities/IndiaStatesCities';
-import './RequestForm.css'
-import cartoonStudent from '../images/cartoon_student.webp'
+import './RequestForm.css';
+import cartoonStudent from '../images/cartoon_student.webp';
 
 const RequestForm = () => {
   const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [otpTimer, setOtpTimer] = useState(0);
   const [cityOptions, setCityOptions] = useState([]);
+  const [isOtpVerified, setIsOtpVerified] = useState(false);
 
-  const email = watch("email"); 
-  const selectedState = watch("state"); // Watch for state changes
+  const email = watch("email");
+  const selectedState = watch("state");
 
-  // Sort states alphabetically
+  const qualifications = [
+    { value: "graduation_completed", label: "Graduation (Completed)" },
+    { value: "graduation_ongoing", label: "Graduation (Ongoing)" },
+    { value: "post_graduation_completed", label: "Post Graduation (Completed)" },
+    { value: "post_graduation_ongoing", label: "Post Graduation (Ongoing)" },
+  ];
+
   const states = Object.keys(IndiaStatesCities)
-    .sort((a, b) => a.localeCompare(b)) // Sort state keys alphabetically
+    .sort((a, b) => a.localeCompare(b))
     .map(stateKey => ({
       value: stateKey,
-      label: stateKey.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
+      label: stateKey.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase()),
     }));
 
-  // Handle state change and update the city options
   useEffect(() => {
     if (selectedState) {
       const cities = IndiaStatesCities[selectedState] || [];
       setCityOptions(cities.map(city => ({ value: city, label: city })));
+    } else {
+      setCityOptions([]);
     }
   }, [selectedState]);
 
   const onSubmit = async (data) => {
+    if (!otpSent || !isOtpVerified) {
+      alert("Please verify your email before submitting the form.");
+      return;
+    }
+
     console.log(data);
     alert("Form submitted successfully!");
   };
 
   const sendOtp = async () => {
     if (!email) {
-      alert("Please enter a valid email");
+      alert("Please enter a valid email.");
       return;
     }
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post("/api/send-otp", { email });
+      await axios.post("/api/send-otp", { email });
       setOtpSent(true);
-      setOtpTimer(60);
       alert("OTP sent successfully!");
     } catch (error) {
       console.error(error);
@@ -58,10 +69,28 @@ const RequestForm = () => {
     }
   };
 
+  const verifyOtp = async () => {
+    if (!otp) {
+      alert("Please enter the OTP.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await axios.post("/api/verify-otp", { email, otp });
+      setIsOtpVerified(true);
+      alert("OTP verified successfully!");
+    } catch (error) {
+      console.error(error);
+      alert("Invalid OTP. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className='min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 request-form-container'>
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-8 md:space-y-0 md:space-x-8">
-      
 
         <div className="flex justify-center items-center w-full md:w-1/3">
           <div className="bg-gray-100 p-6 rounded-lg w-full max-w-4xl mx-auto mb-4">
@@ -91,7 +120,7 @@ const RequestForm = () => {
                   <button 
                     type="button" 
                     onClick={sendOtp} 
-                    className={`p-2 text-white ${!email || isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'} rounded-md`}
+                    className={`p-1 text-white ${!email || isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'} rounded-md`}
                     disabled={!email || isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send OTP'}
@@ -103,13 +132,23 @@ const RequestForm = () => {
               {otpSent && (
                 <div className="mb-3">
                   <label className="block text-gray-700 font-medium mb-0">OTP</label>
-                  <input 
-                    type="text" 
-                    value={otp} 
-                    onChange={(e) => setOtp(e.target.value)} 
-                    className="w-full p-1 border border-gray-300 rounded-md" 
-                    placeholder="Enter OTP" 
-                  />
+                  <div className="flex gap-2">
+                    <input 
+                      type="text" 
+                      value={otp} 
+                      onChange={(e) => setOtp(e.target.value)} 
+                      className="flex-1 p-1 border border-gray-300 rounded-md" 
+                      placeholder="Enter OTP" 
+                    />
+                    <button 
+                      type="button" 
+                      onClick={verifyOtp} 
+                      className={`p-2 text-white ${!otp || isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'} rounded-md`}
+                      disabled={!otp || isSubmitting}
+                    >
+                      {isSubmitting ? 'Verifying...' : 'Verify OTP'}
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -122,6 +161,15 @@ const RequestForm = () => {
                   placeholder="Enter your mobile number" 
                 />
                 {errors.mobileNumber && <p className="text-red-500 text-sm mt-1">{errors.mobileNumber.message}</p>}
+              </div>
+
+              <div className="mb-3">
+                <label className="block text-gray-700 font-medium mb-0">Qualification</label>
+                <Select 
+                  options={qualifications} 
+                  onChange={(selectedOption) => setValue("qualification", selectedOption.value, { shouldValidate: true })} 
+                  placeholder="Select your qualification" 
+                />
               </div>
 
               <div className="mb-3">
@@ -141,7 +189,6 @@ const RequestForm = () => {
                   placeholder="Select your city" 
                   isDisabled={!cityOptions.length} 
                 />
-                {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
               </div>
 
               <button 
@@ -153,6 +200,7 @@ const RequestForm = () => {
             </form>
           </div>
         </div>
+
         <div className='w-full md:w-1/3 hidden md:block'>
           <img src={cartoonStudent} alt="Cartoon Student" className="w-4/3 h-auto" />
         </div>
