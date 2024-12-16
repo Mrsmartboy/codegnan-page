@@ -8,7 +8,7 @@ import cartoonStudent from '../images/cartoon_student.webp';
 
 const RequestForm = () => {
   const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
-  const [otpSent, setOtpSent] = useState(false);
+  const [otpSent, setOtpSent] = useState(true);
   const [otp, setOtp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cityOptions, setCityOptions] = useState([]);
@@ -41,13 +41,25 @@ const RequestForm = () => {
   }, [selectedState]);
 
   const onSubmit = async (data) => {
+    console.log(data);
+
     if (!otpSent || !isOtpVerified) {
       alert("Please verify your email before submitting the form.");
       return;
     }
 
-    console.log(data);
-    alert("Form submitted successfully!");
+    try {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/form-data`, { data });
+      alert("Successful! Our career Expert Will touch you");
+      console.log(data);
+      alert("Form submitted successfully!");
+      
+    } catch (error) {
+      console.error(error);
+      alert(`failed,Technical Error `);
+    }
+
+   
   };
 
   const sendOtp = async () => {
@@ -58,7 +70,7 @@ const RequestForm = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.post("/api/send-otp", { email });
+      await axios.post(  `${process.env.REACT_APP_BACKEND_URL}/api/send-otp`, { email });
       setOtpSent(true);
       alert("OTP sent successfully!");
     } catch (error) {
@@ -77,7 +89,7 @@ const RequestForm = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.post("/api/verify-otp", { email, otp });
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/verify-otp`, { email, otp });
       setIsOtpVerified(true);
       alert("OTP verified successfully!");
     } catch (error) {

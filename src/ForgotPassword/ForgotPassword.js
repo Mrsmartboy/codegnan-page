@@ -42,7 +42,7 @@ export default function ForgotPassword() {
     setLoading(true);
     const OTP = parseInt(otp)
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifystudentotp`, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifyotp`, {
         email,
         otp: OTP,
       });

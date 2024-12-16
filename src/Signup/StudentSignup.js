@@ -163,7 +163,7 @@ const StudentSignup = () => {
         setOtp(value);
         if (value.length === 6) {
             // Make a backend request
-            axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifystudentotp`, { otp: Number(value), email: formData.email })
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifyotp`, { otp: Number(value), email: formData.email })
                 .then(response => {
                     // Handle the response from the backend
                     console.log('OTP verified:', response.data);
