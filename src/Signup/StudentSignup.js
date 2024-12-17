@@ -328,7 +328,7 @@ const StudentSignup = () => {
                             type="password"
                             name="password"
                             placeholder='Ex:Ram@123'
-                            value={formData.passowrd}
+                            value={formData.password}
                             onChange={handleChange}
                             required
                         />

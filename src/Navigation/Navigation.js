@@ -37,7 +37,7 @@ const Navigation = () => {
   const isDirectApply = location.pathname.includes('/directapply');
 
   return (
-    <div className={`navigation-container ${showBlur ? 'blur' : ''}`}>
+    <div className={`navigation-container`}>
       <AppBar position="static" className="navbar" elevation={0}>
         <Toolbar className="tool">
           <img

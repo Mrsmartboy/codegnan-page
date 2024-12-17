@@ -24,6 +24,7 @@ export default function StudentLogin() {
       console.log('Response from student login:', response.data);
       if (response.status === 200) {
         localStorage.setItem('userType', response.data.userType);
+        localStorage.setItem('email',response.data.student_email)
         localStorage.setItem('student_id', response.data.student_id);
         navigate('/');
       }

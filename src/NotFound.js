@@ -3,7 +3,7 @@ import errorGif from './images/error.gif'; // Import your error.gif file
 
 export default function NotFound() {
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className='flex flex-col justify-center items-center'>
       <img src={errorGif} alt="Error" style={styles.errorImage} />
       <p style={styles.message}>You are not authorized to access these. Login first</p>
     </div>
@@ -13,8 +13,7 @@ export default function NotFound() {
 const styles = {
   container: {
     textAlign: 'center',
-    marginTop: '100px',
-    minHeight:'50vh'
+    minHeight:'70vh',
   },
   errorImage: {
     width: '200px', // Adjust the width of the image as needed

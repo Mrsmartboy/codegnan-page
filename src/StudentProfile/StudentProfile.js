@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const StudentProfile = () => {
     const navigate = useNavigate()
+    const email=localStorage.getItem("email")
     // eslint-disable-next-line
     //const [buttonClicked, setButtonClicked] = useState(false);
     const [formData, setFormData] = useState({
@@ -228,7 +229,7 @@ const StudentProfile = () => {
         console.log("signup form \n", formData, selectedSkills, "\n\n")
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/signup`, {
             name: formData.name,
-            //email: formData.email,
+            email: email,
             studentId: formData.studentId,
             password: formData.password,
             cityName: formData.cityname,

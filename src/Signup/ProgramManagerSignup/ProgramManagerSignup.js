@@ -8,12 +8,14 @@ export default function ProgramManagerSignup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [parentNumber, setParentNumber] = useState('');
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  console.log(username,password,parentNumber)
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/`, { username, password, parentNumber });
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`, 
+        { username,password,parentNumber});
       console.log("response from studentlogin", response.data);
       if (response.status === 200) {
         navigate('/');

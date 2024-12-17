@@ -3,11 +3,11 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import ProgramManagerSignup from './Signup/ProgramManagerSignup/ProgramManagerSignup';
 import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
 import StudentSignup from './Signup/StudentSignup';
-import CompanySignup from './Signup/CompanySignup';
+// import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
 import Navigation from './Navigation/Navigation';
 import Home from './Home/Home';
-import Signup from './Signup/Signup';
+// import Signup from './Signup/Signup';
 import StudentLogin from './Login/StudentLogin';
  import Footer from './Footer/Footer';
 import BDELogin from './BDE/BDELogin';
@@ -46,10 +46,11 @@ export default function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />}>
+          {/* <Route path="/signup" element={<Signup />}>
             <Route path="student" element={<StudentSignup />} />
             <Route path="company" element={<CompanySignup />} />
-          </Route>
+          </Route> */}
+            
             <Route path="/login" element={<StudentLogin />} />
           <Route path="/bdelogin" element={<BDELogin />} />
           <Route path="/bdesignup" element={<BDESignup />} />
@@ -66,6 +67,12 @@ export default function App() {
               </ProtectedRoute>
             } 
           />
+
+          <Route path="/student-signup" element={
+            <ProtectedRoute allowedRoles={['bde','company','admin']}>
+              <StudentSignup/>
+          </ProtectedRoute>
+          }/>
 
          <Route 
             path="/programmanagersignup" 
