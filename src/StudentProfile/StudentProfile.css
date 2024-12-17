@@ -1,73 +1,85 @@
-.studentprofile-container {
-    min-height: 80vh;
-    padding: 15px;
+.student-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
 }
 
-.studentprofile-container .student-profile-key {
-    color: black;
-    font-weight: 400 !important;
+.student-profile-container form {
+    width: 60%;
+    margin: 20px;
 }
 
-.studentprofile-container p {
-    color: #363f8f; /* Blue color for values */
-    font-family: "Arimo", sans-serif;
-    font-weight: 700;
-    margin: 15px 0;
-    font-style: normal;
+.student-profile-container .input-group {
+    display: flex;
+    justify-content: space-between;
 }
 
-.file-upload {
-    border: 1px solid #ccc; /* Default border style */
-    /* Adjust width as needed */
-    color:black;
-    padding: 10px; /* Padding for better visual appearance */
-    cursor: pointer; /* Change cursor to pointer when hovering */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 4px; /* Rounded corners */
-    transition: border-color 0.3s ease; /* Smooth transition for border color */
+.student-profile-container .input-group > div {
+    width: 48%; /* Adjust as needed */
 }
 
-.file-upload:hover {
-    border-color: #999; /* Darker border color on hover */
-}
-
-.studentprofile-container .btn-update{
-    border-radius: 5px;
-    background-color: #363f8f;
-    color: white;
-    border: none;
-    padding:8px;
-    cursor:pointer
-}
-
-
-.studentprofile-container label {
+.student-profile-container label {
     font-size: 1rem;
     margin: 10px 0px;
     display: block;
     color: black;
 }
 
-.studentprofile-container select {
-    width: 30%;
-    display: block;
+.student-profile-container input {
+    width: 100%;
+    padding: 10px 80px 10px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: black;
+}
+.student-profile-container .radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.student-profile-container .radio-option {
+    display: flex;
+    align-items: baseline;
+    margin-right: 30px;
+}
+
+.student-profile-container .radio-option input {
+    margin-right: 15px;
+}
+
+.student-profile-container .otp-parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.student-profile-container .check{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.student-profile-container .generateotp-btn{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:fit-content;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.student-profile-container input, .student-profile-container select {
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
     color: black;
-}
-.studentprofile-container option{
-    color: black;
-}
-.other{
-    color: black;
-    padding: 10px 80px 10px 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
 }
 
 .selected-skills{
@@ -79,10 +91,64 @@
     margin: 5px;
 }
 
+.student-profile-container option{
+    color: black;
+}
 .add-skill{
     color: black;
 }
 
+.student-profile-container .btn {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:45%;
+    margin-top: 2%;
+    float: right;
+    font-size: 0.9rem;
+}
+
+.student-profile-container .btn:disabled {
+    background-color: #ccc; /* Grey color when disabled */
+    cursor: not-allowed;
+  }
+
 .remove-skill{
     color: black;
+}
+
+.student-profile-container .btn:not([disabled]):hover {
+    background-color: #45a049;
+}
+
+
+@media (max-width: 768px) {
+    .student-profile-container form {
+        width: 80%;
+    }
+    
+    .student-profile-container input {
+        width: 60vw; 
+    }
+    
+    .student-profile-container .input-group {
+        flex-direction: column;
+    }
+    .student-profile-container .input-group > div {
+        width: 90%; /* Adjust as needed */
+    }
+    .student-profile-container .btn {
+        font-size: 1rem;
+        width:55%;
+    }  
+    .student-profile-container .otp-parent{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .student-profile-container h1 {
+        font-size: 1.4rem;
+    }
 }
