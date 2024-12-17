@@ -2,13 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lexend:wght@100..900&display=swap');
 
 .navbar {
-  background-color: #ffffff !important;
+  background-color: white !important;
+  /* Set background color for the navbar */
+  padding: 0 20px;
 }
 
 
 .logo {
   width: 15%;
-  
+  /* Make the image responsive */
+  /* Set the desired height */
   cursor: pointer;
 }
 
@@ -20,9 +23,10 @@
 }
 
 #nav-link {
-  color: #ffffff;
+  color: white;
   margin-left: 5px;
   background-color: rgb(204, 51, 102) !important;
+  /* Set color for the links */
   font-family:  serif;
   font-weight: 400;
   font-size: 1rem;
@@ -118,11 +122,4 @@
   .logo{
     width:35%
   }
-}
-
-@media screen and (min-width: 1300px) {
-  .logo{
-    width: 60%;
-  }
-  
 }

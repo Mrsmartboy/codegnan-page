@@ -4,7 +4,7 @@ import ScrollToTop from './ScrollToTop';
 import StudentSignup from './Signup/StudentSignup';
 import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
-import NavigationV from './Navigation/NavigationV';
+import Navigation from './Navigation/Navigation';
 import Home from './Home/Home';
 import Signup from './Signup/Signup';
 // import Login from './Login/Login';
@@ -43,7 +43,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 export default function App() {
   return (
     <div>
-      <NavigationV />
+      <Navigation />
       <div>
       <ScrollToTop />
         <Routes>

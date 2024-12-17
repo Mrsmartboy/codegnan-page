@@ -38,6 +38,10 @@
     .info-subtext{
       font-size: 1.2rem;
     }
+    .info-banner-container{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     
   }
 
@@ -84,6 +88,11 @@
     .info-heading{
       font-size: 2rem;
       margin-bottom: 5px;
+     
+    }
+    .info-banner-container{
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
     .info-subtext{
       font-size: 1.5rem;
@@ -92,7 +101,10 @@
 
   
   @media screen and (min-width:976px) and (max-width:1200px){
-   
+    .info-banner-container{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .info-heading{
       font-size: 2rem;
       margin-bottom: 5px;

@@ -8,11 +8,12 @@ import cartoonStudent from '../images/cartoon_student.webp';
 
 const RequestForm = () => {
   const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
-  const [otpSent, setOtpSent] = useState(true);
+  const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cityOptions, setCityOptions] = useState([]);
   const [isOtpVerified, setIsOtpVerified] = useState(false);
+  const [isVerifying,setIsVerifying] = useState(false)
 
   const email = watch("email");
   const selectedState = watch("state");
@@ -41,27 +42,26 @@ const RequestForm = () => {
   }, [selectedState]);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    console.log(data)
+    if (!otpSent) {
+      alert("Please send the OTP before submitting the form.");
+      return;
+    }
 
-    if (!otpSent || !isOtpVerified) {
+    if (!isOtpVerified) {
       alert("Please verify your email before submitting the form.");
       return;
     }
 
     try {
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/form-data`, { data });
-      alert("Successful! Our career Expert Will touch you");
-      console.log(data);
-      alert("Form submitted successfully!");
-      
+       await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/requestform`, data);
+      alert("Successful! Our career expert will be in touch with you.");
+      console.log('Form data submitted:', data);
     } catch (error) {
-      console.error(error);
-      alert(`failed,Technical Error `);
+      console.error('Error submitting form:', error);
+      alert("Failed to submit the form. Please try again later.");
     }
-
-   
   };
-
   const sendOtp = async () => {
     if (!email) {
       alert("Please enter a valid email.");
@@ -70,7 +70,7 @@ const RequestForm = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.post(  `${process.env.REACT_APP_BACKEND_URL}/api/send-otp`, { email });
+      await axios.post(  `${process.env.REACT_APP_BACKEND_URL}/api/v1/callrequest`, { email });
       setOtpSent(true);
       alert("OTP sent successfully!");
     } catch (error) {
@@ -87,16 +87,17 @@ const RequestForm = () => {
       return;
     }
 
-    setIsSubmitting(true);
+    setIsVerifying(true);
+   
     try {
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/verify-otp`, { email, otp });
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifyotp`, { email, otp:parseInt(otp) });
       setIsOtpVerified(true);
       alert("OTP verified successfully!");
     } catch (error) {
       console.error(error);
       alert("Invalid OTP. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      setIsVerifying(false);
     }
   };
 
@@ -146,7 +147,7 @@ const RequestForm = () => {
                   <label className="block text-gray-700 font-medium mb-0">OTP</label>
                   <div className="flex gap-2">
                     <input 
-                      type="text" 
+                      type="number" 
                       value={otp} 
                       onChange={(e) => setOtp(e.target.value)} 
                       className="flex-1 p-1 border border-gray-300 rounded-md" 
@@ -158,7 +159,7 @@ const RequestForm = () => {
                       className={`p-2 text-white ${!otp || isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'} rounded-md`}
                       disabled={!otp || isSubmitting}
                     >
-                      {isSubmitting ? 'Verifying...' : 'Verify OTP'}
+                      {isVerifying ? 'Verifying...' : 'Verify OTP'}
                     </button>
                   </div>
                 </div>
@@ -168,11 +169,11 @@ const RequestForm = () => {
                 <label className="block text-gray-700 font-medium mb-0">Mobile Number</label>
                 <input 
                   type="number" 
-                  {...register("mobileNumber", { required: "Mobile number is required" })} 
+                  {...register("phnumber", { required: "Mobile number is required" })} 
                   className="w-full p-1 border border-gray-300 rounded-md" 
                   placeholder="Enter your mobile number" 
                 />
-                {errors.mobileNumber && <p className="text-red-500 text-sm mt-1">{errors.mobileNumber.message}</p>}
+                {errors.phnumber && <p className="text-red-500 text-sm mt-1">{errors.phnumber.message}</p>}
               </div>
 
               <div className="mb-3">

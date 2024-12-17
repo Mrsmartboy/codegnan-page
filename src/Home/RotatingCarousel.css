@@ -304,12 +304,12 @@
     font-size: 1rem;
   }
   .center-text{
-    font-size: 30px;
+    font-size: 25px;
     color: #ffffff;
     margin-top: 20px;
   }
   .center-text.package{
-    font-size: 40px;
+    font-size: 25px;
   }
   
 }
@@ -402,12 +402,12 @@
     font-size: 1rem;
   }
   .center-text{
-    font-size: 30px;
+    font-size: 20px;
     color: #ffffff;
     margin-top: 20px;
   }
   .center-text.package{
-    font-size: 35px;
+    font-size: 25px;
   }
   .highlight{
     font-size: 6rem;
@@ -566,7 +566,7 @@
 
   .profile {
     width: 80px;
-    height: 120px;
+    height: 130px;
   }
 
   .center-profile {
@@ -574,8 +574,8 @@
     top: 35%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 200px;
     left: 30%;
   }
 
@@ -885,7 +885,10 @@
   .right-section {
     text-align: center;
     width: 100%;
-    margin-top: 0px;
+    margin-top: 30px;
+  }
+  .center-text {
+    font-size: 16px;
   }
 
 }

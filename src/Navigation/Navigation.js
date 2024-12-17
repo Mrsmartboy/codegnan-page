@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Button } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import './Navigation.css';
-// import logo from '../images/Codegnan Logo.png'
-import codegnanLogo from '../images/codegnan-logo.png'
+import codegnanLogo from '../images/codegnan-logo.webp';
 
 const Navigation = () => {
   let navigate = useNavigate();
@@ -34,18 +33,16 @@ const Navigation = () => {
     navigate("/");
   };
 
-  // Check if the current path is /directapply
   const isDirectApply = location.pathname.includes('/directapply');
 
   return (
-    <div className={`navigation-container ${showBlur ? 'blur' : ''}`}> 
-      <AppBar position="fixed" className="navbar" elevation={0}>
+    <div className={`navigation-container ${showBlur ? 'blur' : ''}`}>
+      <AppBar position="static" className="navbar" elevation={0}>
         <Toolbar className="tool">
           <img
             src={codegnanLogo}
             alt="Codegnan Logo"
             className="logo"
-             width="250" height="250"
             onClick={() => handleClick("/")}
           />
           {!isDirectApply && (
@@ -121,7 +118,7 @@ const Navigation = () => {
                 )
               ) : (
                 <>
-                  <Button color="inherit" id="nav-link" onClick={() => handleClick("/login/student")}>
+                  <Button color="inherit" id="nav-link" onClick={() => handleClick("/login")}>
                     Login
                   </Button>
                   <Button color="inherit" id="nav-link" onClick={() => handleClick("/signup/student")}>
