@@ -42,7 +42,7 @@ const RotatingCarousel = () => {
 
   // Function to calculate translation distance based on screen width
   const getTranslationDistance = () => {
-    if (window.innerWidth < 476) return 160;
+    if (window.innerWidth < 476) return 140;
     if (window.innerWidth < 576) return 180;
     if (window.innerWidth < 796) return 220;
     if (window.innerWidth < 1135) return 250;

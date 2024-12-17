@@ -9,7 +9,7 @@
 
 
 .logo {
-  width: 15%;
+  width: 12%;
   /* Make the image responsive */
   /* Set the desired height */
   cursor: pointer;
@@ -120,6 +120,6 @@
     top:3%
   }
   .logo{
-    width:35%
+    width:25%
   }
 }
