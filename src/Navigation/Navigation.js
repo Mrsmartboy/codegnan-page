@@ -33,6 +33,7 @@ const Navigation = () => {
     navigate("/");
   };
 
+  // Check if the current path is /directapply
   const isDirectApply = location.pathname.includes('/directapply');
 
   return (
@@ -50,11 +51,14 @@ const Navigation = () => {
               {userType ? (
                 userType === "student" ? (
                   <>
+                    <Button color="inherit" id="nav-link" onClick={() => handleClick("/student-profile")}>
+                      Profile
+                    </Button>
                     <Button color="inherit" id="nav-link" onClick={() => handleClick("/jobslist")}>
                       Jobs List
                     </Button>
-                    <Button color="inherit" id="nav-link" onClick={() => handleClick("/student-profile")}>
-                      Profile
+                    <Button color="inherit" id="nav-link" onClick={() => handleClick("/student-profile-update")}>
+                      Update Profile
                     </Button>
                     <Button color="inherit" id="nav-link" onClick={handleLogout}>
                       Logout
@@ -92,6 +96,9 @@ const Navigation = () => {
                   </>
                 ): userType === "admin" ? (
                   <>
+                    <Button color="inherit" id="nav-link" onClick={() => handleClick("/programmanagersignup")}>
+                    Student Enrollment
+                    </Button>
                     <Button color="inherit" id="nav-link" onClick={() => handleClick("/addjob")}>
                       Add Job
                     </Button>
@@ -111,9 +118,9 @@ const Navigation = () => {
                     <Button color="inherit" id="nav-link" onClick={() => handleClick("/login/student")}>
                       Login
                     </Button>
-                    <Button color="inherit" id="nav-link" onClick={() => handleClick("/signup/student")}>
+                    {/* <Button color="inherit" id="nav-link" onClick={() => handleClick("/signup/student")}>
                       Signup
-                    </Button>
+                    </Button> */}
                   </>
                 )
               ) : (
@@ -121,9 +128,9 @@ const Navigation = () => {
                   <Button color="inherit" id="nav-link" onClick={() => handleClick("/login")}>
                     Login
                   </Button>
-                  <Button color="inherit" id="nav-link" onClick={() => handleClick("/signup/student")}>
+                  {/* <Button color="inherit" id="nav-link" onClick={() => handleClick("/signup/student")}>
                     Signup
-                  </Button>
+                  </Button> */}
                 </>
               )}
               <span className="close-btn" onClick={handleClose}>X</span>

@@ -1,0 +1,88 @@
+.studentprofile-container {
+    min-height: 80vh;
+    padding: 15px;
+}
+
+.studentprofile-container .student-profile-key {
+    color: black;
+    font-weight: 400 !important;
+}
+
+.studentprofile-container p {
+    color: #363f8f; /* Blue color for values */
+    font-family: "Arimo", sans-serif;
+    font-weight: 700;
+    margin: 15px 0;
+    font-style: normal;
+}
+
+.file-upload {
+    border: 1px solid #ccc; /* Default border style */
+    /* Adjust width as needed */
+    color:black;
+    padding: 10px; /* Padding for better visual appearance */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 4px; /* Rounded corners */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.file-upload:hover {
+    border-color: #999; /* Darker border color on hover */
+}
+
+.studentprofile-container .btn-update{
+    border-radius: 5px;
+    background-color: #363f8f;
+    color: white;
+    border: none;
+    padding:8px;
+    cursor:pointer
+}
+
+
+.studentprofile-container label {
+    font-size: 1rem;
+    margin: 10px 0px;
+    display: block;
+    color: black;
+}
+
+.studentprofile-container select {
+    width: 30%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: black;
+}
+.studentprofile-container option{
+    color: black;
+}
+.other{
+    color: black;
+    padding: 10px 80px 10px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.selected-skills{
+    display:flex;
+    padding:10px;
+    flex-wrap: wrap;
+}
+.selected-skills *{
+    margin: 5px;
+}
+
+.add-skill{
+    color: black;
+}
+
+.remove-skill{
+    color: black;
+}

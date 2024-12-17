@@ -1,15 +1,14 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
+import ProgramManagerSignup from './Signup/ProgramManagerSignup/ProgramManagerSignup';
+import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
 import StudentSignup from './Signup/StudentSignup';
 import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
 import Navigation from './Navigation/Navigation';
 import Home from './Home/Home';
 import Signup from './Signup/Signup';
-// import Login from './Login/Login';
 import StudentLogin from './Login/StudentLogin';
-//  import CompanyLogin from './Login/CompanyLogin';
  import Footer from './Footer/Footer';
 import BDELogin from './BDE/BDELogin';
 import BDESignup from './BDE/BDESignup';
@@ -45,7 +44,6 @@ export default function App() {
     <div>
       <Navigation />
       <div>
-      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />}>
@@ -65,6 +63,15 @@ export default function App() {
             element={
               <ProtectedRoute allowedRoles={['bde','company','admin']}>
                 <AddJob />
+              </ProtectedRoute>
+            } 
+          />
+
+         <Route 
+            path="/programmanagersignup" 
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <ProgramManagerSignup />
               </ProtectedRoute>
             } 
           />
@@ -106,6 +113,14 @@ export default function App() {
             element={
               <ProtectedRoute allowedRoles={['student']}>
                 <StudentProfile />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/student-profile-update" 
+            element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <StudentProfileUpdate />
               </ProtectedRoute>
             } 
           />
