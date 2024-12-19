@@ -39,11 +39,10 @@
 .table-container td,
 .table-container th {
   background-color: #e1e7ff !important;
-  padding: 15px 20px;
+  padding: 8px 15px;
   color: black;
   border: 1px solid rgba(52, 64, 154, 0.4); /* Light border for structure */
   text-align: center;
-  word-break: break-word; /* Prevents content overflow */
 }
 
 .table-container th {
