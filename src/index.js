@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import App from './App';
-import { JobsProvider } from "./contexts/JobsContext";
+import { JobsProvider } from './contexts/JobsContext';
+import { StudentsDataProvider } from './contexts/StudentsListContext';
 
 const theme = createTheme();
 
@@ -14,7 +15,9 @@ root.render(
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <JobsProvider> 
-          <App />
+          <StudentsDataProvider>
+            <App />
+          </StudentsDataProvider>
         </JobsProvider>
       </ThemeProvider>
     </BrowserRouter>

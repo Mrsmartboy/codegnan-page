@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './JobsList.css';
-import JobDeadline from './JobDeadline';
+import JobDeadline from './JobDeadline'; 
 import Swal from 'sweetalert2'
 import { useJobs } from '../contexts/JobsContext';
 
