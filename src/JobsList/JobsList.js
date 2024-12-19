@@ -112,9 +112,18 @@ const JobsList = () => {
                             </div>
                         </div>
                         <div className="job-footer">
-                            <button className={`apply-job-list-btn ${job.isActive && !studentDetails.applied_jobs.includes(job.job_id) ? '' : ((studentDetails && studentDetails.applied_jobs && studentDetails.applied_jobs.includes(job.job_id)) ? 'applied' : 'disabled')}`} onClick={() => applyJob(job.job_id)} disabled={!job.isActive}>
-                                {(job.isActive) && !studentDetails.applied_jobs.includes(job.job_id) ? 'Apply' : ((studentDetails && studentDetails.applied_jobs && studentDetails.applied_jobs.includes(job.job_id)) ? 'Applied' : 'Timeout')}
-                            </button>
+                        <button
+                                    className={`apply-job-list-btn ${job.isActive && !(studentDetails?.applied_jobs || []).includes(job.job_id)
+                                        ? ''
+                                        : ((studentDetails?.applied_jobs || []).includes(job.job_id) ? 'applied' : 'disabled')
+                                        }`}
+                                    onClick={() => applyJob(job.job_id)}
+                                    disabled={!job.isActive}
+                                >
+                                    {job.isActive && !(studentDetails?.applied_jobs || []).includes(job.job_id)
+                                        ? 'Apply'
+                                        : ((studentDetails?.applied_jobs || []).includes(job.job_id) ? 'Applied' : 'Timeout')}
+                                </button>
                             {/*    <p className="posted-date">{job.postedDate}</p> */}
                             <p onClick={() => openModal(job)} className='view-button-student'>View More...</p>
 
@@ -174,9 +183,18 @@ const JobsList = () => {
                                 </div>
                             )}
                             <div className="job-footer">
-                                <button className={`apply-job-list-btn ${selectedJob.isActive && !studentDetails.applied_jobs.includes(selectedJob.job_id) ? '' : ((studentDetails && studentDetails.applied_jobs && studentDetails.applied_jobs.includes(selectedJob.job_id)) ? 'applied' : 'disabled')}`} onClick={() => applyJob(selectedJob.job_id)} disabled={!selectedJob.isActive}>
-                                    {(selectedJob.isActive) && !studentDetails.applied_jobs.includes(selectedJob.job_id) ? 'Apply' : ((studentDetails && studentDetails.applied_jobs && studentDetails.applied_jobs.includes(selectedJob.job_id)) ? 'Applied' : 'Timeout')}
-                                </button>
+                            <button
+                                    className={`apply-job-list-btn ${selectedJob.isActive && !(studentDetails?.applied_jobs || []).includes(selectedJob.job_id)
+                                        ? ''
+                                        : ((studentDetails?.applied_jobs || []).includes(selectedJob.job_id) ? 'applied' : 'disabled')
+                                        }`}
+                                    onClick={() => applyJob(selectedJob.job_id)}
+                                    disabled={!selectedJob.isActive}
+                                >
+                                    {selectedJob.isActive && !(studentDetails?.applied_jobs || []).includes(selectedJob.job_id)
+                                        ? 'Apply'
+                                        : ((studentDetails?.applied_jobs || []).includes(selectedJob.job_id) ? 'Applied' : 'Timeout')}
+                                </button>
                                 {selectedJob.isActive && <JobDeadline deadLine={selectedJob.deadLine} />
                                 }
                             </div>

@@ -153,14 +153,15 @@ const BDEStudentsAppliedJobsList = () => {
   };
   return (
     <div className='students-jobs-list'>
-      <h2 style={{ textAlign: 'center' }}>
-        Students Applied for Job
+      <h2 style={{ textAlign: 'center' }} >
+        <span className='text-2xl font-semibold'> Students Applied for Job </span>
         <div className='btn-parent'>
           <button className='btn-excel' onClick={downloadExcel}>Download Excel</button>
           <button className='resume-download' onClick={downloadResume}>Get the Resumes</button>
           <button onClick={acceptSelectedStudents} className='btn-accept-job-students'>Accept the selected students</button>
         </div>
-      </h2>
+        </h2>
+      
       <div className='filter-list'>
         <MultipleSelect
           selectedDepartments={selectedDepartments}

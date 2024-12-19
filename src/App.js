@@ -1,11 +1,13 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProgramManagerSignup from './Signup/ProgramManagerSignup/ProgramManagerSignup';
+import StudentSearch from './StudentSearch/StudentSearch';
 import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
 // import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
 import Navigation from './Navigation/Navigation';
 import Home from './Home/Home';
+import ScrollToTop from './ScrollToTop'
 // import Signup from './Signup/Signup';
 import StudentLogin from './Login/StudentLogin';
  import Footer from './Footer/Footer';
@@ -42,6 +44,8 @@ export default function App() {
   return (
     <div>
       <Navigation />
+      <ScrollToTop/>
+
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -73,6 +77,14 @@ export default function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <ProgramManagerSignup />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/studentsearch" 
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <StudentSearch />
               </ProtectedRoute>
             } 
           />

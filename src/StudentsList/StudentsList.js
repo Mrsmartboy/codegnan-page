@@ -9,7 +9,7 @@ import { saveAs } from 'file-saver';
 export default function StudentsList() {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
-  const { studentsList = [], loading, error } = useStudentsData();
+  const { studentsList, loading, error } = useStudentsData();
 
   
 
@@ -34,19 +34,24 @@ export default function StudentsList() {
     saveAs(blob, 'students-list.xlsx');
   };
 
-  const filteredStudents = studentsList.filter(student => 
-    student?.name?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredStudents = (studentsList || []).length > 0
+  ? studentsList.filter(student => {
+      const studentName = student?.name || ""; // Safely access 'name', fallback to empty string
+      return studentName.toLowerCase().includes(searchQuery.toLowerCase());
+    })
+  : [];
+
 
   const indexOfLastStudent = page * studentsPerPage;
   const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
   const currentStudents = filteredStudents.slice(indexOfFirstStudent, indexOfLastStudent);
   const totalStudents = filteredStudents.length;
   const totalPages = Math.ceil(totalStudents / studentsPerPage);
+  console.log(filteredStudents)
 
   return (
     <div className='studentslist-dashboard' style={{ marginBottom: "-10px" }}>
-      {console.log(studentsList)}
+     
       <h2 className='success'>Students List ({studentsList.length})</h2>
       <div className='download-container'>
         <button className='download-button excel' onClick={exportToExcel}>Download Excel</button>

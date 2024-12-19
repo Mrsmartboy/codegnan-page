@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './AddJob.css'
+import { useJobs } from '../contexts/JobsContext'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 
 export default function AddJob() {
+    const {fetchJobs} = useJobs()
     const [companyName, setCompanyName] = useState('');
     const [jobRole, setJobRole] = useState('');
     const [graduates, setGraduates] = useState('');
@@ -103,7 +105,6 @@ export default function AddJob() {
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
-        console.log(selectedSkills, selectedDepartments)
         e.preventDefault();
         let isValid = true;
 
@@ -169,13 +170,14 @@ export default function AddJob() {
                     specialNote,
                     designation,
                     jobSkills: selectedSkills
-                }).then((response) => {
+                }).then(async (response) => {
                     console.log(response);
                     if (response.status === 200) {
                         Swal.fire({
                             title: "Job added successfully!",
                             icon: "success"
                         });
+                        await fetchJobs()
                         navigate('/bdedashboard');
                     }
                 })

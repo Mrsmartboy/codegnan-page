@@ -4,14 +4,13 @@ import { CgPlayButton } from "react-icons/cg";
 import "./Footer.css";
 
 
-// Importing assets
 import codegnanLogo from '../images/codegnan-white.webp';
-import facebook from '../images/facebook-white.png';
-import linkedin from '../images/linkedin-white.png';
+import facebook from '../images/facebook-white.webp';
+import linkedin from '../images/linkedin-white.webp';
 import twitter from '../images/twitter.webp';
 import whatsapp from '../images/whatsapp-white.webp';
 import youtube from '../images/youtube-white.webp';
-import instagram from '../images/insta-white.png';
+import instagram from '../images/insta-white.webp';
 
 const Footer = () => {
   return (

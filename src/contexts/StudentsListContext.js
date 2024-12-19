@@ -19,8 +19,7 @@ export const StudentsDataProvider = ({ children }) => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/allstudents`);
       setStudentsList(response.data);
-      console.log("message from fetch students data context")
-      console.log(response.data)
+  
     } catch (err) {
       setError('Failed to fetch data from the server.');
     } finally {
