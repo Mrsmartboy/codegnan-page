@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import './ProgramManagerSignup.css';
 import axios from 'axios';
+import {useStudentsData} from '../../contexts/StudentsListContext'
 export default function ProgramManagerSignup() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [parentNumber, setParentNumber] = useState('');
-  
+  const {fetchStudentsData} = useStudentsData()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ export default function ProgramManagerSignup() {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`, { username, password,parentNumber });
       console.log("response from studentlogin", response.data);
       if (response.status === 200) {
+        await fetchStudentsData()
         navigate('/');
       }
     } catch (error) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback} from 'react';
+import React, { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import './BDEStudentsAppliedJobsList.css';
 import axios from 'axios';
@@ -6,37 +6,32 @@ import Swal from 'sweetalert2';
 import * as XLSX from 'xlsx';
 import MultipleSelect from './MultipleSelect'; 
 import SkillsSelect from './SkillsSelect'; 
+import { useStudentsApplyData } from '../contexts/StudentsApplyContext';
+
 const BDEStudentsAppliedJobsList = () => {
   const { jobId } = useParams();
-  const [appliedStudents, setAppliedStudents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [resumeName, setResumeName] = useState('');
-  const [excelName, setExcelName] = useState('');
-  const [jobSkills, setJobSkills] = useState([]);
+  const {
+    appliedStudents,
+    jobSkills,
+    selectedStudents,
+    rejectedStudents,
+    resumeName,
+    excelName,
+    loading,
+    fetchAppliedStudents,
+  } = useStudentsApplyData();
+
   const [selectedDepartments, setSelectedDepartments] = useState([]);
   const [selectedCGPA, setSelectedCGPA] = useState('');
-  const [selectedStudents, setSelectedStudents] = useState([]);
-  const [rejectedStudents, setRejectedStudents] = useState([]);
   const [selectedSkills, setSelectedSkills] = useState([]);
-  const fetchAppliedStudents = useCallback( async () => {
-    try {
-      const resumeNameResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/getjobdetails?job_id=${jobId}`);
-      const { companyName, jobRole } = resumeNameResponse.data;
-      setExcelName(`${companyName}_${jobRole}`);
-      setResumeName(`resumes_${companyName}_${jobRole}`);
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/getappliedstudentslist?job_id=${jobId}`);
-      setAppliedStudents(response.data.students_applied);
-      setJobSkills(response.data.jobSkills);
-      setSelectedStudents(response.data.selected_students_ids);
-      setRejectedStudents(response.data.rejected_students_ids);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-    }
-  },[jobId]);
+
   useEffect(() => {
-    fetchAppliedStudents();
-  }, [fetchAppliedStudents]);
+    fetchAppliedStudents(jobId);
+  }, [jobId, fetchAppliedStudents]);
+
+  
+
+
   const handleDepartmentChange = (event) => {
     const {
       target: { value },

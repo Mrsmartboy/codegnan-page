@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import { useJobs } from '../contexts/JobsContext';
 
 const JobsList = () => {
-          const { jobs, loading, error, fetchJobs } = useJobs();
+    const { jobs, loading, error, fetchJobs } = useJobs();
     const [selectedJob, setSelectedJob] = useState(null); // State for the selected job
     const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
     const [studentDetails, setStudentDetails] = useState(null)

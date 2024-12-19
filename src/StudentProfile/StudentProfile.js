@@ -3,10 +3,13 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import './StudentProfile.css';
 import { useNavigate } from 'react-router-dom';
+import {useStudentsData} from '../contexts/StudentsListContext'
 
 const StudentProfile = () => {
     const navigate = useNavigate()
+    const {fetchStudentsData} = useStudentsData()
     const email=localStorage.getItem("email")
+
    
     const [formData, setFormData] = useState({
         name: '',
@@ -146,7 +149,7 @@ const StudentProfile = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData, formData.age)
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -204,9 +207,10 @@ const StudentProfile = () => {
                 "Content-Type": "multipart/form-data"
             }
         })
-            .then((response) => {
+            .then(async (response) => {
                 console.log("", response.data)
                 console.log("student signup ", response.data)
+                await fetchStudentsData()
                 Swal.fire({
                     title: "Signup Successful",
                     icon: "success"

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback,useMemo } from 'react';
 import axios from 'axios';
 
 const StudentsListContext = createContext();
@@ -15,9 +15,12 @@ export const StudentsDataProvider = ({ children }) => {
   const fetchStudentsData = useCallback(async () => {
     setLoading(true);
     setError(null);
+    
     try {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/allstudents`);
       setStudentsList(response.data);
+      console.log("message from fetch students data context")
+      console.log(response.data)
     } catch (err) {
       setError('Failed to fetch data from the server.');
     } finally {
@@ -29,8 +32,10 @@ export const StudentsDataProvider = ({ children }) => {
     fetchStudentsData();
   }, [fetchStudentsData]);
 
+    const contextValue = useMemo(() => ({ studentsList, loading, error, fetchStudentsData }), [studentsList, loading, error, fetchStudentsData]);
+
   return (
-    <StudentsListContext.Provider value={{ studentsList, loading, error, fetchStudentsData }}>
+    <StudentsListContext.Provider value={contextValue}>
       {children}
     </StudentsListContext.Provider>
   );

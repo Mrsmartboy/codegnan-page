@@ -11,6 +11,8 @@ export default function StudentsList() {
   const [page, setPage] = useState(1);
   const { studentsList = [], loading, error } = useStudentsData();
 
+  
+
   const studentsPerPage = 20;
 
   const handleChange = (event, value) => {
@@ -44,6 +46,7 @@ export default function StudentsList() {
 
   return (
     <div className='studentslist-dashboard' style={{ marginBottom: "-10px" }}>
+      {console.log(studentsList)}
       <h2 className='success'>Students List ({studentsList.length})</h2>
       <div className='download-container'>
         <button className='download-button excel' onClick={exportToExcel}>Download Excel</button>

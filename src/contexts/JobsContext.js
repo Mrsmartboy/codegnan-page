@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback,useMemo } from 'react';
 import axios from 'axios';
 
 const JobsContext = createContext();
@@ -30,8 +30,10 @@ export const JobsProvider = ({ children }) => {
         fetchJobs();
     }, [fetchJobs]);
 
+    const contextValue = useMemo(() => ({ jobs, loading, error, fetchJobs }), [jobs, loading, error, fetchJobs]);
+
     return (
-        <JobsContext.Provider value={{ jobs, loading, error, fetchJobs }}>
+        <JobsContext.Provider value={contextValue}>
             {children}
         </JobsContext.Provider>
     );
