@@ -3,31 +3,26 @@ import axios from 'axios';
 import './JobsList.css';
 import JobDeadline from './JobDeadline';
 import Swal from 'sweetalert2'
+import { useJobs } from '../contexts/JobsContext';
+
 const JobsList = () => {
-    const [jobs, setJobs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+          const { jobs, loading, error, fetchJobs } = useJobs();
     const [selectedJob, setSelectedJob] = useState(null); // State for the selected job
     const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
     const [studentDetails, setStudentDetails] = useState(null)
     const student_id = localStorage.getItem("student_id")
 
     // Fetch job details from the backend API
-    const fetchJobs = useCallback(async () => {
-        try {
-            const response = await axios.get(
-                `${process.env.REACT_APP_BACKEND_URL}/api/v1/listopenings`
-            );
+    const fetchStudents = useCallback(async () => {
+        try { 
+        
             const studentResponse = await axios.get(
                 `${process.env.REACT_APP_BACKEND_URL}/api/v1/getstudentdetails?student_id=${student_id}`
             )
             setStudentDetails(studentResponse.data)
 
-            setJobs(response.data.jobs);
-            setLoading(false);
         } catch (err) {
-            setError('Failed to fetch job details');
-            setLoading(false);
+            alert('Failed to fetch Student details');
         }
     }, [student_id]);
 
@@ -43,7 +38,8 @@ const JobsList = () => {
                             showConfirmButton: false,
                             timer: 3000
                         });
-                        fetchJobs();
+                        fetchStudents();
+                        fetchJobs()
                     }
                 })
                 .catch((error) => {
@@ -63,8 +59,8 @@ const JobsList = () => {
     }
     // Fetch job details on component mount
     useEffect(() => {
-        fetchJobs();
-    }, [fetchJobs]);
+        fetchStudents();
+    }, [fetchStudents]);
 
     // Open modal and set selected job
     const openModal = (job) => {

@@ -23,7 +23,7 @@ export default function AdminLogin() {
       console.log('Response from admin login:', response.data);
       if (response.status === 200) {
         localStorage.setItem('userType', response.data.userType);
-        navigate('/studentslist'); // Navigate to students list
+        navigate('/'); // Navigate to students list
       }
     } catch (error) {
       console.error('Login failed:', error);

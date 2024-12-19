@@ -19,15 +19,12 @@ export default function AddJob() {
     const [designation, setDesignation] = useState('')
     const [companyNameError ] = useState('');
     const [jobRoleError ] = useState('');
-  //  const [graduatesError, setGraduatesError] = useState('');
     const [salaryError] = useState('');
     const [educationQualificationError] = useState('');
-   // const [departmentError, setDepartmentError] = useState('');
     const [percentageError] = useState('');
     const [technologiesError] = useState('');
     const [bondError] = useState('');
     const [jobLocationError] = useState('');
-    // eslint-disable-next-line
     const [skills] = useState(['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'NodeJS', 'Reactjs', 'Angular', 'Vuejs', 'ML', 'Django', 'Spring Boot', 'C++', 'C#', 'Ruby', 'PHP', 'Flask Framework', 'Bootstrap', 'MYSQL', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Shell Scripting', 'VB.NET', 'MATLAB', 'R', 'AWS', 'DevOps', "Hybernate", "Spring", "Spring Boot", "JSP", "Servlets"]);
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [currentSkill, setCurrentSkill] = useState('');
@@ -37,21 +34,14 @@ export default function AddJob() {
     const [selectedYears, setSelectedYears] = useState([]);
 
 
-    // const addSkill = () => {
-    //     if (currentSkill && !selectedSkills.includes(currentSkill)) {
-    //         setSelectedSkills([...selectedSkills, currentSkill]);
-    //     }
-    //     setCurrentSkill('')
-    // };
+    
 
     const handleDateChange = (e) => {
         const value = e.target.value;
         if (!value) {
-            // If the input is cleared, set the deadline to an empty string
             setDeadLine('');
             return;
         }
-        // Format the datetime to match the 24-hour format
         const [date, time] = value.split('T');
         const formattedTime = formatTimeTo24Hour(time);
         const formattedDateTime = `${date} ${formattedTime}`;
@@ -107,7 +97,7 @@ export default function AddJob() {
         setSelectedYears(updatedYears);
     };
 
-    const years = Array.from({ length: 10 }, (_, index) => 2015 + index); // Generating years from 2015 to 2024
+    const years = Array.from({ length: 10 }, (_, index) => 2015 + index); 
 
 
     const navigate = useNavigate()
@@ -186,7 +176,6 @@ export default function AddJob() {
                             title: "Job added successfully!",
                             icon: "success"
                         });
-                        // Redirect to dashboard or another page
                         navigate('/bdedashboard');
                     }
                 })
@@ -198,7 +187,7 @@ export default function AddJob() {
                     text: "Please check the fields again"
                 });
             } finally {
-                setButtonClicked(false); // Re-enable the button after the action completes
+                setButtonClicked(false); 
             }
         }
     };
@@ -313,7 +302,7 @@ export default function AddJob() {
                                 </option>
                             ))}
                         </select>
-                        <button type="button" className='add-skill' onClick={addYear}>
+                        <button type="button" className='add-skill-addJob' onClick={addYear}>
                             Add Year
                         </button>
                         <div className='selected-skills'>
@@ -353,7 +342,7 @@ export default function AddJob() {
                             <option value="MSC">MSC</option>
                             <option value="Others">Others</option>
                         </select>
-                        <button type="button" className='add-skill' onClick={addDepartment}>
+                        <button type="button" className='add-skill-addJob' onClick={addDepartment}>
                             Add Department
                         </button>
                         <div className='selected-skills'>
@@ -410,7 +399,7 @@ export default function AddJob() {
                             />
                         )}
                         {technologiesError && <p className="error-message">{technologiesError}</p>}
-                        <button type="button" className='add-skill' onClick={addSkill}>
+                        <button type="button" className='add-skill-addJob' onClick={addSkill}>
                             Add Skill
                         </button>
                         <div className='selected-skills'>

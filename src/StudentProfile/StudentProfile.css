@@ -95,8 +95,15 @@
     color: black;
 }
 .add-skill{
-    color: black;
-}
+    padding: 5px 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    padding-top: 5px;
+    padding-bottom: 5px;}
 
 .student-profile-container .btn {
     padding: 10px;

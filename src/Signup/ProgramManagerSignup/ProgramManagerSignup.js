@@ -12,10 +12,11 @@ export default function ProgramManagerSignup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  console.log(username,password,parentNumber)
+    console.log(username,password,parentNumber)
+  
+  
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`, 
-        { username,password,parentNumber});
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`, { username, password,parentNumber });
       console.log("response from studentlogin", response.data);
       if (response.status === 200) {
         navigate('/');
@@ -40,7 +41,7 @@ export default function ProgramManagerSignup() {
   };
   return (
     <div className="programmanager-container">
-      <h1 style={{ color: "black" }}>Student Enrollment</h1>
+      <h1 style={{ color: "black" }} className='font-semibold text-lg lg:text-2xl'>Student Enrollment</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email address</label>

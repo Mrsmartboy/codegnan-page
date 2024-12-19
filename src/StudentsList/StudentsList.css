@@ -3,19 +3,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin: auto;
   padding: 2% 10px;
 }
 
-.studentslist .title,
 .success {
-  margin: auto;
   color: #32398d;
+  margin: auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+
 }
 
-.success {
-  font-size: 30px;
+.studentslist-search-bar {
+  border: none;
+  border-radius: 2px;
+  color: #000;
+  margin: 1.8% auto;
+  padding: 10px;
+  width: 40%;
 }
 
 .table-container {
@@ -35,8 +42,8 @@
   padding: 15px 20px;
   color: black;
   border: 1px solid rgba(52, 64, 154, 0.4); /* Light border for structure */
-  border-bottom-style: solid;
   text-align: center;
+  word-break: break-word; /* Prevents content overflow */
 }
 
 .table-container th {
@@ -48,7 +55,7 @@
 .loading-message,
 .no-results {
   font-size: 16px;
-  color: #000; /* Black color for the loading message */
+  color: #000; /* Black color for messages */
   text-align: center;
   margin-top: 20px;
 }
@@ -60,12 +67,17 @@
   border-radius: 5px;
   padding: 10px;
   color: black;
+  transition: all 0.3s ease;
+}
+
+.studentslist-search-bar:focus {
+  border-color: #32398d;
+  outline: none;
 }
 
 .download-container {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Use gap for consistent spacing */
   margin: 10px 0;
   flex-wrap: wrap;
   flex-direction: column;
@@ -91,28 +103,19 @@
   background-color: rgb(184, 41, 92);
 }
 
-.resume {
-  background-color: rgb(246, 197, 90);
-}
-
-.resume:hover {
-  background-color: rgb(226, 177, 70);
-}
-
 .pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-@media (max-width: 700px) {
+
+@media (max-width: 1200px) {
   .studentslist-dashboard {
     padding: 2% 0%;
   }
 
-  .studentslist-search-bar {
-    width: 80%;
-  }
+ 
 
   .download-button {
     font-size: 12px;
@@ -123,8 +126,45 @@
   .table-container th {
     padding: 10px 12px;
   }
+
+  .table-container {
+    overflow-x: auto; /* Add horizontal scrolling for tables */
+    display: block;
+  }
+
+  .table-container table {
+    width: 1100px; /* Set a fixed width for the table */
+  }
 }
 
+/* Responsive Design for Small Devices */
+@media (max-width: 700px) {
+  .studentslist-dashboard {
+    padding: 2% 0%;
+  }
+
+
+  .download-button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .table-container td,
+  .table-container th {
+    padding: 10px 12px;
+  }
+
+  .table-container {
+    overflow-x: auto; /* Add horizontal scrolling for tables */
+    display: block;
+  }
+
+  .table-container table {
+    width: 900px; /* Set a fixed width for the table */
+  }
+}
+
+/* Mobile-specific Scrolling Behavior (Max-width: 480px) */
 @media (max-width: 480px) {
   .studentslist-dashboard {
     padding: 5% 0;
@@ -140,9 +180,37 @@
     padding: 5px 8px;
   }
 
-  .table-container td,
-  .table-container th {
-    font-size: 12px;
-    padding: 8px;
+  .table-container {
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    display: block;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
+
+  .table-container table {
+    min-width: 1100px; /* Ensure a minimum width for horizontal scrolling */
+  }
+
+  .table-container tr {
+    display: table-row; /* Retain table-row structure for scrolling */
+    border: none;
+  }
+
+  .table-container td {
+    display: table-cell;
+    padding: 10px;
+  }
+
+  .success {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .download-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  
+
+  
 }

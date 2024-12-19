@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProgramManagerSignup from './Signup/ProgramManagerSignup/ProgramManagerSignup';
 import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
-import StudentSignup from './Signup/StudentSignup';
 // import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
 import Navigation from './Navigation/Navigation';
@@ -68,11 +67,6 @@ export default function App() {
             } 
           />
 
-          <Route path="/student-signup" element={
-            <ProtectedRoute allowedRoles={['bde','company','admin']}>
-              <StudentSignup/>
-          </ProtectedRoute>
-          }/>
 
          <Route 
             path="/programmanagersignup" 

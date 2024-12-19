@@ -109,7 +109,7 @@ export default function BDELogin() {
 
             <p className=" text-center text-sm text-gray-600  space-y-0" >
               Don&apos;t Have an Account?{' '}
-              <Link to="/signup" className="font-semibold text-[#0737EE]">
+              <Link to="/bdesignup" className="font-semibold text-[#0737EE]">
                 Register Now
               </Link>
             </p>

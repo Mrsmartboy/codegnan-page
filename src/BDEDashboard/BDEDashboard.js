@@ -1,17 +1,17 @@
-import React, { useState, useEffect ,useCallback} from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useJobs } from '../contexts/JobsContext';
 import Swal from 'sweetalert2';
 import './BDEDashboard.css';
+
 const BDEDashboard = () => {
+      const { jobs, loading, error, fetchJobs } = useJobs();
   const [state, setState] = useState({
-    jobs: [],
-    loading: true,
-    error: '',
     selectedJob: null,
     isModalOpen: false,
     editingJobId: null,
-    formData: {}, // Store form data
+    formData: {}, 
     skills: [
       'HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'Node.js', 'React.js', 'Angular', 'Vue.js',
       'Machine Learning', 'Django', 'Spring Boot', 'C++', 'C#', 'Ruby', 'PHP',
@@ -50,7 +50,7 @@ const BDEDashboard = () => {
   };
 
   const handleEditClick = (selectedJob) => {
-    const jobToEdit = state.jobs.find((job) => job.job_id === selectedJob.job_id);
+    const jobToEdit = jobs.find((job) => job.job_id === selectedJob.job_id);
     console.log(jobToEdit)
     if (jobToEdit) {
       setState((prevState) => ({
@@ -236,22 +236,7 @@ const BDEDashboard = () => {
     }
   };
 
-  const fetchJobs = useCallback(async () => {
-    try {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/listopenings`);
-      setField('jobs', response.data.jobs);
-      setField('loading', false);
-    } catch (error) {
-      setError('error', 'Failed to fetch job details');
-      setField('loading', false);
-    }
-  },[]);
 
-  useEffect(() => {
-    fetchJobs();
-  }, [fetchJobs]);
-
- 
 
   const closeModal = () => {
     setState((prevState) => ({
@@ -318,9 +303,9 @@ const BDEDashboard = () => {
    
     <div className="bde-dashboard">
       <h1 className='bde-head'>BDE Dashboard</h1>
-      {state.loading && <p className="bde-loading">Loading jobs...</p>}
+      {loading && <p className="bde-loading">Loading jobs...</p>}
  
-      {state.error && <p className="bde-error">{state.error}</p>}
+      {error && <p className="bde-error">{error}</p>}
       {state.editingJobId?(
         <div className="job-edit-form">
           <h3 className="form-title">Edit Job</h3>
@@ -527,7 +512,7 @@ const BDEDashboard = () => {
       ):(
         <>
         <div className="job-grid">
-          {state.jobs.map((job) => (
+          {jobs.map((job) => (
             <div
               key={job.job_id}
               className={`job-card ${!job.isActive ? 'job-card-closed' : ''}`}

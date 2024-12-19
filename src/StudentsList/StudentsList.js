@@ -65,17 +65,20 @@ export default function StudentsList() {
         saveAs(blob, 'students-list.xlsx');
     
       }
-
-  const filteredStudents = studentsList.filter(student =>
-    student.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
+      const filteredStudents = (studentsList || []).length > 0
+      ? studentsList.filter(student => {
+          const studentName = student?.name || ""; // Safely access 'name', fallback to empty string
+          return studentName.toLowerCase().includes(searchQuery.toLowerCase());
+        })
+      : [];
+    
 
   const indexOfLastStudent = page * studentsPerPage;
   const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
   const currentStudents = filteredStudents.slice(indexOfFirstStudent, indexOfLastStudent);
   const totalStudents = filteredStudents.length;
   const totalPages = Math.ceil(totalStudents / studentsPerPage);
+  console.log(studentsList)
 
   return (
     <div className='studentslist-dashboard' style={{marginBottom:"-10px"}}>
@@ -95,12 +98,10 @@ export default function StudentsList() {
      
      
       <br/>
-      {/* Loading message */}
       {loading ? (
         <p className='loading-message'>Loading...</p>
       ) : (
         <>
-          {/* Student list */}
           {totalStudents > 0 ? (
             <div className='table-container'>
               <table>
@@ -117,18 +118,24 @@ export default function StudentsList() {
                   </tr>
                 </thead>
                 <tbody>
-                  {currentStudents.map(student => (
-                    <tr key={student.id} className='studentslist-item'>
-                      <td>{student.name}</td>
-                      <td>{student.email}</td>
-                      <td>{student.phone}</td>
-                      <td>{student.collegeName}</td>
-                      <td>{student.department}</td>
-                      <td>{student.highestGraduationCGPA}</td>
-                      <td>{student.studentSkills.join(', ')}</td>
-                      <td>{student.yearOfPassing}</td>
-                    </tr>
-                  ))}
+                          {currentStudents.length > 0 ? (
+            currentStudents.map(student => (
+              <tr key={student.id} className='studentslist-item'>
+                <td>{student.name || '__'}</td>
+                <td>{student.email}</td>
+                <td>{student.phone || '__'}</td>
+                <td>{student.collegeName || '__'}</td>
+                <td>{student.department || '__'}</td>
+                <td>{student.highestGraduationCGPA || '__'}</td>
+                <td>{student.studentSkills && student.studentSkills.length > 0 ? student.studentSkills.join(', ') : 'No skills listed'}</td>
+                <td>{student.yearOfPassing || '__'}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="8">No students found</td>
+            </tr>
+          )}
                 </tbody>
               </table>
               

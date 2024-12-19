@@ -7,11 +7,9 @@ import { useNavigate } from 'react-router-dom';
 const StudentProfile = () => {
     const navigate = useNavigate()
     const email=localStorage.getItem("email")
-    // eslint-disable-next-line
-    //const [buttonClicked, setButtonClicked] = useState(false);
+   
     const [formData, setFormData] = useState({
         name: '',
-        //email: '',
         studentId: '',
         age: '',
         mobileNumber: '',
@@ -32,9 +30,7 @@ const StudentProfile = () => {
         resume: null,
         highestGraduationCGPA: '',
     });
-    //const [otp, setOtp] = useState('')
     const [age, setAge] = useState('');
-    //const [check, setCheck] = useState(false)
     const handleAgeChange = (e) => {
         const selectedDate = e.target.value;
         const calculatedAge = calculateAge(selectedDate);
@@ -57,18 +53,16 @@ const StudentProfile = () => {
             const birthYear = dob.getFullYear();
             const currentYear = today.getFullYear();
             if (isLeapYear(birthYear) && hasBirthdayOccuredThisYear && !isLeapYear(currentYear)) {
-                age--; // Subtract one year if the birthday hasn't occurred in a non-leap year
+                age--; 
             }
         }
         return age;
     };
-    // eslint-disable-next-line
     const [skills, setSkills] = useState(['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'NodeJS', 'Reactjs', 'Angular', 'Vuejs', 'ML', 'Django', 'Spring Boot', 'C++', 'C#', 'Ruby', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Shell Scripting', 'VB.NET', 'MATLAB', 'R', 'AWS', 'DevOps']);
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [currentSkill, setCurrentSkill] = useState('');
     const [isOther, setIsOther] = useState(false);
     const [newSkill, setNewSkill] = useState('');
-    //const [showOTPInput, setShowOTPInput] = useState(false);
     const addSkill = () => {
         const skillToAdd = isOther ? newSkill : currentSkill;
         if (skillToAdd && !selectedSkills.includes(skillToAdd)) {
@@ -143,50 +137,7 @@ const StudentProfile = () => {
         }
     };
 
-    /*
-        const generateOtp = () => {
-        console.log("email value", formData.email)
-        if(formData.email===""){
-            alert("Please enter valid emailID")
-            return ;
-        }
-        setShowOTPInput(true);
-        Swal.fire({
-            title: "Check your email for OTP",
-            icon: "success"
-        });
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/studentotp`, { email: formData.email })
-            .then((res) => {
-                console.log("res from generateotp function", res)
-
-            })
-    }
    
-    
-    const handleOTPChange = (e) => {
-        const value = e.target.value;
-        setOtp(value);
-        if (value.length === 6) {
-            // Make a backend request
-            axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/verifystudentotp`, { otp: Number(value), email: formData.email })
-                .then(response => {
-                    // Handle the response from the backend
-                    console.log('OTP verified:', response.data);
-                    if (response.status === 200) {
-                        setCheck(true)
-                        setButtonClicked(true);
-
-                    }
-                    // You can also add logic here to enable the signup button
-                })
-                .catch(error => {
-                    // Handle any errors from the backend
-                    console.error('Error verifying OTP:', error);
-                });
-        }
-    }
-    */
-
     const handleArrearsChange = (e) => {
         const value = e.target.value === 'yes' ? true : false;
         setFormData({
@@ -197,7 +148,6 @@ const StudentProfile = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission
         console.log(formData, formData.age)
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         const graduationRegex = /^\d*\.?\d*$/
@@ -248,7 +198,7 @@ const StudentProfile = () => {
             tenthStandard: Number(formData.tenthStandard),
             twelfthStandard: Number(formData.twelfthStandard),
             highestGraduationCGPA: Number(formData.highestGraduationCGPA),
-            studentSkills: selectedSkills // Include skills field
+            studentSkills: selectedSkills 
         }, {
             headers: {
                 "Content-Type": "multipart/form-data"
@@ -261,7 +211,7 @@ const StudentProfile = () => {
                     title: "Signup Successful",
                     icon: "success"
                 });
-                navigate("/login/student")
+                navigate("/")
             })
             .catch((error) => {
                 console.log("error from student signup", error)
@@ -272,12 +222,11 @@ const StudentProfile = () => {
                     text: "Unable to signup",
                 });
             })
-        //console.log(formData);
 
     };
     return (
         <div className='student-profile-container'>
-            <h1 style={{ color: "black" }}>Student Profile</h1>
+            <h1 style={{ color: "black" }} className='font-semibold text-3xl'>Student Profile</h1>
             <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="input-group">
                     <div className="form-group">
@@ -306,47 +255,9 @@ const StudentProfile = () => {
                             <p>Your age: {age} years</p>
                         )}
                     </div>
-                    {/* <div className="form-group otp-parent">
-                        <div>
-                            <label>Email <span style={{ color: 'red' }}>*</span></label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder='Ex:sivaram@gmail.com'
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        {
-                            !check && <span className='generateotp-btn' onClick={generateOtp}>Generate OTP</span>
-                        }
-
-                    </div> */}
+                   
                 </div>
-                {/*
-                    {showOTPInput && (
-                    <div className='input-group'>
-                        <div className="form-group ">
-                            <label>Enter OTP <span style={{ color: 'red' }}>*</span></label>
-                            <input
-                                type="text"
-                                name="otp"
-                                placeholder='Ex: 92145'
-                                value={otp}
-                                onChange={handleOTPChange}
-                                required
-                            />
-                        </div>
-                        {
-                            check &&
-                            <div className="check">
-                                <img style={{marginTop:"10px"}} width="10%" src='https://media.tenor.com/bm8Q6yAlsPsAAAAj/verified.gif' alt='email_verification' />
-                            </div>
-                        }
-                    </div>
-                )}  
-                */}
+               
                 <div className="input-group">
                     <div className="form-group">
                         <label>New Password <span style={{ color: 'red' }}>*</span></label>
@@ -645,7 +556,6 @@ const StudentProfile = () => {
                     </div>
                 </div>
                 <button className='btn'>Submit</button>
-                {/* <button disabled={!buttonClicked} className='btn'>Signup Now</button> */}
             </form>
         </div>
     );
