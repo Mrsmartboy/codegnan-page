@@ -1,12 +1,11 @@
 
 import React from 'react';
 import bannerGirl from '../images/banner-girl.webp';
-import Youtube from '../images/youtube.webp'
 import './BannerPage.css'
 import StatsChart from './StatsChart'
 
 const BannerPage =()=>{
-    // const videoUrl = 'https://youtu.be/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
+  const videoUrl = 'https://www.youtube.com/embed/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
     
 
 return(      
@@ -39,8 +38,16 @@ return(
 
      <StatsChart />
 
-   <img src={Youtube} alt='youtube' className='custom-player'   width="400" 
-    height="225"/>
+     <iframe 
+  width="410" 
+  height="240" 
+
+  src={videoUrl} 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
 
   </div>
 </div>
