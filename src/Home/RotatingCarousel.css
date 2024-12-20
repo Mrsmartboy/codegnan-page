@@ -812,7 +812,6 @@
 @media screen and  (max-width:476px) {
   .main-container {
     flex-direction: column;
-    min-height: 100vh;
   }
 
   .carousel-container {
