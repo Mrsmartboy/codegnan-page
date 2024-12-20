@@ -121,7 +121,7 @@ const BDEStudentsAppliedJobsList = () => {
       confirmButtonText: 'Accept',
       cancelButtonText: 'Cancel'
     });
-    if (result.isConfirmed) {
+    if (result.isConfirmed) { 
       try {
         const selectedStudentIds = filteredStudents.map(student => student.student_id);
         if (selectedStudentIds.length === 0) {
@@ -193,7 +193,6 @@ const BDEStudentsAppliedJobsList = () => {
         />
       </div>
       <table>
-        {console.log("filtered students", filteredStudents)}
         <thead>
           <tr>
             <th style={{ color: "white" }}>Applied Students  ({filteredStudents.length})</th>
