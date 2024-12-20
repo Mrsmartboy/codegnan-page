@@ -200,6 +200,15 @@
   display: block;
 }
 
+ .question-mark {
+  min-width: 48px; /* Ensure sufficient clickable width */
+  min-height: 48px; /* Ensure sufficient clickable height */
+  padding: 8px; /* Add padding around the icons */
+  display: inline-flex; /* Maintain alignment */
+  justify-content: center; 
+  align-items: center;
+}
+
 .call {
   width: 30px;
   height: 30px;

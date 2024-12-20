@@ -186,6 +186,15 @@
   height: 50px;
 }
 
+ .smile-icon {
+  min-width: 48px; /* Ensure sufficient clickable width */
+  min-height: 48px; /* Ensure sufficient clickable height */
+  padding: 8px; /* Add padding around the icons */
+  display: inline-flex; /* Maintain alignment */
+  justify-content: center; 
+  align-items: center;
+}
+
 .circle-img.highlighted {
   transform: scale(1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
