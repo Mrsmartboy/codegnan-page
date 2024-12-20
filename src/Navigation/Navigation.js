@@ -141,11 +141,16 @@ const Navigation = () => {
             </div>
           )}
           {!isDirectApply && (
-            <button className={`toggler ${showNavLinks ? 'show' : ''}`} onClick={handleToggle}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+           <button
+           className={`toggler ${showNavLinks ? 'show' : ''}`}
+           onClick={handleToggle}
+           aria-label={showNavLinks ? 'Close navigation menu' : 'Open navigation menu'}
+         >
+           <span></span>
+           <span></span>
+           <span></span>
+         </button>
+         
           )}
         </Toolbar>
       </AppBar>
