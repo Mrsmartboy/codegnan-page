@@ -61,7 +61,9 @@ export default function AddJob() {
     const addSkill = () => {
         let skillToAdd = currentSkill;
         if (currentSkill === 'Other' && customSkill.trim() !== '') {
-            skillToAdd = customSkill.trim();
+            const updatedSkill=  customSkill.charAt(0).toUpperCase() + customSkill.slice(1)
+            skillToAdd = updatedSkill.trim();
+            
         }
 
         if (skillToAdd && !selectedSkills.includes(skillToAdd)) {

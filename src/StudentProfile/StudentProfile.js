@@ -68,7 +68,9 @@ const StudentProfile = () => {
     const [isOther, setIsOther] = useState(false);
     const [newSkill, setNewSkill] = useState('');
     const addSkill = () => {
-        const skillToAdd = isOther ? newSkill : currentSkill;
+      const updatedSkill=  newSkill.charAt(0).toUpperCase() + newSkill.slice(1)
+      console.log(updatedSkill)
+        const skillToAdd = isOther ? updatedSkill : currentSkill;
         if (skillToAdd && !selectedSkills.includes(skillToAdd)) {
             setSelectedSkills([...selectedSkills, skillToAdd]);
             setCurrentSkill('');
@@ -473,7 +475,6 @@ const StudentProfile = () => {
                         />
                     </div>
                 </div>
-                {/* sill set*/}
                 <div className="input-group">
                     <div className="form-group">
                         <label>StudentId <span style={{ color: 'red' }}>*</span></label>

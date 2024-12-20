@@ -6,6 +6,7 @@ const StudentSearch = () => {
   const [studentData, setStudentData] = useState(null);
  const [appliedJobs, setAppliedJobs] = useState([]);
    const [eligibleJobs, setEligibleJobs] = useState([]);
+   const [selectedJob, setSelectedJob] = useState(null);
 
 
   const handleSearch = async () => {
@@ -37,6 +38,14 @@ const StudentSearch = () => {
     }
   };
   
+
+  const handleRowClick = (job) => {
+    setSelectedJob(job);
+  };
+
+  const closeModal = () => {
+    setSelectedJob(null);
+  };
   
 
 
@@ -111,10 +120,10 @@ const StudentSearch = () => {
                           </thead>
                           <tbody>
                             {appliedJobs.map((job, index) => (
-                              <tr key={index} >
-                                <td className="border border-gray-300 px-4 py-2 text-black">{job.companyName}</td>
-                                <td className="border border-gray-300 px-4 py-2 text-black">{job.jobRole}</td>
-                                <td className="border border-gray-300 px-4 py-2 text-black">
+                              <tr key={index}   className="transition-all cursor-pointer hover:bg-red-500 hover:text-white hover:font-semibold"   onClick={() => handleRowClick(job)}>
+                                <td className="border border-gray-300 px-4 py-2  ">{job.companyName}</td>
+                                <td className="border border-gray-300 px-4 py-2 ">{job.jobRole}</td>
+                                <td className="border border-gray-300 px-4 py-2">
                                   {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
                                 </td>
                               </tr>
@@ -154,15 +163,15 @@ const StudentSearch = () => {
                             </thead>
                             <tbody>
                               {eligibleJobs.map((job, index) => (
-                                <tr key={index} className=" transition-all">
-                                  <td className="border border-gray-300 px-4 py-2 text-black">
+                                <tr key={index} className="transition-all cursor-pointer hover:bg-red-500 hover:text-white hover:font-semibold" onClick={() => handleRowClick(job)}>
+                                  <td className="border border-gray-300 px-4 py-2 ">
                                     {job.companyName}
                                   </td>
-                                  <td className="border border-gray-300 px-4 py-2 text-black">
+                                  <td className="border border-gray-300 px-4 py-2 ">
                                     {job.jobRole}
                                   </td>
                                  
-                                  <td className="border border-gray-300 px-4 py-2 text-black">
+                                  <td className="border border-gray-300 px-4 py-2 ">
                                     {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
                                   </td>
                                 </tr>
@@ -175,6 +184,62 @@ const StudentSearch = () => {
                   </div>
 
 
+        </div>
+      )}
+
+       {selectedJob && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white w-full max-w-lg rounded-lg shadow-lg p-6 relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 px-2 text-black font-bold hover:text-red-500"
+            >
+              ✕
+            </button>
+            <h2 className="text-xl font-bold text-pink-500 mb-4">{selectedJob.jobRole}</h2>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Company Name:</span> {selectedJob.companyName}
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Salary:</span>   {selectedJob.salary.includes('LPA') ? selectedJob.salary : `${selectedJob.salary} LPA`}
+
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Location:</span> {selectedJob.jobLocation || "N/A"}
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Percentage:</span> {selectedJob.percentage || "N/A"}%
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Bond:</span> {selectedJob.bond || "N/A"} year
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Branch:</span> {selectedJob.department?.join(", ") || "N/A"}
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Qualification:</span> {selectedJob.educationQualification}
+            </p>
+            <p className="text-sm mb-2">
+              <span className="font-bold">Graduate Level:</span>{" "}
+              {selectedJob.graduates?.join(", ") || "N/A"}
+            </p>
+            <div className="flex gap-2 mt-4">
+              {selectedJob.jobSkills?.map((skill, i) => (
+                <span
+                  key={i}
+                  className="px-2 py-1 bg-green-500 border border-gray-300 rounded-full text-sm text-white font-semibold"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+            {selectedJob.specialNote && (
+              <div className="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500">
+                <p className="text-sm font-bold">Special Note:</p>
+                <p className="text-sm">{selectedJob.specialNote}</p>
+              </div>
+            )}
+             </div>
         </div>
       )}
     </div>

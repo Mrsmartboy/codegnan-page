@@ -9,7 +9,9 @@ export const fetchDashboardData = async () => {
         throw new Error("Failed to fetch data from API");
       }
       const data = await response.json();
-  
+      let objectLength = Object.keys(data.COLLEGES_LIST).length;
+      console.log("home page",data,  objectLength   )
+
       // Extracting specific parts of the API response
       const companiesList = data.COMPANIES;
       const collegesList = data.COLLEGES_LIST;

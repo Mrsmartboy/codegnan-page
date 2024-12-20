@@ -25,7 +25,7 @@ export default function StudentProfile() {
   }, [student_id]);
 
   const updateResume = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
     const formData = new FormData();
     formData.append('resume', file);
     formData.append('student_id', student_id);
@@ -52,7 +52,6 @@ export default function StudentProfile() {
         navigate("/jobslist")
       } 
       console.log('Update Resume Response:', response);
-      // Optionally, update UI or state after successful update
 
     } catch (error) {
       console.error('Error updating resume:', error);
@@ -61,7 +60,7 @@ export default function StudentProfile() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    const maxSize = 100 * 1024; // 100 KB
+    const maxSize = 100 * 1024; 
 
     if (file) {
         if (file.size > maxSize) {
@@ -79,7 +78,6 @@ export default function StudentProfile() {
 
   return (
     <div className='studentprofile-container'>
-      {/* Display student details here */}
       {loading ? (
         <p>Loading...</p>
       ) : (
