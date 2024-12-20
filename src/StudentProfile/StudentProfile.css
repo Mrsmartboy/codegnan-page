@@ -132,17 +132,23 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     .student-profile-container form {
         width: 80%;
     }
     
-    .student-profile-container input {
-        width: 60vw; 
-    }
+   
     
     .student-profile-container .input-group {
         flex-direction: column;
+    }
+
+    .radio-group{
+        flex-direction: column;
+    }
+    .radio-option.input{
+        margin-right: 0px;
+        width: 5vw;
     }
     .student-profile-container .input-group > div {
         width: 90%; /* Adjust as needed */
