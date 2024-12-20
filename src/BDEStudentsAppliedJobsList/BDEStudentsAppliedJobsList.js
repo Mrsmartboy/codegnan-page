@@ -8,6 +8,7 @@ import MultipleSelect from './MultipleSelect';
 import SkillsSelect from './SkillsSelect'; 
 import { useStudentsApplyData } from '../contexts/StudentsApplyContext';
 
+
 const BDEStudentsAppliedJobsList = () => {
   const { jobId } = useParams();
   const {
@@ -24,9 +25,15 @@ const BDEStudentsAppliedJobsList = () => {
   const [selectedDepartments, setSelectedDepartments] = useState([]);
   const [selectedCGPA, setSelectedCGPA] = useState('');
   const [selectedSkills, setSelectedSkills] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchAppliedStudents(jobId);
+    const fetchData = async () => {
+      setIsLoading(true); 
+      await fetchAppliedStudents(jobId);
+      setIsLoading(false); 
+    };
+    fetchData();
   }, [jobId, fetchAppliedStudents]);
 
   
@@ -153,7 +160,12 @@ const BDEStudentsAppliedJobsList = () => {
   };
   return (
     <div className='students-jobs-list'>
-      <h2 style={{ textAlign: 'center' }} >
+    {isLoading?(
+      <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>):(
+      <>
+        <h2 style={{ textAlign: 'center' }} >
         <span className='text-2xl font-semibold'> Students Applied for Job </span>
         <div className='btn-parent'>
           <button className='btn-excel' onClick={downloadExcel}>Download Excel</button>
@@ -228,6 +240,11 @@ const BDEStudentsAppliedJobsList = () => {
           }
         </tbody>
       </table>
+      </>
+    )
+    
+  }
+    
     </div>
   );
 };

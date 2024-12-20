@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import { useJobs } from '../contexts/JobsContext';
 import Swal from 'sweetalert2';
 import './BDEDashboard.css';
-import { useStudentsApplyData } from '../contexts/StudentsApplyContext';
 
 const BDEDashboard = () => {
       const { jobs, loading, error, fetchJobs } = useJobs();
-      const {fetchAppliedStudents} =  useStudentsApplyData();
 
   const [state, setState] = useState({
     selectedJob: null,
@@ -154,14 +152,12 @@ const BDEDashboard = () => {
     setField('selectedSkills', state.selectedSkills.filter((s) => s !== skill));
   };
 
-  const openModal = async (job) => {
+  const openModal = (job) => {
     setState((prevState) => ({
       ...prevState,
       selectedJob: job, 
       isModalOpen: true, 
     }));
-    console.log(job.job_id)
-    await fetchAppliedStudents(job.job_id)
   };
 
   const applyCancel = () => {
