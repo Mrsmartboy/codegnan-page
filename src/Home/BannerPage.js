@@ -7,11 +7,9 @@ import StatsChart from './StatsChart'
 
 const BannerPage =()=>{
     // const videoUrl = 'https://youtu.be/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
+    
 
-
-return(
-  
-       
+return(      
 <div className='coverpage-container'>
 <div className='home-cover-text-container'>
   <div className='home-text-container'>
@@ -41,7 +39,7 @@ return(
 
      <StatsChart />
 
-   <img src={Youtube} alt='youtube' className='custom-player' loading="lazy"   width="400" 
+   <img src={Youtube} alt='youtube' className='custom-player'   width="400" 
     height="225"/>
 
   </div>
