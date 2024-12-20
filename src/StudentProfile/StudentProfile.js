@@ -32,6 +32,7 @@ const StudentProfile = () => {
         profilePic: '',
         resume: null,
         highestGraduationCGPA: '',
+        batchNo:''
     });
     const [age, setAge] = useState('');
     const handleAgeChange = (e) => {
@@ -183,7 +184,7 @@ const StudentProfile = () => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/signup`, {
             name: formData.name,
             email: email,
-            studentId: formData.studentId,
+            studentId: formData.studentId.toUpperCase(),
             password: formData.password,
             cityName: formData.cityname,
             department: formData.department,
@@ -197,6 +198,7 @@ const StudentProfile = () => {
             githubLink: formData.githubLink,
             arrears: formData.arrears,
             resume: formData.resume,
+            batchNo:formData.batchNo,
             profilePic: formData.profilePic,
             tenthStandard: Number(formData.tenthStandard),
             twelfthStandard: Number(formData.twelfthStandard),
@@ -484,9 +486,24 @@ const StudentProfile = () => {
                             required
                         />
                     </div>
+                    <div className="form-group">
+                        <label>Student Batch Number <span style={{ color: 'red' }}>*</span></label>
+                        <input
+                            type="text"
+                            name="batchNo"
+                            placeholder='Ex:PFS5 or JAP13'
+                            value={formData.batchNo}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
+                   
 
-                    <div>
+                </div>
+
+                <div className="input-group">
+                <div>
                         <label>Skills: <span style={{ color: 'red' }}>*</span></label>
                         <select
                             id="skills"
@@ -525,10 +542,6 @@ const StudentProfile = () => {
                             ))}
                         </div>
                     </div>
-
-                </div>
-
-                <div className="input-group">
                     <div className="form-group">
                         <label>Arrears <span style={{ color: 'red' }}>*</span></label>
                         <div className="radio-group">

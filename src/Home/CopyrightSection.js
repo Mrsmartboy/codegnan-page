@@ -8,10 +8,10 @@ function CopyrightSection() {
         © Copyright 2018-{new Date().getFullYear()} | Codegnan IT Solutions PVT LTD
       </p>
       <p>
-        <a href="/privacy-policy" className="copyright-link">Privacy Policy</a> | 
-        <a href="/terms-and-conditions" className="copyright-link">Terms and Conditions</a> | 
-        <a href="/refund-policy" className="copyright-link">Refund Policy</a> | 
-        <a href="/cancellation-policy" className="copyright-link">Cancellation Policy</a>
+        <a href="https://codegnan.com/privacy-policy/" className="copyright-link">Privacy Policy</a> | 
+        <a href="https://codegnan.com/terms-conditions/" className="copyright-link">Terms and Conditions</a> | 
+        <a href="https://codegnan.com/refund-policy/" className="copyright-link">Refund Policy</a> | 
+        <a href="https://codegnan.com/cancellation-policy/" className="copyright-link">Cancellation Policy</a>
       </p>
     </div>
   );

@@ -47,7 +47,6 @@ export default function StudentsList() {
   const currentStudents = filteredStudents.slice(indexOfFirstStudent, indexOfLastStudent);
   const totalStudents = filteredStudents.length;
   const totalPages = Math.ceil(totalStudents / studentsPerPage);
-  console.log(filteredStudents)
 
   return (
     <div className='studentslist-dashboard' style={{ marginBottom: "-10px" }}>
