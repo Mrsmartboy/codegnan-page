@@ -1,14 +1,17 @@
 
 import React from 'react';
 import bannerGirl from '../images/banner-girl.webp';
+import Youtube from '../images/youtube.webp'
 import './BannerPage.css'
 import StatsChart from './StatsChart'
 
 const BannerPage =()=>{
-  const videoUrl = 'https://www.youtube.com/embed/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
-    
+    // const videoUrl = 'https://youtu.be/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
 
-return(      
+
+return(
+  
+       
 <div className='coverpage-container'>
 <div className='home-cover-text-container'>
   <div className='home-text-container'>
@@ -38,19 +41,8 @@ return(
 
      <StatsChart />
 
-    <iframe 
-  width="410" 
-  height="240" 
-
-  src={videoUrl} 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  allowfullscreen
-   loading="lazy"
-  >
-    
-</iframe>
+   <img src={Youtube} alt='youtube' className='custom-player'    width="400" 
+    height="225"/>
 
   </div>
 </div>
