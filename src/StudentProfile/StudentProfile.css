@@ -144,7 +144,7 @@
     }
 
     .radio-group{
-        flex-direction: column;
+        flex-direction: row;
     }
     .radio-option.input{
         margin-right: 0px;
