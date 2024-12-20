@@ -243,6 +243,7 @@
     .coverpage-container {
         padding: 10px;
         width: 100%;
+        background-image: none;
 
     }
     .home-text-container{
@@ -337,6 +338,7 @@
         width: 100%;
         margin: 0px;
         background-size: cover;
+        background-image: none;
     }
     .home-text-container{
         margin-top: 20px;
