@@ -4,13 +4,13 @@ import { CgPlayButton } from "react-icons/cg";
 import "./Footer.css";
 
 
-import codegnanLogo from '../images/codegnan-white.webp';
-import facebook from '../images/facebook-white.webp';
-import linkedin from '../images/linkedin-white.webp';
-import twitter from '../images/twitter.webp';
-import whatsapp from '../images/whatsapp-white.webp';
-import youtube from '../images/youtube-white.webp';
-import instagram from '../images/insta-white.webp';
+// import codegnanLogo from '../images/codegnan-white.webp';
+// import facebook from '../images/facebook-white.webp';
+// import linkedin from '../images/linkedin-white.webp';
+// import twitter from '../images/twitter.webp';
+// import whatsapp from '../images/whatsapp-white.webp';
+// import youtube from '../images/youtube-white.webp';
+// import instagram from '../images/insta-white.webp';
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer-left">
           <div className="logo">
             <img
-              src={codegnanLogo}
+              src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/codegnan-white_pin8eo.png"
               alt="Codegnan Logo"
               className="footer-logo"
               width="150" 
@@ -36,22 +36,22 @@ const Footer = () => {
           </p>
           <div className="social-icons-footer">
             <a href="https://www.facebook.com/codegnan" target="_blank" rel="noopener noreferrer">
-              <img src={facebook} alt="Facebook" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774539/facebook-white_cddxuz.png" alt="Facebook" width={30} height={30}/>
             </a>
             <a href="https://www.instagram.com/codegnan/" target="_blank" rel="noopener noreferrer">
-              <img src={instagram} alt="Instagram" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774542/insta-white_pdvrvl.png"alt="Instagram" width={30} height={30}/>
             </a>
             <a href="https://www.youtube.com/@Codegnan" target="_blank" rel="noopener noreferrer">
-              <img src={youtube} alt="YouTube" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774565/youtube-white_ichyfd.png" alt="YouTube" width={30} height={30}/>
             </a>
             <a href="https://in.linkedin.com/company/codegnan" target="_blank" rel="noopener noreferrer">
-              <img src={linkedin} alt="LinkedIn" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774545/linkedin-white_d2jcqa.png" alt="LinkedIn" width={30} height={30}/>
             </a>
             <a href="https://wa.me/message/V6KW6C7XJG6FK1" target="_blank" rel="noopener noreferrer">
-              <img src={whatsapp} alt="WhatsApp" width={30} height={30} />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774564/whatsapp-white_s10r6j.png" alt="WhatsApp" width={30} height={30} />
             </a>
             <a href="https://x.com/i/flow/login?redirect_after_login=%2FCodegnandotcom" target="_blank" rel="noopener noreferrer">
-              <img src={twitter} alt="Twitter" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774561/twitter_ico6v5.png" alt="Twitter" width={30} height={30}/>
             </a>
           </div>
         </div>

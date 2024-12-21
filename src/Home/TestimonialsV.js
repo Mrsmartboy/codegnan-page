@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./TestimonialsV.css"; 
-import smileIcon from "../images/smile.webp"; 
-import sathupatiPreethi from '../images/sathupati_preethi.webp';
-import anuRajN from '../images/anu_raj_n.webp';
-import venukrithikBr from '../images/venu_krithik_b.webp';
-import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
-import shreeshaMs from '../images/shreesha_ms.webp';
-import suhas from '../images/suhas.webp'
+// import smileIcon from "../images/smile.webp"; 
+// import sathupatiPreethi from '../images/sathupati_preethi.webp';
+// import anuRajN from '../images/anu_raj_n.webp';
+// import venukrithikBr from '../images/venu_krithik_b.webp';
+// import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
+// import shreeshaMs from '../images/shreesha_ms.webp';
+// import suhas from '../images/suhas.webp'
  
 const testimonials = [
   {
@@ -14,7 +14,7 @@ const testimonials = [
     name: "SATHUPATI PREETHI",
     review:
       "I completed a Python course at Codegnan under the guidance of Saketh sir, and his teaching style is so effective. He explains concepts so clearly. I highly recommend Codegnan for their excellent training. Thanks to Saketh sir and the entire Codegnan team!",
-    image: sathupatiPreethi, 
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774555/sathupati_preethi_a5igfq.png", 
     className: "top-left",
   },
 
@@ -23,7 +23,7 @@ const testimonials = [
     name: "SUHAS",
     review:
       "The Java course at Codegnan helped me gain a deep understanding of object-oriented programming and backend development. The projects were challenging but rewarding, and the mentorship I received was invaluable. Highly recommend Codegnan for Java enthusiasts!",
-    image: suhas,
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774559/suhas_b4brf0.png",
     className: "middle-left", 
   },
  
@@ -32,7 +32,7 @@ const testimonials = [
     name: "ANU RAJ N",
     review:
       "I’ve learned so much in the Data Science course. The content is well-structured, and the support I received was amazing. I now feel confident pursuing a career in data science. Thank you, Codegnan!",
-    image: anuRajN, 
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/anu_raj_n_o2y8fa.png", 
     className: "bottom-left",
   },
   {
@@ -40,7 +40,7 @@ const testimonials = [
     name: "VENUKRITHIK Br",
     review:
       "Codegnan’s course on machine learning gave me the perfect foundation for my career. The instructors were always available to help, and the practical exercises helped me build a strong skill set.",
-    image: venukrithikBr, 
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774564/venu_krithik_b_m06wr6.png", 
     className: "top-right",
   },
   {
@@ -48,7 +48,7 @@ const testimonials = [
     name: "MORAMPUDU ANU SRI",
     review:
       "I took the full-stack development course at Codegnan, and I’m now working at a tech company! The curriculum was comprehensive and up-to-date, and the support team was always there to guide me.",
-    image: morampudiAnuSri, 
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774549/morampudu_anu_sri_ihcqxp.png", 
     className: "middle-right",
   },
   {
@@ -56,7 +56,7 @@ const testimonials = [
     name: "SHREESHA MS",
     review:
       "The Python programming course was amazing. I learned so much and was able to apply the knowledge immediately. Codegnan’s teaching approach is very hands-on, which I loved.",
-    image: shreeshaMs, 
+    image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774557/shreesha_ms_o2zhw8.png", 
     className: "bottom-right",
   }
 ];
@@ -126,7 +126,7 @@ const TestimonialsV = () => {
               <div className="card-rating">★★★★★</div>
               <p className="card-description">{testimonial.review}</p>
             </div>
-            <img src={smileIcon} alt="smile" className="smile-icon" width={35} height={35}/>
+            <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774557/smile_m3f2qm.png" alt="smile" className="smile-icon" width={35} height={35}/>
           </div>
           <div className="gradient top-right"></div>
           <div className="gradient bottom-left"></div>

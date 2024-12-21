@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Button } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import './Navigation.css';
-import codegnanLogo from '../images/codegnan-logo.webp';
+// import codegnanLogo from '../images/codegnan-logo.webp';
 
 const Navigation = () => {
   let navigate = useNavigate();
@@ -41,7 +41,7 @@ const Navigation = () => {
       <AppBar position="static" className="navbar" elevation={0}>
         <Toolbar className="tool">
           <img
-            src={codegnanLogo}
+            src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/codegnan-logo_ftcfsx.png"
             alt="Codegnan Logo"
             className="logo"
             onClick={() => handleClick("/")}

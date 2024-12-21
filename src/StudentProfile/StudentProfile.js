@@ -13,7 +13,6 @@ const StudentProfile = () => {
    
     const [formData, setFormData] = useState({
         name: '',
-        studentId: '',
         age: '',
         mobileNumber: '',
         collegeUSNNumber: '',
@@ -31,9 +30,8 @@ const StudentProfile = () => {
         twelfthStandard: '',
         profilePic: '',
         resume: null,
-        highestGraduationCGPA: '',
-        batchNo:''
-    });
+        highestGraduationCGPA: ''
+        });
     const [age, setAge] = useState('');
     const handleAgeChange = (e) => {
         const selectedDate = e.target.value;
@@ -186,7 +184,6 @@ const StudentProfile = () => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/signup`, {
             name: formData.name,
             email: email,
-            studentId: formData.studentId.toUpperCase(),
             password: formData.password,
             cityName: formData.cityname,
             department: formData.department,
@@ -200,7 +197,6 @@ const StudentProfile = () => {
             githubLink: formData.githubLink,
             arrears: formData.arrears,
             resume: formData.resume,
-            batchNo:formData.batchNo,
             profilePic: formData.profilePic,
             tenthStandard: Number(formData.tenthStandard),
             twelfthStandard: Number(formData.twelfthStandard),
@@ -216,7 +212,7 @@ const StudentProfile = () => {
                 console.log("student signup ", response.data)
                 await fetchStudentsData()
                 Swal.fire({
-                    title: "Signup Successful",
+                    title: "Profile Successfully Updated",
                     icon: "success"
                 });
                 navigate("/")
@@ -475,33 +471,7 @@ const StudentProfile = () => {
                         />
                     </div>
                 </div>
-                <div className="input-group">
-                    <div className="form-group">
-                        <label>StudentId <span style={{ color: 'red' }}>*</span></label>
-                        <input
-                            type="text"
-                            name="studentId"
-                            placeholder='Ex:CGDT12345'
-                            value={formData.studentId}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Student Batch Number <span style={{ color: 'red' }}>*</span></label>
-                        <input
-                            type="text"
-                            name="batchNo"
-                            placeholder='Ex:PFS5 or JAP13'
-                            value={formData.batchNo}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
 
-                   
-
-                </div>
 
                 <div className="input-group">
                 <div>

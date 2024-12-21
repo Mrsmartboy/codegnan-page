@@ -1,5 +1,5 @@
 .team-page {
-  background-image: url('../images/team-bg.webp');
+  background-image: url('https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774560/team-bg_qf5ljs.png');
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,14 @@
   align-items: center;
   width: 100%;
   padding-bottom: 30px;
+}
+
+
+@media screen  and (min-width:796px){
+  .team-page{
+    margin-bottom: -2%;
+  }
+  
 }
 
 

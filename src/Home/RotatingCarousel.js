@@ -1,36 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './RotatingCarousel.css';
-import questionImage from '../images/question-mark.webp';
-import call from '../images/call.webp';
-import spiral from '../images/spiral-bg.webp'
 
- import sathupatiPreethi from '../images/sathupati_preethi.webp';
- import sathupatiPreethi1 from '../images/sathupati_preethi_1.webp';
- import anuRajN from '../images/anu_raj_n.webp';
- import varuniBr from '../images/varuni_br.webp';
- import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
- import kavyaC from '../images/kavya_c.webp';
-import bhargaviGHegde from '../images/bhargavi_g_hegde.webp';
- import sharathS from '../images/sharath_s.webp';
- import manuN from '../images/manu_n.webp';
-import tShivani from '../images/t_shivani.webp';
-import suhas from '../images/suhas.webp'
-import manojNaidu from '../images/manoj_naidu_m.webp'
+// import questionImage from '../images/question-mark.webp';
+// import call from '../images/call.webp';
+// import spiral from '../images/spiral-bg.webp'
+
+//  import sathupatiPreethi from '../images/sathupati_preethi.webp';
+//  import sathupatiPreethi1 from '../images/sathupati_preethi_1.webp';
+//  import anuRajN from '../images/anu_raj_n.webp';
+//  import varuniBr from '../images/varuni_br.webp';
+//  import morampudiAnuSri from '../images/morampudu_anu_sri.webp';
+//  import kavyaC from '../images/kavya_c.webp';
+// import bhargaviGHegde from '../images/bhargavi_g_hegde.webp';
+//  import sharathS from '../images/sharath_s.webp';
+//  import manuN from '../images/manu_n.webp';
+// import tShivani from '../images/t_shivani.webp';
+// import suhas from '../images/suhas.webp'
+// import manojNaidu from '../images/manoj_naidu_m.webp'
 
 const profiles = [
-   { id: 1, package: '18.2 LPA', company: 'Akamai', image: sathupatiPreethi, alt: 'sathupati_preethi' },
-   { id: 2, package: '9.5 LPA', company: 'Infosys', image: sathupatiPreethi1, alt: 'sathupati_preethi_1' },
-   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: anuRajN, alt: 'anu_raj_n' },
-   { id: 4, package: '7 LPA', company: 'Healthsyst', image: varuniBr, alt: 'varuni-br' },
-   { id: 5, package: '7 LPA', company: 'TCS', image: morampudiAnuSri, alt: 'morampudi_anu_sri' },
-   { id: 6, package: '7 LPA', company: 'Healthsyst', image: kavyaC, alt: 'kavya_c' },
-   {id:7,package:'6.5 LPA', company:'Mastech',image:manojNaidu,alt:'manoj_naidu'},
-   { id: 8, package: '6.5 LPA', company: 'Aptean', image: bhargaviGHegde, alt: 'bhargavi_g_hegde' },
-   { id: 9, package: '6.5 LPA', company: 'Aptean', image: sharathS, alt: 'sharath_s' },
-   { id: 10, package: '6.5 LPA', company: 'Aptean', image: manuN, alt: 'manu_n' },
-   { id: 11, package: '6.5 LPA', company: 'Aptean', image: tShivani, alt: 't_shivani' },
-  { id: 12, package: '6.5 LPA', company: 'Aptean', image: suhas, alt: 'suhas' }
+   { id: 1, package: '18.2 LPA', company: 'Akamai', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774555/sathupati_preethi_a5igfq.png", alt: 'sathupati_preethi' },
+   { id: 2, package: '9.5 LPA', company: 'Infosys', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/sathupati_preethi_1_goubrb.png", alt: 'sathupati_preethi_1' },
+   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/anu_raj_n_o2y8fa.png", alt: 'anu_raj_n' },
+   { id: 4, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774562/varuni_br_onu9le.png", alt: 'varuni-br' },
+   { id: 5, package: '7 LPA', company: 'TCS', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774549/morampudu_anu_sri_ihcqxp.png", alt: 'morampudi_anu_sri' },
+   { id: 6, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/kavya_c_wlbl9t.png", alt: 'kavya_c' },
+   {id:7,package:'6.5 LPA', company:'Mastech',image:"https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774549/manoj_naidu_m_m6thbz.png",alt:'manoj_naidu'},
+   { id: 8, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/bhargavi_g_hegde_jwdclw.png", alt: 'bhargavi_g_hegde' },
+   { id: 9, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774558/sharath_s_blrrra.png", alt: 'sharath_s' },
+   { id: 10, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774548/manu_n_acjn0f.png", alt: 'manu_n' },
+   { id: 11, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774561/t_shivani_qa9di2.png", alt: 't_shivani' },
+  { id: 12, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774559/suhas_b4brf0.png", alt: 'suhas' }
 ];
 
 
@@ -89,7 +90,7 @@ const RotatingCarousel = () => {
   return (
     <div className='main-container'>
       <img
-        src={spiral} 
+        src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774558/spiral-bg_vlrwrd.png"
         alt="Spiral Background"
         className="spiral-bg"
       />
@@ -140,12 +141,12 @@ const RotatingCarousel = () => {
             </p>
             <h1>WHO IS <br /> NEXT...</h1>
           </div>
-          <img src={questionImage} alt="Question Mark" className="question-mark" max-height={120} width={250} />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774552/question-mark_hfkpcd.webp" alt="Question Mark" className="question-mark" max-height={120} width={250} />
           </div>
           <div className="callback-section">
             <Link to='/talk-to-career-expert' className='request-callback'>
             <button className="callback-button-rotating">
-              <img src={call} alt="call" className='call' /> Request A Callback
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/call_vymdug.png" alt="call" className='call' /> Request A Callback
             </button>
             </Link>
           </div>

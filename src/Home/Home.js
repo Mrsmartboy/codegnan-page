@@ -43,7 +43,6 @@ export default function Home() {
 
       <RotatingCarousel />
       <Dashboard  />
-
       <CourseQuerySection/>
       <Collaboration/>
       <TeamPage/>

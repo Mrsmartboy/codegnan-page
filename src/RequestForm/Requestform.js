@@ -4,7 +4,7 @@ import Select from 'react-select';
 import axios from 'axios';
 import { IndiaStatesCities } from '../IndiaStatesCities/IndiaStatesCities';
 import './RequestForm.css';
-import cartoonStudent from '../images/cartoon_student.webp';
+// import cartoonStudent from '../images/cartoon_student.webp';
 
 const RequestForm = () => {
   const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
@@ -215,7 +215,7 @@ const RequestForm = () => {
         </div>
 
         <div className='w-full md:w-1/3 hidden md:block'>
-          <img src={cartoonStudent} alt="Cartoon Student" className="w-4/3 h-auto" />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774537/cartoon_student_snh1cl.png" alt="Cartoon Student" className="w-4/3 h-auto" />
         </div>
       </div>
     </div>

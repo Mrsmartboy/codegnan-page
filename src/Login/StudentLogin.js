@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
-import CartoonLogo from '../images/login-cartoon.webp';
+// import CartoonLogo from '../images/login-cartoon.webp';
 import  './StudentLogin.css'
 
 
@@ -15,11 +15,12 @@ export default function StudentLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  const id = username.toUpperCase()
+  console.log(id)
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/studentlogin`,
-        { username, password }
+        { username:id, password }
       );
       console.log('Response from student login:', response.data);
       if (response.status === 200) {
@@ -27,6 +28,10 @@ export default function StudentLogin() {
         localStorage.setItem('email',response.data.student_email)
         localStorage.setItem('student_id', response.data.student_id);
         navigate('/');
+         Swal.fire({
+                        title: "Login Successfull ",
+                        icon: "success"
+                    });
       }
     } catch (error) {
       console.error('Login failed:', error);
@@ -53,21 +58,21 @@ export default function StudentLogin() {
     <div className="min-h-screen flex row items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 student-login-container" >
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-8 md:space-y-0 md:space-x-8">
         <div className="flex  justify-center items-center w-full md:w-1/2">
-          <img src={CartoonLogo} alt="Cartoon logo" className="w-full max-w-lg" />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774546/login-cartoon_oognlj.png" alt="Cartoon logo" className="w-full max-w-lg" />
         </div>
         <div className="w-full md:w-1/3">
           <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-2">Student Login</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-sm  font-medium text-black mb-1">
-                  Email ID
+                <label htmlFor="studentId" className="block text-sm  font-medium text-black mb-1">
+                  StudentID
                 </label>
                 <input
-                  type="email"
-                  id="email"
+                  type="text"
+                  id="studentId"
                   className="block w-full p-1 text-lg border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
-                  placeholder="Enter Your Email"
+                  placeholder="Enter Your StudentId"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required

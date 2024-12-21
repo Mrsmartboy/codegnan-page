@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CourseQuerySection.css"; 
-import studentImg from "../images/student.webp"; 
-import call from '../images/call.webp';
+// import studentImg from "../images/student.webp"; 
+// import call from '../images/call.webp';
 
 const CourseQuerySection = () => {
   return (
@@ -17,11 +17,11 @@ const CourseQuerySection = () => {
           </p>
           <Link to="/talk-to-career-expert" className="request-callback">
             <button className="callback-button-query">
-              <img src={call} alt="call" className="call" /> Request A Callback
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/call_vymdug.png" alt="call" className="call" /> Request A Callback
             </button>
           </Link>       
             </div>
-        <img src={studentImg} alt="Student" className="student-img" />
+        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774559/student_rbexda.png" alt="Student" className="student-img" />
       </div>
     </div>
   );

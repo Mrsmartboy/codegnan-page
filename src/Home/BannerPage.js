@@ -1,14 +1,11 @@
 
 import React from 'react';
-import bannerGirl from '../images/banner-girl.webp';
-import Youtube from '../images/youtube.webp'
+// import bannerGirl from '../images/banner-girl.webp';
 import './BannerPage.css'
 import StatsChart from './StatsChart'
+import ReactPlayer from 'react-player';
 
 const BannerPage =()=>{
-    // const videoUrl = 'https://youtu.be/RlKgCehjw0M?si=j1qCaE-fQYGqfON-'
-
-
 return(
   
        
@@ -41,14 +38,22 @@ return(
 
      <StatsChart />
 
-   <img src={Youtube} alt='youtube' className='custom-player'    width="400" 
-    height="225"/>
+     <div className="video-wrapper" style={{ width: '400px', height: '225px' }}>
+      <ReactPlayer
+        url="https://youtu.be/uTBlsOoiMQs?si=ppEqo_c6IuI53lKK"
+        width="100%"
+        height="100%"
+        className="custom-player"
+        controls={true} 
+        
+      />
+    </div>
 
   </div>
 </div>
 
 <div className='image-container'>
-<img src={bannerGirl} 
+<img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/banner-girl_w3yoxr.png"
     alt="Banner Girl" 
     className="banner-girl" 
     loading="lazy"

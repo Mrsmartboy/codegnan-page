@@ -13,7 +13,7 @@
 
 
 .coverpage-container {
-    background-image: url('../images/cover-bg.webp');
+    background-image: url('https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774538/cover-bg_znd1g3.png');
     background-size: cover;
     display: flex; 
     width: 100%;
@@ -320,7 +320,7 @@
     }
     .custom-player{
         max-width: 90%;
-        display: none;
+        display: block;
     }
     
 }

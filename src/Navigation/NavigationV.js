@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import './NavigationV.css';
-import codegnanLogo from '../images/codegnan-logo.webp';
+// import codegnanLogo from '../images/codegnan-logo.webp';
 
 const NavigationV = () => {
   const navigate = useNavigate();

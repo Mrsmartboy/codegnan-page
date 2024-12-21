@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 
-import GEC from '../images/GEC.webp';
-import KBN from '../images/KBN.webp';
-import KIT from '../images/KIT.webp';
-import LBC from '../images/LBC.webp';
-import NEC from '../images/NEC.webp';
-import SECV from '../images/SECV.webp';
-import VIJAYAWADA from '../images/VIJAYAWADA.webp';
-import LOYOLA from '../images/LOYOLA.webp';
+// import GEC from '../images/GEC.webp';
+// import KBN from '../images/KBN.webp';
+// import KIT from '../images/KIT.webp';
+// import LBC from '../images/LBC.webp';
+// import NEC from '../images/NEC.webp';
+// import SECV from '../images/SECV.webp';
+// import VIJAYAWADA from '../images/VIJAYAWADA.webp';
+// import LOYOLA from '../images/LOYOLA.webp';
 
 import './Collaboration.css';
 
@@ -15,16 +15,21 @@ const Collaboration = () => {
   const carouselRef = useRef(null);
 
   const collaborationList = [
-    { id: 1, image: GEC, alt: 'GEC' },
-    { id: 2, image: KBN, alt: 'KBN' },
-    { id: 3, image: KIT, alt: 'KIT' },
-    { id: 4, image: LBC, alt: 'LBC' },
-    { id: 5, image: NEC, alt: 'NEC' },
-    { id: 6, image: SECV, alt: 'SEC' },
-    { id: 7, image: VIJAYAWADA, alt: 'Vijayawada' },
-      { id: 8, image: LOYOLA, alt: 'LOYOLA' },
-    { id: 9, image: KBN, alt: 'KBN' },
-    { id: 10, image: KIT, alt: 'KIT' },
+    { id: 1, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774540/GEC_oqmogk.png", alt: 'GEC' },
+    { id: 2, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/KBN_exknal.png", alt: 'KBN' },
+    { id: 3, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/KIT_j0qmdb.png", alt: 'KIT' },
+    { id: 4, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/LBC_kfgnqb.png", alt: 'LBC' },
+    { id: 5, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774551/NEC_mansna.png", alt: 'NEC' },
+    { id: 6, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/SECV_i0ao0g.png", alt: 'SEC' },
+    { id: 7, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774564/VIJAYAWADA_oipbm8.png", alt: 'Vijayawada' },
+      { id: 8, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774547/LOYOLA_wuygdr.png", alt: 'LOYOLA' },
+      { id: 9, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774540/GEC_oqmogk.png", alt: 'GEC' },
+      { id: 10, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/KBN_exknal.png", alt: 'KBN' },
+      { id: 11, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/KIT_j0qmdb.png", alt: 'KIT' },
+      { id: 12, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/LBC_kfgnqb.png", alt: 'LBC' },
+      { id: 13, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774551/NEC_mansna.png", alt: 'NEC' },
+      { id: 14, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/SECV_i0ao0g.png", alt: 'SEC' },
+   
 
   ];
 
