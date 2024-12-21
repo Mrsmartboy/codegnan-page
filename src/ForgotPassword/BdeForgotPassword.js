@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
-import CartoonLogo from '../images/login-cartoon.png';
+import CartoonLogo from '../images/login-cartoon.webp';
 import '../Login/StudentLogin';
 
 export default function ForgotPassword() {
