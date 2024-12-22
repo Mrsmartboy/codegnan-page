@@ -50,7 +50,7 @@ export default function AdminLogin() {
     <div className="min-h-screen flex row items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 student-login-container" >
     <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl space-y-8 md:space-y-0 md:space-x-8">
       <div className="flex  justify-center items-center w-full md:w-1/2">
-        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774546/login-cartoon_oognlj.png" alt="Cartoon logo" className="w-full max-w-lg" />
+        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849448/login-cartoon_znh33j.webp" alt="Cartoon logo" className="w-full max-w-lg" />
       </div>
       <div className="w-full md:w-1/3">
         <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200">

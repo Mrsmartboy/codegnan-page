@@ -41,7 +41,8 @@ const BannerPage = () => {
                     <div className="video-wrapper" style={{ width: '400px', height: '225px' }}>
                         {!isPlayerVisible ? (
                             <img
-                                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774565/youtube_s19iwj.png"
+                            
+                                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/youtube_cwvt1d.webp"
                                 alt="YouTube Thumbnail"
                                 className="youtube-thumbnail"
                                 style={{ width: '100%', height: '100%', cursor: 'pointer' }}
@@ -64,7 +65,8 @@ const BannerPage = () => {
 
             <div className='image-container'>
                 <img
-                    src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/banner-girl_w3yoxr.png"
+                
+                    src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/banner-girl_i195ik.webp"
                     alt="Banner Girl"
                     className="banner-girl"
                     loading="lazy"

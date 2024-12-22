@@ -215,7 +215,7 @@ const RequestForm = () => {
         </div>
 
         <div className='w-full md:w-1/3 hidden md:block'>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774537/cartoon_student_snh1cl.png" alt="Cartoon Student" className="w-4/3 h-auto" />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/cartoon_student_grm5dl.webp" alt="Cartoon Student" className="w-4/3 h-auto" />
         </div>
       </div>
     </div>

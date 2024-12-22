@@ -41,7 +41,7 @@ const Navigation = () => {
       <AppBar position="static" className="navbar" elevation={0}>
         <Toolbar className="tool">
           <img
-            src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/codegnan-logo_ftcfsx.png"
+            src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/codegnan-logo_qxnxrq.webp"
             alt="Codegnan Logo"
             className="logo"
             onClick={() => handleClick("/")}

@@ -20,18 +20,18 @@ import './RotatingCarousel.css';
 // import manojNaidu from '../images/manoj_naidu_m.webp'
 
 const profiles = [
-   { id: 1, package: '18.2 LPA', company: 'Akamai', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774555/sathupati_preethi_a5igfq.png", alt: 'sathupati_preethi' },
-   { id: 2, package: '9.5 LPA', company: 'Infosys', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/sathupati_preethi_1_goubrb.png", alt: 'sathupati_preethi_1' },
-   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/anu_raj_n_o2y8fa.png", alt: 'anu_raj_n' },
-   { id: 4, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774562/varuni_br_onu9le.png", alt: 'varuni-br' },
-   { id: 5, package: '7 LPA', company: 'TCS', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774549/morampudu_anu_sri_ihcqxp.png", alt: 'morampudi_anu_sri' },
-   { id: 6, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/kavya_c_wlbl9t.png", alt: 'kavya_c' },
-   {id:7,package:'6.5 LPA', company:'Mastech',image:"https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774549/manoj_naidu_m_m6thbz.png",alt:'manoj_naidu'},
-   { id: 8, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/bhargavi_g_hegde_jwdclw.png", alt: 'bhargavi_g_hegde' },
-   { id: 9, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774558/sharath_s_blrrra.png", alt: 'sharath_s' },
-   { id: 10, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774548/manu_n_acjn0f.png", alt: 'manu_n' },
-   { id: 11, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774561/t_shivani_qa9di2.png", alt: 't_shivani' },
-  { id: 12, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774559/suhas_b4brf0.png", alt: 'suhas' }
+   { id: 1, package: '18.2 LPA', company: 'Akamai', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/sathupati_preethi_mubejj.webp", alt: 'sathupati_preethi' },
+   { id: 2, package: '9.5 LPA', company: 'Infosys', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/sathupati_preethi_1_xyerqt.webp", alt: 'sathupati_preethi_1' },
+   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849438/anu_raj_n_crqd7w.webp", alt: 'anu_raj_n' },
+   { id: 4, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/varuni_br_ji3lzr.webp", alt: 'varuni-br' },
+   { id: 5, package: '7 LPA', company: 'TCS', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849449/morampudu_anu_sri_m0ni5y.webp", alt: 'morampudi_anu_sri' },
+   { id: 6, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/kavya_c_zkvdnm.webp", alt: 'kavya_c' },
+   {id:7,package:'6.5 LPA', company:'Mastech',image:"https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849449/manoj_naidu_m_itdtcw.webp",alt:'manoj_naidu'},
+   { id: 8, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/bhargavi_g_hegde_cvurt4.webp", alt: 'bhargavi_g_hegde' },
+   { id: 9, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/sharath_s_bznwej.webp", alt: 'sharath_s' },
+   { id: 10, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849449/manu_n_oqizdn.webp", alt: 'manu_n' },
+   { id: 11, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849457/t_shivani_bkgftb.webp", alt: 't_shivani' },
+  { id: 12, package: '6.5 LPA', company: 'Aptean', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849457/suhas_zrwtlu.webp", alt: 'suhas' }
 ];
 
 
@@ -90,7 +90,7 @@ const RotatingCarousel = () => {
   return (
     <div className='main-container'>
       <img
-        src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774558/spiral-bg_vlrwrd.png"
+        src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/spiral-bg_vvbq62.webp"
         alt="Spiral Background"
         className="spiral-bg"
       />
@@ -141,12 +141,12 @@ const RotatingCarousel = () => {
             </p>
             <h1>WHO IS <br /> NEXT...</h1>
           </div>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774552/question-mark_hfkpcd.webp" alt="Question Mark" className="question-mark" max-height={120} width={250} />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849454/question-mark_monpn0.webp" alt="Question Mark" className="question-mark" max-height={120} width={250} />
           </div>
           <div className="callback-section">
             <Link to='/talk-to-career-expert' className='request-callback'>
             <button className="callback-button-rotating">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/call_vymdug.png" alt="call" className='call' /> Request A Callback
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/call_ea4ffs.webp" alt="call" className='call' /> Request A Callback
             </button>
             </Link>
           </div>

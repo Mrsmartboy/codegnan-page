@@ -31,7 +31,7 @@ const NavigationV = () => {
       <AppBar position="static" className="navbar" elevation={0} sx={{ height: 60, flexGrow: 1,backgroundColor: 'transparent', boxShadow: 'none', textTransform: 'none' }}>
         <Toolbar className="tool">
           <img
-            src={codegnanLogo}
+            src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/codegnan-logo_qxnxrq.webp"
             alt="Codegnan Logo"
             className="logo"
             width="150"

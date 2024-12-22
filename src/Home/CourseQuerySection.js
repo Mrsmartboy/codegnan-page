@@ -17,11 +17,11 @@ const CourseQuerySection = () => {
           </p>
           <Link to="/talk-to-career-expert" className="request-callback">
             <button className="callback-button-query">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774536/call_vymdug.png" alt="call" className="call" /> Request A Callback
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/call_ea4ffs.webp" alt="call" className="call" /> Request A Callback
             </button>
           </Link>       
             </div>
-        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774559/student_rbexda.png" alt="Student" className="student-img" />
+        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849457/student_hhy6rh.webp" alt="Student" className="student-img" />
       </div>
     </div>
   );

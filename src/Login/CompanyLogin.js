@@ -51,7 +51,7 @@ export default function CompanyLogin() {
   return (
     <div className="student-login-container">
       <div className="cartoon-image-container">
-        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774546/login-cartoon_oognlj.png" alt="Cartoon Logo" className="cartoon-image" />
+        <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849448/login-cartoon_znh33j.webp" alt="Cartoon Logo" className="cartoon-image" />
       </div>
       <div className="student-login-container-1">
         <div className="student-login-form">

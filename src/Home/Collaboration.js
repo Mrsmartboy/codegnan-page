@@ -15,21 +15,22 @@ const Collaboration = () => {
   const carouselRef = useRef(null);
 
   const collaborationList = [
-    { id: 1, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774540/GEC_oqmogk.png", alt: 'GEC' },
-    { id: 2, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/KBN_exknal.png", alt: 'KBN' },
-    { id: 3, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/KIT_j0qmdb.png", alt: 'KIT' },
-    { id: 4, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/LBC_kfgnqb.png", alt: 'LBC' },
-    { id: 5, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774551/NEC_mansna.png", alt: 'NEC' },
-    { id: 6, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/SECV_i0ao0g.png", alt: 'SEC' },
-    { id: 7, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774564/VIJAYAWADA_oipbm8.png", alt: 'Vijayawada' },
-      { id: 8, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774547/LOYOLA_wuygdr.png", alt: 'LOYOLA' },
-      { id: 9, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774540/GEC_oqmogk.png", alt: 'GEC' },
-      { id: 10, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774543/KBN_exknal.png", alt: 'KBN' },
-      { id: 11, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/KIT_j0qmdb.png", alt: 'KIT' },
-      { id: 12, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774544/LBC_kfgnqb.png", alt: 'LBC' },
-      { id: 13, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774551/NEC_mansna.png", alt: 'NEC' },
-      { id: 14, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774556/SECV_i0ao0g.png", alt: 'SEC' },
-   
+    { id: 1, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849442/GEC_criduj.webp", alt: 'GEC' },
+    { id: 2, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/KBN_pu820v.webp", alt: 'KBN' },
+    { id: 3, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/KIT_xvsxok.webp", alt: 'KIT' },
+    { id: 4, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/LBC_hsj1ti.webp", alt: 'LBC' },
+    { id: 5, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849453/NEC_apltpw.webp", alt: 'NEC' },
+    { id: 6, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/SECV_cmabmn.webp", alt: 'SEC' },
+    { id: 7, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/VIJAYAWADA_wgk6wt.webp", alt: 'Vijayawada' },
+      { id: 8, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849448/LOYOLA_hyadey.webp", alt: 'LOYOLA' },
+      { id: 9, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849442/GEC_criduj.webp", alt: 'GEC' },
+    { id: 10, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/KBN_pu820v.webp", alt: 'KBN' },
+    { id: 11, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/KIT_xvsxok.webp", alt: 'KIT' },
+    { id: 12, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/LBC_hsj1ti.webp", alt: 'LBC' },
+    { id: 13, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849453/NEC_apltpw.webp", alt: 'NEC' },
+    { id: 14, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/SECV_cmabmn.webp", alt: 'SEC' },
+    { id: 15, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/VIJAYAWADA_wgk6wt.webp", alt: 'Vijayawada' },
+      { id: 16, image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849448/LOYOLA_hyadey.webp", alt: 'LOYOLA' },
 
   ];
 

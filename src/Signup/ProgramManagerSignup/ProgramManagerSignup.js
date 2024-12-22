@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import './ProgramManagerSignup.css';
 import axios from 'axios';
 import { useStudentsData } from '../../contexts/StudentsListContext';
-import * as XLSX from 'xlsx';
+// import * as XLSX from 'xlsx';
 
 export default function ProgramManagerSignup() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function ProgramManagerSignup() {
     email: '',
     parentNumber: '',
   });
-  const [excelData, setExcelData] = useState([]); // State to store Excel data
+  // const [excelData, setExcelData] = useState([]); // State to store Excel data
   const [loading, setLoading] = useState(false);
   const { fetchStudentsData } = useStudentsData();
 
@@ -23,43 +23,43 @@ export default function ProgramManagerSignup() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const data = new Uint8Array(event.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+  // const handleFileUpload = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = (event) => {
+  //       const data = new Uint8Array(event.target.result);
+  //       const workbook = XLSX.read(data, { type: 'array' });
+  //       const sheetName = workbook.SheetNames[0];
+  //       const sheet = workbook.Sheets[sheetName];
+  //       const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
   
-        if (rows.length > 1) {
-          const headers = rows[0].map((header) => header.toLowerCase().trim()); // Normalize headers
-          const formattedData = rows.slice(1).map((row) => {
-            return {
-              studentId: row[headers.indexOf('studentid')]?.toString() || '',
-              batchNo: row[headers.indexOf('batchno')]?.toString() || '',
-              email: row[headers.indexOf('email')]?.toString() || '',
-              parentNumber: row[headers.indexOf('parentnumber')]?.toString() || '',
-            };
-          });
+  //       if (rows.length > 1) {
+  //         const headers = rows[0].map((header) => header.toLowerCase().trim()); // Normalize headers
+  //         const formattedData = rows.slice(1).map((row) => {
+  //           return {
+  //             studentId: row[headers.indexOf('studentid')]?.toString() || '',
+  //             batchNo: row[headers.indexOf('batchno')]?.toString() || '',
+  //             email: row[headers.indexOf('email')]?.toString() || '',
+  //             parentNumber: row[headers.indexOf('parentnumber')]?.toString() || '',
+  //           };
+  //         });
   
-          setExcelData(formattedData); // Store the Excel data in state
-          Swal.fire({
-            title: 'Excel file processed successfully!',
-            icon: 'success',
-          });
-        } else {
-          Swal.fire({
-            title: 'The Excel file is empty or headers are missing.',
-            icon: 'error',
-          });
-        }
-      };
-      reader.readAsArrayBuffer(file);
-    }
-  };
+  //         setExcelData(formattedData); // Store the Excel data in state
+  //         Swal.fire({
+  //           title: 'Excel file processed successfully!',
+  //           icon: 'success',
+  //         });
+  //       } else {
+  //         Swal.fire({
+  //           title: 'The Excel file is empty or headers are missing.',
+  //           icon: 'error',
+  //         });
+  //       }
+  //     };
+  //     reader.readAsArrayBuffer(file);
+  //   }
+  // };
   
 
   const handleSubmit = async (e) => {
@@ -123,7 +123,7 @@ export default function ProgramManagerSignup() {
             />
           </div>
         ))}
-        <div>
+        {/* <div>
           <label htmlFor="excelUpload">Upload Excel</label>
           <input
             id="excelUpload"
@@ -131,20 +131,20 @@ export default function ProgramManagerSignup() {
             accept=".xlsx, .xls"
             onChange={handleFileUpload}
           />
-        </div>
+        </div> */}
         <div className="forgot">
           <button className="btn" disabled={loading}>
             {loading ? 'Submitting...' : 'Submit'}
           </button>
         </div>
       </form>
-
+{/* 
       {excelData.length > 0 && (
         <div>
           <h2>Uploaded Excel Data</h2>
           <pre>{JSON.stringify(excelData, null, 2)}</pre>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
