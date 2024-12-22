@@ -4,7 +4,7 @@ import React from 'react';
 export default function NotFound() {
   return (
     <div style={styles.container} className='flex flex-col justify-center items-center'>
-      <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734774538/error_ybsrbg.gif" alt="Error" style={styles.errorImage} />
+      <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734867148/error_nlqtwy.gif" alt="Error" style={styles.errorImage} />
       <p style={styles.message}>You are not authorized to access these. Login first</p>
     </div>
   );
