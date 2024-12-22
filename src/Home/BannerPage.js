@@ -3,7 +3,7 @@ import React from 'react';
 // import bannerGirl from '../images/banner-girl.webp';
 import './BannerPage.css'
 import StatsChart from './StatsChart'
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 
 const BannerPage =()=>{
 return(
@@ -38,7 +38,7 @@ return(
 
      <StatsChart />
 
-     <div className="video-wrapper" style={{ width: '400px', height: '225px' }}>
+     {/* <div className="video-wrapper" style={{ width: '400px', height: '225px' }}>
       <ReactPlayer
         url="https://youtu.be/uTBlsOoiMQs?si=ppEqo_c6IuI53lKK"
         width="100%"
@@ -47,7 +47,7 @@ return(
         controls={true} 
         
       />
-    </div>
+    </div> */}
 
   </div>
 </div>
