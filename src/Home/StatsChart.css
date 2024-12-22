@@ -41,9 +41,11 @@
   background-color: #132EE0;
   border-radius: 4px;
   margin: 5px;
-  height: 0;
-  animation: grow-bar 1s ease-in-out forwards;
+  /* height: 0; */
+  /* animation: grow-bar 1s ease-in-out forwards; */
   transform-origin: bottom;
+  height: var(--bar-height);
+
 }
 
 .bar-value {
