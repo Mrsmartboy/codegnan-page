@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CopyrightSection from "../Home/CopyrightSection";
 import { CgPlayButton } from "react-icons/cg";
 import "./Footer.css";
@@ -13,9 +13,36 @@ import "./Footer.css";
 // import instagram from '../images/insta-white.webp';
 
 const Footer = () => {
+
+    useEffect(() => {
+      const lazyBackgrounds = document.querySelectorAll(".lazy-background");
+  
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const lazyBg = entry.target;
+              lazyBg.style.backgroundImage = `url(${lazyBg.dataset.src})`;
+              observer.unobserve(lazyBg);
+            }
+          });
+        });
+  
+        lazyBackgrounds.forEach((bg) => observer.observe(bg));
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyBackgrounds.forEach((bg) => {
+          bg.style.backgroundImage = `url(${bg.dataset.src})`;
+        });
+      }
+    }, []);
+
   return (
     <>
-    <footer className="footer">
+    <footer
+        className="footer lazy-background"
+        data-src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849441/footer-bg_bwclqj.webp">
+      
       <div className="footer-container">
         <div className="footer-left">
           <div className="logo">

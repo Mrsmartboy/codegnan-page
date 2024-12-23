@@ -34,8 +34,8 @@
 
 .query-background {
   position: relative;
-  background-image: url('https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849453/question-bg_pwlqgo.webp'); 
-  background-size: cover;
+  background-color: #f0f0f0; 
+    background-size: cover;
   background-position: center;
   border-radius: 12px;
   padding: 2rem;
