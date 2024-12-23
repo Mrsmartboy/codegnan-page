@@ -32,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "react-scripts build && webpack-bundle-analyzer build/static/js"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +58,7 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "stylelint-config-tailwindcss": "^0.0.7",
-    "tailwindcss": "^3.4.16"
+    "tailwindcss": "^3.4.16",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }
