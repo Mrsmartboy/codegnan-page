@@ -42,7 +42,7 @@ const BannerPage = () => {
                         {!isPlayerVisible ? (
                             <img
                             
-                                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/youtube_cwvt1d.webp"
+                                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734944177/youtube-video_afamyz.jpg"
                                 alt="YouTube Thumbnail"
                                 className="youtube-thumbnail"
                                 style={{ width: '100%', height: '100%', cursor: 'pointer' }}

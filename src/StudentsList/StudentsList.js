@@ -10,7 +10,7 @@ export default function StudentsList() {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const { studentsList, loading, error } = useStudentsData();
-
+   console.log(studentsList)
   
 
   const studentsPerPage = 20;

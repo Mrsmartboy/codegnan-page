@@ -1,4 +1,3 @@
-// data.js
 export const fetchDashboardData = async () => {
     const apiUrl =`${process.env.REACT_APP_BACKEND_URL}/api/v1/refreshdashboard`;
 
@@ -9,17 +8,15 @@ export const fetchDashboardData = async () => {
         throw new Error("Failed to fetch data from API");
       }
       const data = await response.json();
-      let objectLength = Object.keys(data.COLLEGES_LIST).length;
-      console.log("home page",data,  objectLength   )
 
-      // Extracting specific parts of the API response
       const companiesList = data.COMPANIES;
       const collegesList = data.COLLEGES_LIST;
-  
-      return { companiesList, collegesList };
+      const yearOFPlacement = data.YOP_DICT;
+    console.log(yearOFPlacement)
+      return { companiesList, collegesList,yearOFPlacement };
     } catch (error) {
       console.error("Error fetching data:", error);
-      return { companiesList: {}, collegesList: {} }; // Fallback in case of error
+      return { companiesList: {}, collegesList: {},yearOFPlacement:{} }; // Fallback in case of error
     }
   };
   

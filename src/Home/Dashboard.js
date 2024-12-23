@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchDashboardData } from "./Data"; // Import the fetch function
+import { fetchDashboardData } from "./Data";
 import "./Dashboard.css";
 
 export default function Dashboard() {
