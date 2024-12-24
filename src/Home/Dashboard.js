@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { fetchDashboardData } from "./Data";
+import React, { useState } from "react";
+import { useDashboard } from "../contexts/DashboardContext";
 import "./Dashboard.css";
 
 export default function Dashboard() {
-  const [companiesList, setCompaniesList] = useState({});
-  const [collegesList, setCollegesList] = useState({});
+  const { dashboardData, loading, error } = useDashboard();
   const [companySearchQuery, setCompanySearchQuery] = useState("");
   const [collegeSearchQuery, setCollegeSearchQuery] = useState("");
   const [companyPage, setCompanyPage] = useState(1);
@@ -13,14 +12,15 @@ export default function Dashboard() {
   const companiesPerPage = 5;
   const collegesPerPage = 5;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { companiesList, collegesList } = await fetchDashboardData();
-      setCompaniesList(companiesList);
-      setCollegesList(collegesList);
-    };
-    fetchData();
-  }, []);
+  if (loading) {
+    return <p>Loading data...</p>;
+  }
+
+  if (error) {
+    return <p>Error loading data: {error.message}</p>;
+  }
+
+  const { companiesList = {}, collegesList = {} } = dashboardData || {};
 
   const filterCompanies = (query) =>
     Object.entries(companiesList).filter(([company]) =>
@@ -137,13 +137,12 @@ export default function Dashboard() {
                 ))}
               </tbody>
             </table>
-            
           </div>
           {renderPagination(
-              companyPage,
-              Math.ceil(filterCompanies(companySearchQuery).length / companiesPerPage),
-              setCompanyPage
-            )}
+            companyPage,
+            Math.ceil(filterCompanies(companySearchQuery).length / companiesPerPage),
+            setCompanyPage
+          )}
         </div>
 
         {/* Colleges Section */}
@@ -172,13 +171,12 @@ export default function Dashboard() {
                 ))}
               </tbody>
             </table>
-           
           </div>
           {renderPagination(
-              collegePage,
-              Math.ceil(filterColleges(collegeSearchQuery).length / collegesPerPage),
-              setCollegePage
-            )}
+            collegePage,
+            Math.ceil(filterColleges(collegeSearchQuery).length / collegesPerPage),
+            setCollegePage
+          )}
         </div>
       </div>
     </div>

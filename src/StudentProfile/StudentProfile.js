@@ -30,7 +30,7 @@ const StudentProfile = () => {
         twelfthStandard: '',
         profilePic: '',
         resume: null,
-        highestGraduationCGPA: ''
+        highestGraduationPercentage: ''
         });
     const [age, setAge] = useState('');
     const handleAgeChange = (e) => {
@@ -168,7 +168,7 @@ const StudentProfile = () => {
             alert('Password and Confirm Password do not match');
             return false;
         }
-        if (!graduationRegex.test(formData.highestGraduationCGPA)) {
+        if (!graduationRegex.test(formData.highestGraduationPercentage)) {
             alert("Highest graduation must be a number");
             return false
         }
@@ -200,7 +200,7 @@ const StudentProfile = () => {
             profilePic: formData.profilePic,
             tenthStandard: Number(formData.tenthStandard),
             twelfthStandard: Number(formData.twelfthStandard),
-            highestGraduationCGPA: Number(formData.highestGraduationCGPA),
+            highestGraduationPercentage: Number(formData.highestGraduationPercentage),
             studentSkills: selectedSkills 
         }, {
             headers: {
@@ -438,12 +438,12 @@ const StudentProfile = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>CGPA(Highest Graduation) <span style={{ color: 'red' }}>*</span></label>
+                        <label>Percentage(Highest Graduation) <span style={{ color: 'red' }}>*</span></label>
                         <input
                             type="number"
-                            name="highestGraduationCGPA"
-                            placeholder='Ex:9.2'
-                            value={formData.highestGraduationCGPA}
+                            name="highestGraduationPercentage"
+                            placeholder='Ex:92'
+                            value={formData.highestGraduationPercentage}
                             onChange={handleChange}
                             required
                         />

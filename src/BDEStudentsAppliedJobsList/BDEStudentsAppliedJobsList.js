@@ -1,13 +1,12 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './BDEStudentsAppliedJobsList.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import * as XLSX from 'xlsx';
-import MultipleSelect from './MultipleSelect'; 
-import SkillsSelect from './SkillsSelect'; 
+import MultipleSelect from './MultipleSelect';
+import SkillsSelect from './SkillsSelect';
 import { useStudentsApplyData } from '../contexts/StudentsApplyContext';
-
 
 const BDEStudentsAppliedJobsList = () => {
   const { jobId } = useParams();
@@ -23,57 +22,49 @@ const BDEStudentsAppliedJobsList = () => {
   } = useStudentsApplyData();
 
   const [selectedDepartments, setSelectedDepartments] = useState([]);
-  const [selectedCGPA, setSelectedCGPA] = useState('');
+  const [selectedPercentage, setSelectedPercentage] = useState('');
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true); 
+      setIsLoading(true);
       await fetchAppliedStudents(jobId);
-      setIsLoading(false); 
+      setIsLoading(false);
     };
     fetchData();
   }, [jobId, fetchAppliedStudents]);
 
-  
-
-
   const handleDepartmentChange = (event) => {
-    const {
-      target: { value },
-    } = event;
+    const { target: { value } } = event;
     setSelectedDepartments(
       typeof value === 'string' ? value.split(',') : value,
     );
   };
+
   const handleSkillChange = (event) => {
-    const {
-      target: { value },
-    } = event;
+    const { target: { value } } = event;
     setSelectedSkills(
       typeof value === 'string' ? value.split(',') : value,
     );
   };
+
+  // Filter students based on department, percentage, and skills
   const filteredStudents = appliedStudents.filter(student => {
-    let departmentMatch = true;
-    let cgpaMatch = true;
-    let skillMatch = true;
+    const departmentMatch =
+      selectedDepartments.length === 0 || selectedDepartments.includes(student.department);
 
-    if (selectedDepartments.length > 0 && !selectedDepartments.includes(student.department)) {
-      departmentMatch = false;
-    }
+    const percentageMatch =
+      !selectedPercentage ||
+      parseFloat(student.highestGraduationPercentage) >= parseFloat(selectedPercentage);
 
-    if (selectedCGPA && parseFloat(student.highestGraduationCGPA) < parseFloat(selectedCGPA)) {
-      cgpaMatch = false;
-    }
+    const skillMatch =
+      selectedSkills.length === 0 ||
+      selectedSkills.some(skill => student.studentSkills?.includes(skill));
 
-    if (selectedSkills.length > 0 && !selectedSkills.some(skill => student.studentSkills?.includes(skill))) {
-      skillMatch = false;
-    }
-
-    return departmentMatch && cgpaMatch && skillMatch;
+    return departmentMatch && percentageMatch && skillMatch;
   });
+
   const downloadResume = async () => {
     try {
       const selectedStudentIds = filteredStudents.map(student => student.student_id);
@@ -107,11 +98,11 @@ const BDEStudentsAppliedJobsList = () => {
       });
     }
   };
+
   const downloadExcel = () => {
-    // Map over filteredStudents to convert the studentSkills array into a string
     const formattedStudents = filteredStudents.map(student => ({
       ...student,
-      studentSkills: student.studentSkills.join(', '), // Join skills array into a comma-separated string
+      studentSkills: student.studentSkills.join(', '),
     }));
 
     const workbook = XLSX.utils.book_new();
@@ -119,6 +110,7 @@ const BDEStudentsAppliedJobsList = () => {
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Students');
     XLSX.writeFile(workbook, `${excelName}.xlsx`);
   };
+
   const acceptSelectedStudents = async () => {
     const result = await Swal.fire({
       title: 'Confirm Acceptance',
@@ -128,7 +120,7 @@ const BDEStudentsAppliedJobsList = () => {
       confirmButtonText: 'Accept',
       cancelButtonText: 'Cancel'
     });
-    if (result.isConfirmed) { 
+    if (result.isConfirmed) {
       try {
         const selectedStudentIds = filteredStudents.map(student => student.student_id);
         if (selectedStudentIds.length === 0) {
@@ -158,94 +150,86 @@ const BDEStudentsAppliedJobsList = () => {
       }
     }
   };
+
   return (
     <div className='students-jobs-list'>
-    {isLoading?(
-      <div className="spinner-container">
+      {isLoading ? (
+        <div className="spinner-container">
           <div className="spinner"></div>
-        </div>):(
-      <>
-        <h2 style={{ textAlign: 'center' }} >
-        <span className='text-2xl font-semibold'> Students Applied for Job </span>
-        <div className='btn-parent'>
-          <button className='btn-excel' onClick={downloadExcel}>Download Excel</button>
-          <button className='resume-download' onClick={downloadResume}>Get the Resumes</button>
-          <button onClick={acceptSelectedStudents} className='btn-accept-job-students'>Accept the selected students</button>
         </div>
-        </h2>
-      
-      <div className='filter-list'>
-        <MultipleSelect
-          selectedDepartments={selectedDepartments}
-          handleChange={handleDepartmentChange}
-        />
-        <div>
-          <select
-            className='cgpa'
-            value={selectedCGPA}
-            onChange={(e) => setSelectedCGPA(e.target.value)}
-          >
-            <option value="">Minimum CGPA</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <SkillsSelect
-          jobSkills={jobSkills}
-          selectedSkills={selectedSkills}
-          handleChange={handleSkillChange}
-        />
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th style={{ color: "white" }}>Applied Students  ({filteredStudents.length})</th>
-            <th style={{ color: "white" }}>Selected Students
-              ({filteredStudents.length > 0 ? selectedStudents.length : null})</th>
-            <th style={{ color: "white" }}>Rejected Students
-              ({filteredStudents.length > 0 ? rejectedStudents.length : null})</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            loading ?
-              (<tr><td colSpan="3">Loading...</td></tr>) :
-              (
-                filteredStudents.length > 0 ?
-                  (
-                    filteredStudents.map(student => (
-                      <tr key={student.student_id}>
-                        <td>
-                          {student.name}<br />
-                          {student.email}
-                        </td>
-                        <td>{selectedStudents.includes(student.student_id) ? 'Selected' : ''}</td>
-                        <td>{rejectedStudents.includes(student.student_id) ? 'Rejected' : ''}</td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="3">No students have applied for this job.</td>
+      ) : (
+        <>
+          <h2 style={{ textAlign: 'center' }}>
+            <span className='text-2xl font-semibold'> Students Applied for Job </span>
+            <div className='btn-parent'>
+              <button className='btn-excel' onClick={downloadExcel}>Download Excel</button>
+              <button className='resume-download' onClick={downloadResume}>Get the Resumes</button>
+              <button onClick={acceptSelectedStudents} className='btn-accept-job-students'>Accept the selected students</button>
+            </div>
+          </h2>
+
+          <div className='filter-list'>
+            <MultipleSelect
+              selectedDepartments={selectedDepartments}
+              handleChange={handleDepartmentChange}
+            />
+            <div>
+              <select
+                className='percentage'
+                value={selectedPercentage}
+                onChange={(e) => setSelectedPercentage(e.target.value)}
+              >
+                <option value="">Minimum Percentage</option>
+                {[...Array(10)].map((_, index) => {
+                  const value = 50 + index * 5;
+                  return <option key={value} value={value}>{value}%</option>;
+                })}
+              </select>
+            </div>
+            <SkillsSelect
+              jobSkills={jobSkills}
+              selectedSkills={selectedSkills}
+              handleChange={handleSkillChange}
+            />
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th style={{ color: "white" }}>Applied Students  ({filteredStudents.length})</th>
+                <th style={{ color: "white" }}>Selected Students
+                  ({filteredStudents.length > 0 ? selectedStudents.length : null})</th>
+                <th style={{ color: "white" }}>Rejected Students
+                  ({filteredStudents.length > 0 ? rejectedStudents.length : null})</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loading ? (
+                <tr><td colSpan="3">Loading...</td></tr>
+              ) : (
+                filteredStudents.length > 0 ? (
+                  filteredStudents.map(student => (
+                    <tr key={student.student_id}>
+                      <td>
+                        {student.name}<br />
+                        {student.email}
+                      </td>
+                      <td>{selectedStudents.includes(student.student_id) ? 'Selected' : ''}</td>
+                      <td>{rejectedStudents.includes(student.student_id) ? 'Rejected' : ''}</td>
                     </tr>
-                  )
-              )
-          }
-        </tbody>
-      </table>
-      </>
-    )
-    
-  }
-    
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="3">No students have applied for this job.</td>
+                  </tr>
+                )
+              )}
+            </tbody>
+          </table>
+        </>
+      )}
     </div>
   );
 };
+
 export default BDEStudentsAppliedJobsList;

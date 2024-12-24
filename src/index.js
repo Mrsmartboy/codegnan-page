@@ -6,6 +6,7 @@ import App from './App';
 import { JobsProvider } from './contexts/JobsContext';
 import { StudentsDataProvider } from './contexts/StudentsListContext';
 import { StudentsApplyProvider } from './contexts/StudentsApplyContext';
+import { DashboardProvider } from "./contexts/DashboardContext";
 const theme = createTheme();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,7 +19,9 @@ root.render(
           <StudentsDataProvider>
             <StudentsApplyProvider>
               <StudentsApplyProvider>
+              <DashboardProvider>
             <App />
+            </DashboardProvider>
             </StudentsApplyProvider>
             </StudentsApplyProvider>
           </StudentsDataProvider>

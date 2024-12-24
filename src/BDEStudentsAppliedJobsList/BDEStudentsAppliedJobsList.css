@@ -28,7 +28,7 @@
     color: black !important;
     font-weight:bold !important;
 }
-.filter-list .cgpa{
+.filter-list .percentage{
     border:1px solid rgba(0,0,0,0.2) !important;
     padding: 16px 10px !important;
     border-radius: 5px;
@@ -126,7 +126,7 @@ input[type="number"] {
     .filter-list{
         flex-direction: column;
     }
-    .filter-list .cgpa{
+    .filter-list .percentage{
         width: 300px;
     }
 }
