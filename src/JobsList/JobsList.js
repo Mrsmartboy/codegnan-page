@@ -97,7 +97,7 @@ const JobsList = () => {
                         </div>
                         <div className="job-info">
                             <p className='sub-info'>
-                                <span className='strong'>CTC:</span> {job.salary}
+                                <span className='strong'>CTC:</span> {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
                             </p>
                             <p className='sub-info'>
                                 <span className='strong'>Loc:</span> {job.jobLocation}
@@ -145,7 +145,7 @@ const JobsList = () => {
                             </p>
 
                             <p className="pop-up-item">
-                                <strong className='strong'>Salary:</strong> {selectedJob.salary}
+                                <strong className='strong'>Salary:</strong> {selectedJob.salary.includes('LPA') ? selectedJob.salary : `${selectedJob.salary} LPA`}
                             </p>
                             <p className="pop-up-item">
                                 <strong className='strong'>Location:</strong> {selectedJob.jobLocation}

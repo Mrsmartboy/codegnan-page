@@ -46,10 +46,7 @@ export default function ProgramManagerSignup() {
 
           setExcelData(formattedData);
           
-          Swal.fire({
-            title: "Excel file processed successfully!",
-            icon: "success",
-          });
+         
         } else {
           Swal.fire({
             title: "The Excel file is empty or headers are missing.",
@@ -87,9 +84,11 @@ export default function ProgramManagerSignup() {
         }
       } else {
         const response = await axios.post(
-          `${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudents`,
-          { students: excelData }
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`,
+          { excelData }
         );
+
+        console.log(response)
         if (response.status === 200) {
           await fetchStudentsData();
           navigate("/");
@@ -101,12 +100,13 @@ export default function ProgramManagerSignup() {
       }
     } catch (error) {
       const status = error.response?.status;
+      console.log(error.response.data.error)
       if (status === 404) {
         Swal.fire({ icon: "error", title: "User email exists" });
       } else if (status === 400) {
         Swal.fire({ icon: "error", title: "Invalid data" });
       } else {
-        Swal.fire({ icon: "error", title: "An error occurred" });
+        Swal.fire({ icon: "error", title: error.response.data.error });
       }
     } finally {
       setLoading(false);
@@ -114,7 +114,7 @@ export default function ProgramManagerSignup() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[70vh] bg-gray-100 p-4">
+    <div className="flex justify-center items-center min-h-[70vh] bg-[#e1e7ff] p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md sm:max-w-lg md:max-w-xl">
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Student Enrollment</h1>
         
@@ -150,7 +150,7 @@ export default function ProgramManagerSignup() {
                     <input
                       id={field}
                       name={field}
-                      type={field === "email" ? "email" : field === "parentNumber" ? "tel" : "text"}
+                      type={field === "email" ? "email" : field === "parentNumber" ? "number" : "text"}
                       placeholder={`Enter ${field}`}
                       value={formData[field]}
                       onChange={handleChange}
@@ -184,12 +184,7 @@ export default function ProgramManagerSignup() {
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
-          {excelData.length > 0 && (
-        <div>
-          <h2>Uploaded Excel Data</h2>
-          <pre>{JSON.stringify(excelData, null, 2)}</pre>
-        </div>
-      )}
+          
         </form>
       </div>
     </div>

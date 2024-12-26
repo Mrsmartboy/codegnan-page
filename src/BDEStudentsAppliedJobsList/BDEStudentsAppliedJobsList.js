@@ -26,6 +26,7 @@ const BDEStudentsAppliedJobsList = () => {
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Fetch applied students on component mount or when jobId changes
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -35,6 +36,7 @@ const BDEStudentsAppliedJobsList = () => {
     fetchData();
   }, [jobId, fetchAppliedStudents]);
 
+  // Handler for department selection changes
   const handleDepartmentChange = (event) => {
     const { target: { value } } = event;
     setSelectedDepartments(
@@ -42,6 +44,7 @@ const BDEStudentsAppliedJobsList = () => {
     );
   };
 
+  // Handler for skills selection changes
   const handleSkillChange = (event) => {
     const { target: { value } } = event;
     setSelectedSkills(
@@ -49,14 +52,15 @@ const BDEStudentsAppliedJobsList = () => {
     );
   };
 
-  // Filter students based on department, percentage, and skills
+  // Filter students based on selected department, percentage, and skills
+  console.log(appliedStudents)
   const filteredStudents = appliedStudents.filter(student => {
     const departmentMatch =
       selectedDepartments.length === 0 || selectedDepartments.includes(student.department);
 
     const percentageMatch =
       !selectedPercentage ||
-      parseFloat(student.highestGraduationPercentage) >= parseFloat(selectedPercentage);
+      parseInt(student.highestGraduationpercentage) >= parseInt(selectedPercentage);
 
     const skillMatch =
       selectedSkills.length === 0 ||
@@ -65,6 +69,7 @@ const BDEStudentsAppliedJobsList = () => {
     return departmentMatch && percentageMatch && skillMatch;
   });
 
+  // Function to download resumes in a zip file
   const downloadResume = async () => {
     try {
       const selectedStudentIds = filteredStudents.map(student => student.student_id);
@@ -99,6 +104,7 @@ const BDEStudentsAppliedJobsList = () => {
     }
   };
 
+  // Function to download students' data in an Excel file
   const downloadExcel = () => {
     const formattedStudents = filteredStudents.map(student => ({
       ...student,
@@ -111,10 +117,11 @@ const BDEStudentsAppliedJobsList = () => {
     XLSX.writeFile(workbook, `${excelName}.xlsx`);
   };
 
+  // Function to accept selected students and update their status
   const acceptSelectedStudents = async () => {
     const result = await Swal.fire({
       title: 'Confirm Acceptance',
-      text: 'Are you sure you want to reject the remaining students?',
+      text: 'Are you sure you want to accept the selected students?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Accept',
@@ -196,11 +203,9 @@ const BDEStudentsAppliedJobsList = () => {
           <table>
             <thead>
               <tr>
-                <th style={{ color: "white" }}>Applied Students  ({filteredStudents.length})</th>
-                <th style={{ color: "white" }}>Selected Students
-                  ({filteredStudents.length > 0 ? selectedStudents.length : null})</th>
-                <th style={{ color: "white" }}>Rejected Students
-                  ({filteredStudents.length > 0 ? rejectedStudents.length : null})</th>
+                <th style={{ color: "white" }}>Applied Students ({filteredStudents.length})</th>
+                <th style={{ color: "white" }}>Selected Students ({selectedStudents.length})</th>
+                <th style={{ color: "white" }}>Rejected Students ({rejectedStudents.length})</th>
               </tr>
             </thead>
             <tbody>

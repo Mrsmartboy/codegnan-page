@@ -525,7 +525,7 @@ const BDEDashboard = () => {
               </div>
               <div className="job-card-details">
                 <p className="job-card-info">
-                  <span>CTC:</span> {job.salary}
+                  <span>CTC:</span> {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
                 </p>
                 <p className="job-card-info">
                   <span>Location:</span> {job.jobLocation}
@@ -555,7 +555,7 @@ const BDEDashboard = () => {
                 <strong className='strong'>Company:</strong> {state.selectedJob.companyName}
               </p>
               <p className="job-modal-info">
-                <strong className='strong'>Salary:</strong> {state.selectedJob.salary}
+                <strong className='strong'>Salary:</strong> {state.selectedJob.salary.includes('LPA') ? state.selectedJob.salary : `${state.selectedJob.salary} LPA`}
               </p>
               <p className="job-modal-info">
                 <strong className='strong'>Location:</strong> {state.selectedJob.jobLocation}

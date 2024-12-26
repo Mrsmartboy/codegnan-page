@@ -193,7 +193,7 @@
   
     .styled-table thead th,
     .styled-table tbody td {
-      font-size: 1.2rem;
+      font-size: 1rem;
       padding: 14px;
       letter-spacing: 1px;
     }
@@ -204,6 +204,7 @@
       min-height: 400px;
 
     }
+   
   
   
     .page-number {

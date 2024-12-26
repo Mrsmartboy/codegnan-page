@@ -66,7 +66,7 @@ export default function StudentLogin() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="studentId" className="block text-sm  font-medium text-black mb-1">
-                  StudentID
+                  Username
                 </label>
                 <input
                   type="text"

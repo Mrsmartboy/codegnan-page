@@ -7,37 +7,52 @@ const StudentSearch = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [eligibleJobs, setEligibleJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
-
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSearch = async () => {
-    const id = studentId.toUpperCase()
+    const id = studentId.toUpperCase();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/searchstudent`, { studentId: id });
+      setErrorMessage(""); 
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/searchstudent`,
+        { studentId: id }
+      );
+
 
       const data = response.data;
+      
+      if (!data.student_data || data.student_data.length === 0) {
+        setErrorMessage("Invalid student ID. Please try again.");
+        setStudentData(null);
+        setAppliedJobs([]);
+        setEligibleJobs([]);
+        return;
+      }
+
       const studentDetails = data.student_data[0];
-      console.log(data)
       setStudentData({
-        id: studentDetails.studentId,
+        studentId: studentDetails.studentId,
         name: studentDetails.name,
         email: studentDetails.email,
-        program: studentDetails.qualification,
+        qualification: studentDetails.qualification,
         parentNumber: studentDetails.parentNumber,
         batchNo: studentDetails.std_BatchNo,
-        skills: studentDetails.studentSkills.join(', '),
-        cgpa: studentDetails.highestGraduationCGPA,
+        skills: studentDetails.studentSkills.join(", "),
+        percentage: studentDetails.highestGraduationpercentage,
         yearOfPassing: studentDetails.yearOfPassing,
       });
       setAppliedJobs(data.applied_jobs_details || []);
       setEligibleJobs(data.eligible_jobs_details || []);
     } catch (err) {
-      console.error('Error fetching data:', err.message);
+      console.log('response',err.response.data.error)
+      setErrorMessage(err.response.data.error);
+
+      console.error("Error fetching data:", err.message);
       setStudentData(null);
       setAppliedJobs([]);
       setEligibleJobs([]);
     }
   };
-
 
   const handleRowClick = (job) => {
     setSelectedJob(job);
@@ -46,6 +61,7 @@ const StudentSearch = () => {
   const closeModal = () => {
     setSelectedJob(null);
   };
+
   return (
     <div className="flex flex-col items-center bg-gradient-to-b from-blue-100 to-white p-4 min-h-[70vh]">
       <div className="w-full md:max-w-lg p-6 bg-white rounded-lg shadow-md">
@@ -67,10 +83,13 @@ const StudentSearch = () => {
         >
           Search
         </button>
+        {errorMessage && (
+          <p className="text-red-500 text-center mt-4">{errorMessage}</p>
+        )}
       </div>
 
       {studentData && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
           <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
             <h3 className="text-xl font-bold text-black mb-6 text-center">
               Student Details
@@ -79,7 +98,7 @@ const StudentSearch = () => {
               <table className="w-full border-collapse border border-gray-300">
                 <tbody>
                   {Object.entries(studentData).map(([key, value]) => (
-                    <tr key={key} >
+                    <tr key={key}>
                       <th className="border border-gray-300 px-4 py-2 text-left capitalize font-semibold text-black">
                         {key.replace(/([A-Z])/g, " $1")}
                       </th>
@@ -93,12 +112,11 @@ const StudentSearch = () => {
             </div>
           </div>
 
-
           <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
             <h3 className="text-xl font-bold text-black mb-6 text-center">
               Applied Jobs
             </h3>
-            {appliedJobs && appliedJobs.length > 0 ? (
+            {appliedJobs.length > 0 ? (
               <div className="overflow-y-auto max-h-60">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
@@ -116,11 +134,15 @@ const StudentSearch = () => {
                   </thead>
                   <tbody>
                     {appliedJobs.map((job, index) => (
-                      <tr key={index} className="transition-all cursor-pointer" onClick={() => handleRowClick(job)}>
-                        <td className="border border-gray-300 px-4 py-2  ">{job.companyName}</td>
-                        <td className="border border-gray-300 px-4 py-2 ">{job.jobRole}</td>
+                      <tr
+                        key={index}
+                        className="transition-all cursor-pointer"
+                        onClick={() => handleRowClick(job)}
+                      >
+                        <td className="border border-gray-300 px-4 py-2">{job.companyName}</td>
+                        <td className="border border-gray-300 px-4 py-2">{job.jobRole}</td>
                         <td className="border border-gray-300 px-4 py-2">
-                          {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
+                          {job.salary.includes("LPA") ? job.salary : `${job.salary} LPA`}
                         </td>
                       </tr>
                     ))}
@@ -132,58 +154,52 @@ const StudentSearch = () => {
             )}
           </div>
 
-
+          {/* Eligible Jobs */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-bold text-black mb-6 text-center">
               Eligible Jobs
             </h3>
-            <div className="overflow-x-auto">
-              {eligibleJobs.length === 0 ? (
-                <p className="text-center text-gray-600">No eligible jobs available.</p>
-              ) : (
-                <div className="overflow-y-auto max-h-60">
-                  <table className="w-full border-collapse border border-gray-300">
-                    <thead>
-                      <tr className="bg-gray-100">
-                        <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
-                          Company Name
-                        </th>
-                        <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
-                          Job Role
-                        </th>
-
-                        <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
-                          Salary
-                        </th>
+            {eligibleJobs.length > 0 ? (
+              <div className="overflow-y-auto max-h-60">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
+                        Company Name
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
+                        Job Role
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 text-left text-black font-semibold">
+                        Salary
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {eligibleJobs.map((job, index) => (
+                      <tr
+                        key={index}
+                        className="transition-all cursor-pointer"
+                        onClick={() => handleRowClick(job)}
+                      >
+                        <td className="border border-gray-300 px-4 py-2">{job.companyName}</td>
+                        <td className="border border-gray-300 px-4 py-2">{job.jobRole}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {job.salary.includes("LPA") ? job.salary : `${job.salary} LPA`}
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {eligibleJobs.map((job, index) => (
-                        <tr key={index} className="transition-all cursor-pointer" onClick={() => handleRowClick(job)}>
-                          <td className="border border-gray-300 px-4 py-2 ">
-                            {job.companyName}
-                          </td>
-                          <td className="border border-gray-300 px-4 py-2 ">
-                            {job.jobRole}
-                          </td>
-
-                          <td className="border border-gray-300 px-4 py-2 ">
-                            {job.salary.includes('LPA') ? job.salary : `${job.salary} LPA`}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <p className="text-center text-gray-600">No eligible jobs available.</p>
+            )}
           </div>
-
-
         </div>
       )}
 
-      {selectedJob && (
+{selectedJob && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white w-full max-w-lg rounded-lg shadow-lg p-6 relative">
             <button

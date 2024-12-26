@@ -78,7 +78,7 @@ export default function StudentsList() {
                   <th>Phone</th>
                   <th>College Name</th>
                   <th>Department</th>
-                  <th>Graduation CGPA</th>
+                  <th>Graduation Percentage</th>
                   <th>Skills</th>
                   <th>Year of <br /> Passing</th>
                 </tr>
@@ -92,7 +92,9 @@ export default function StudentsList() {
                       <td>{student.phone || '__'}</td>
                       <td>{student.collegeName || '__'}</td>
                       <td>{student.department || '__'}</td>
-                      <td>{student.highestGraduationCGPA || '__'}</td>
+                      <td>{student.highestGraduationpercentage 
+                      ? `${student.highestGraduationpercentage}%` 
+                      : '__'}</td>
                       <td>{student.studentSkills?.length > 0 ? student.studentSkills.join(', ') : 'No skills listed'}</td>
                       <td>{student.yearOfPassing || '__'}</td>
                     </tr>
