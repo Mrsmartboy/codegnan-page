@@ -46,7 +46,9 @@ const CourseQuerySection = () => {
                 src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/call_ea4ffs.webp"
                 alt="call"
                 className="call"
-              />{" "}
+                width="50" 
+                height="50"
+              />
               Request A Callback
             </button>
           </Link>

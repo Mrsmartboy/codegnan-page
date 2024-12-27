@@ -44,6 +44,8 @@ const Navigation = () => {
             src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/codegnan-logo_qxnxrq.webp"
             alt="Codegnan Logo"
             className="logo"
+            width="100" 
+             height="50"
             onClick={() => handleClick("/")}
           />
           {!isDirectApply && (

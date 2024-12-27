@@ -28,13 +28,16 @@ const TeamPage = () => {
           <p>Founder & Chief Executive Officer</p>
           <div className="social-icons-team">
           <a href="https://www.instagram.com/sairamuppugandla?igsh=MWVub3o5OXFvZWhvdA==" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734851066/insta_hul2pm.webp" alt="Instagram" />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734851066/insta_hul2pm.webp" alt="Instagram" width="50" 
+              height="50"/>
             </a>
             <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/linkedin_mlpwz3.webp" alt="LinkedIn" />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/linkedin_mlpwz3.webp" alt="LinkedIn"  width="50" 
+              height="50"/>
             </a>
             <a href="https://wa.me/message/V6KW6C7XJG6FK1" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp_ewencw.webp" alt="whatsapp" />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp_ewencw.webp" alt="whatsapp" width="50" 
+              height="50"/>
             </a>
             
             
@@ -47,13 +50,16 @@ const TeamPage = () => {
           <p>Co-Founder and Chief Management Officer</p>
           <div className="social-icons-team">
           <a href="https://www.instagram.com/codewithsaketh?igsh=MTh4eXIzd21kaHRhYQ==" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734851066/insta_hul2pm.webp" alt="Instagram" />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734851066/insta_hul2pm.webp" alt="Instagram" width="50" 
+               height="50"/>
             </a>
             <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/linkedin_mlpwz3.webp" alt="LinkedIn" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/linkedin_mlpwz3.webp" alt="LinkedIn" width="50" 
+              height="50"/>
             </a>
             <a href="https://wa.me/message/V6KW6C7XJG6FK1" target="_blank" rel="noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp_ewencw.webp" alt="whatsapp" />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp_ewencw.webp" alt="whatsapp" width="50" 
+              height="50"/>
             </a>
             
           </div>
