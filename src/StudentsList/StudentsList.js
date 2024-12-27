@@ -36,10 +36,13 @@ export default function StudentsList() {
 
   const filteredStudents = (studentsList || []).length > 0
   ? studentsList.filter(student => {
-      const studentName = student?.name || ""; // Safely access 'name', fallback to empty string
-      return studentName.toLowerCase().includes(searchQuery.toLowerCase());
+      const studentName = student?.name || ""; 
+      const studentId = student?.studentId || "";
+      return studentName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             studentId.toLowerCase().includes(searchQuery.toLowerCase());
     })
   : [];
+
 
 
   const indexOfLastStudent = page * studentsPerPage;
@@ -58,7 +61,7 @@ export default function StudentsList() {
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="Search by student name..."
+          placeholder="Search by studentId or name"
           className='studentslist-search-bar'
         />
       </div>
@@ -73,6 +76,8 @@ export default function StudentsList() {
             <table>
               <thead>
                 <tr>
+                  <th>StudentId</th>
+                  <th>BatchNO</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
@@ -87,6 +92,8 @@ export default function StudentsList() {
                 {currentStudents.length > 0 ? (
                   currentStudents.map(student => (
                     <tr key={student.id} className='studentslist-item'>
+                      <td>{student.studentId || '__'}</td>
+                      <td>{student.BatchNo || '__'}</td>
                       <td>{student.name || '__'}</td>
                       <td>{student.email || '__'}</td>
                       <td>{student.phone || '__'}</td>

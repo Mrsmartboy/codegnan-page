@@ -511,7 +511,7 @@
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .coverpage-container {
         display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     }

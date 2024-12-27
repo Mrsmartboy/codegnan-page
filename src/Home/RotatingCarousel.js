@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useMemo} from 'react';
 import { Link } from 'react-router-dom';
+import { useDashboard } from "../contexts/DashboardContext"; 
 import './RotatingCarousel.css';
 
 // import questionImage from '../images/question-mark.webp';
@@ -22,7 +23,7 @@ import './RotatingCarousel.css';
 const profiles = [
    { id: 1, package: '18.2 LPA', company: 'Akamai', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/sathupati_preethi_mubejj.webp", alt: 'sathupati_preethi' },
    { id: 2, package: '9.5 LPA', company: 'Infosys', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849456/sathupati_preethi_1_xyerqt.webp", alt: 'sathupati_preethi_1' },
-   { id: 3, package: '7.36 LPA', company: 'CodeYoung', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849438/anu_raj_n_crqd7w.webp", alt: 'anu_raj_n' },
+   { id: 3, package: '7.3 LPA', company: 'CodeYoung', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849438/anu_raj_n_crqd7w.webp", alt: 'anu_raj_n' },
    { id: 4, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/varuni_br_ji3lzr.webp", alt: 'varuni-br' },
    { id: 5, package: '7 LPA', company: 'TCS', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849449/morampudu_anu_sri_m0ni5y.webp", alt: 'morampudi_anu_sri' },
    { id: 6, package: '7 LPA', company: 'Healthsyst', image: "https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/kavya_c_zkvdnm.webp", alt: 'kavya_c' },
@@ -40,6 +41,17 @@ const RotatingCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
+  const { dashboardData } = useDashboard();
+
+  
+    const totalStudentsPlaced = useMemo(() => {
+      if (!dashboardData) return 0;
+      return Object.values(dashboardData.yearOFPlacement || {}).reduce(
+        (acc, count) => acc + count,
+        0
+      );
+    }, [dashboardData]);
+  
 
   // Function to calculate translation distance based on screen width
   const getTranslationDistance = () => {
@@ -116,7 +128,8 @@ const RotatingCarousel = () => {
                   {profile.company}
                 </span>
                 <div className="highlight-circle">
-                  <img src={profile.image} alt={profile.alt} className='rotate-img' />
+                  <img src={profile.image} alt={profile.alt} className='rotate-img' width="200" 
+                  height="200" />
                 </div>
               </div>
             );
@@ -137,7 +150,7 @@ const RotatingCarousel = () => {
         <div className='text-next'>
           <div className="text-content">
             <p>
-              After <span className="highlight">3281+</span> <br /> Successful Placed <br /> Students
+              After <span className="highlight">{totalStudentsPlaced}+</span> <br /> Successful Placed <br /> Students
             </p>
             <h1>WHO IS <br /> NEXT...</h1>
           </div>

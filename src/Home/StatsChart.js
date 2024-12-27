@@ -3,10 +3,10 @@ import { useDashboard } from "../contexts/DashboardContext";
 import "./StatsChart.css";
 
 const StatsChart = () => {
-  const { dashboardData, loading, error } = useDashboard();
+  const { dashboardData, loading } = useDashboard();
   const [yearOFPlacement, setYearOFPlacement] = useState([]);
   const [barHeightMultiplier, setBarHeightMultiplier] = useState(19);
- console.log("dashboardData",dashboardData)
+  console.log(dashboardData)
   useEffect(() => {
     if (dashboardData.yearOFPlacement && typeof dashboardData.yearOFPlacement === "object") {
       const formattedData = Object.entries(dashboardData.yearOFPlacement).map(([year, value]) => ({
@@ -42,9 +42,7 @@ const StatsChart = () => {
     return <p>Loading data...</p>;
   }
 
-  if (error) {
-    return <p>Error loading data: {error.message}</p>;
-  }
+ 
 
   return (
     <div className="stats-chart-container">
