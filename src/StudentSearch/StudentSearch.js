@@ -8,24 +8,25 @@ const StudentSearch = () => {
   const [eligibleJobs, setEligibleJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
     const id = studentId.toUpperCase();
     try {
-      setErrorMessage(""); 
+      setLoading(true); // Start loading
+      setErrorMessage("");
+      setStudentData(null);
+      setAppliedJobs([]);
+      setEligibleJobs([]);
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/searchstudent`,
         { studentId: id }
       );
 
-
       const data = response.data;
-      
+
       if (!data.student_data || data.student_data.length === 0) {
-        setErrorMessage("Invalid student ID. Please try again.");
-        setStudentData(null);
-        setAppliedJobs([]);
-        setEligibleJobs([]);
+        setErrorMessage(data.message);
         return;
       }
 
@@ -44,15 +45,12 @@ const StudentSearch = () => {
       setAppliedJobs(data.applied_jobs_details || []);
       setEligibleJobs(data.eligible_jobs_details || []);
     } catch (err) {
-      console.log('response',err.response.data.error)
-      setErrorMessage(err.response.data.error);
-
-      console.error("Error fetching data:", err.message);
-      setStudentData(null);
-      setAppliedJobs([]);
-      setEligibleJobs([]);
+      setErrorMessage(err.response?.data?.error || "An error occurred.");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
+
 
   const handleRowClick = (job) => {
     setSelectedJob(job);
@@ -79,9 +77,14 @@ const StudentSearch = () => {
         </div>
         <button
           onClick={handleSearch}
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none shadow-md transition-all"
+          disabled={loading} 
+          className={`w-full text-white py-2 px-4 rounded-md shadow-md transition-all ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-600 focus:outline-none"
+          }`}
         >
-          Search
+          {loading ? "Searching..." : "Search"} 
         </button>
         {errorMessage && (
           <p className="text-red-500 text-center mt-4">{errorMessage}</p>
