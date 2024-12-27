@@ -63,6 +63,8 @@ const BannerPage = () => {
                 src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734944177/youtube-video_afamyz.jpg"
                 alt="YouTube Thumbnail"
                 className="youtube-thumbnail"
+                width="1280" 
+                height="720"
                 style={{ width: "100%", height: "100%", cursor: "pointer" }}
                 onClick={handleVideoLoad}
               />

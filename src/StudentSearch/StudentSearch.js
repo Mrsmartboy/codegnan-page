@@ -246,7 +246,7 @@ const StudentSearch = () => {
               ))}
             </div>
             {selectedJob.specialNote && (
-              <div className="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500">
+              <div className="mt-4 p-4  border-l-4 border-yellow-500">
                 <p className="text-sm font-bold">Special Note:</p>
                 <p className="text-sm">{selectedJob.specialNote}</p>
               </div>

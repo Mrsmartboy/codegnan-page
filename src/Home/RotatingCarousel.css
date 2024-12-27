@@ -54,7 +54,7 @@
 
 .highlight-circle {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%;
   overflow: hidden;
   padding: 4px;
@@ -71,7 +71,7 @@
 
 .highlight-circle img, .rotate-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%; 
   object-fit: cover; 
 }
@@ -108,7 +108,7 @@
 
 .center-profile img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
