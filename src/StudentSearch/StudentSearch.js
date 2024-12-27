@@ -200,7 +200,7 @@ const StudentSearch = () => {
       )}
 
 {selectedJob && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 p-4">
           <div className="bg-white w-full max-w-lg rounded-lg shadow-lg p-6 relative">
             <button
               onClick={closeModal}
@@ -246,7 +246,7 @@ const StudentSearch = () => {
               ))}
             </div>
             {selectedJob.specialNote && (
-              <div className="mt-4 p-4  border-l-4 border-yellow-500">
+              <div className="mt-4 p-2  border-l-4 border-yellow-500">
                 <p className="text-sm font-bold">Special Note:</p>
                 <p className="text-sm">{selectedJob.specialNote}</p>
               </div>
