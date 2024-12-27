@@ -60,7 +60,8 @@ const Collaboration = () => {
       <div className="collaboration-carousel" ref={carouselRef}>
         {collaborationList.map((eachItem) => (
           <div key={eachItem.id} className="collaboration-item">
-            <img src={eachItem.image} alt={eachItem.alt} className="collaboration-image" />
+            <img src={eachItem.image} alt={eachItem.alt} className="collaboration-image" width="300" 
+             height="200"/>
           </div>
         ))}
       </div>

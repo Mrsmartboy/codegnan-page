@@ -154,12 +154,14 @@ const RotatingCarousel = () => {
             </p>
             <h1>WHO IS <br /> NEXT...</h1>
           </div>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849454/question-mark_monpn0.webp" alt="Question Mark" className="question-mark" max-height={120} width={250} />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849454/question-mark_monpn0.webp" alt="Question Mark" className="question-mark" 
+            />
           </div>
           <div className="callback-section">
             <Link to='/talk-to-career-expert' className='request-callback'>
             <button className="callback-button-rotating">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/call_ea4ffs.webp" alt="call" className='call' /> Request A Callback
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849439/call_ea4ffs.webp" alt="call" className='call'  width="50" 
+               height="50"/> Request A Callback
             </button>
             </Link>
           </div>

@@ -68,7 +68,7 @@ const BannerPage = () => {
               />
             ) : (
               <iframe
-                width="400"
+                width="380"
                 height="225"
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title="YouTube video"
@@ -87,6 +87,8 @@ const BannerPage = () => {
           alt="Banner Girl"
           className="banner-girl"
           loading="lazy"
+           width="400" 
+           height="300"
         />
       </div>
 

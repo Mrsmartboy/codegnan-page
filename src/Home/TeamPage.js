@@ -22,7 +22,8 @@ const TeamPage = () => {
       <div className='section-container'>
       <section className="team-members">
         <div className="team-card sairam">
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849455/sairam_k5ikzh.webp" alt="Uppugundla Sairam" className="profile-pic" />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849455/sairam_k5ikzh.webp" alt="Uppugundla Sairam" className="profile-pic" width="150" 
+            height="150"/>
           <h2 className='sairam'>Uppugundla Sairam</h2>
           <p>Founder & Chief Executive Officer</p>
           <div className="social-icons-team">
@@ -40,7 +41,8 @@ const TeamPage = () => {
           </div>
         </div>
         <div className="team-card saketh">
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849455/saketh_ja4t5l.webp" alt="Kallepu Saketh Reddy" className="profile-pic" />
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849455/saketh_ja4t5l.webp" alt="Kallepu Saketh Reddy" className="profile-pic" width="150" 
+           height="150"/>
           <h2 className='saketh-head'>Kallepu Saketh Reddy</h2>
           <p>Co-Founder and Chief Management Officer</p>
           <div className="social-icons-team">
@@ -62,13 +64,16 @@ const TeamPage = () => {
         <h3>You Learn Programming<span>,<br/>Not Just Coding.</span></h3>
         <ul>
           <li>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark'/>
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark' width="20" 
+          height="20"/>
             Embark on a Journey with Elite Mentors - IIT Alumni and Top MNC Experts.</li>
           <li>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark'/>
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark' width="20" 
+          height="20"/>
             Experience Doubt-Free Learning from Product Developers.</li>
           <li>
-          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark'/>
+          <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849458/tick-mark_uldxvq.webp" alt="tickMark" className='tick-mark' width="20" 
+           height="20"/>
             Elevate Your Skills with Expert Masterclasses.</li>
         </ul>
       </section>

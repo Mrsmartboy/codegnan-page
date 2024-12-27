@@ -63,22 +63,28 @@ const Footer = () => {
           </p>
           <div className="social-icons-footer">
             <a href="https://www.facebook.com/codegnan" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849441/facebook-white_ymzqgq.webp" alt="Facebook" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849441/facebook-white_ymzqgq.webp" alt="Facebook" width="50" 
+             height="50"/>
             </a>
             <a href="https://www.instagram.com/codegnan/" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/insta-white_nhqx3x.png"alt="Instagram" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849444/insta-white_nhqx3x.png"alt="Instagram" width="50" 
+               height="50"/>
             </a>
             <a href="https://www.youtube.com/@Codegnan" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/youtube-white_yt1dva.webp" alt="YouTube" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/youtube-white_yt1dva.webp" alt="YouTube" width="50" 
+               height="50"/>
             </a>
             <a href="https://in.linkedin.com/company/codegnan" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849445/linkedin-white_hxzohq.webp" alt="LinkedIn" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849445/linkedin-white_hxzohq.webp" alt="LinkedIn" width="50" 
+               height="50"/>
             </a>
             <a href="https://wa.me/message/V6KW6C7XJG6FK1" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp-white_jo75ju.webp" alt="WhatsApp" width={30} height={30} />
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849465/whatsapp-white_jo75ju.webp" alt="WhatsApp" width="50" 
+              height="50" />
             </a>
             <a href="https://x.com/i/flow/login?redirect_after_login=%2FCodegnandotcom" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/twitter_wfmn38.webp" alt="Twitter" width={30} height={30}/>
+              <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849464/twitter_wfmn38.webp" alt="Twitter" width="50" 
+             height="50"/>
             </a>
           </div>
         </div>
