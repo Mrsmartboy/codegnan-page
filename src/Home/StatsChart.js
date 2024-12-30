@@ -20,15 +20,15 @@ const StatsChart = () => {
 
     const updateBarHeightMultiplier = () => {
       if (window.innerWidth < 576) {
-        setBarHeightMultiplier(4);
+        setBarHeightMultiplier(7);
       } else if (window.innerWidth >= 576 && window.innerWidth < 796) {
-        setBarHeightMultiplier(4);
+        setBarHeightMultiplier(7);
       } else if (window.innerWidth >= 796 && window.innerWidth < 1024) {
-        setBarHeightMultiplier(4);
+        setBarHeightMultiplier(7);
       } else if (window.innerWidth >= 1024 && window.innerWidth < 1500) {
-        setBarHeightMultiplier(4);
+        setBarHeightMultiplier(7);
       } else {
-        setBarHeightMultiplier(3);
+        setBarHeightMultiplier(7);
       }
     };
 

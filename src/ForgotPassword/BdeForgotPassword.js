@@ -97,7 +97,7 @@ export default function BDEForgotPassword() {
       </div>
       <div className="w-full  md:w-1/3 bg-white shadow-lg rounded-lg p-8 border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-          {step === 1 && 'Forgot Password'}
+          {step === 1 && 'BDE Forgot Password'}
           {step === 2 && 'Enter OTP'}
           {step === 3 && 'Reset Password'}
         </h2>
