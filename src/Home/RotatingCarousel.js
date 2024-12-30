@@ -92,11 +92,11 @@ const RotatingCarousel = () => {
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    clearInterval(intervalId); // Stop rotation on hover
+    clearInterval(intervalId); 
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false); // Restart rotation after hover
+    setIsHovered(false); 
   };
 
   return (
