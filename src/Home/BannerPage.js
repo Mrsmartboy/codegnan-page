@@ -98,7 +98,6 @@ const BannerPage = () => {
         <p className="error-message">Placement data is currently unavailable.</p>
       )}
 
-      {loading && <p>Loading data...</p>}
 
     </div>
   );

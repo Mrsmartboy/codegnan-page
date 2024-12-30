@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import './StudentsList.css';
-import * as XLSX from 'xlsx';
+import { write, utils } from 'xlsx';
 import { useStudentsData } from '../contexts/StudentsListContext';
 import { saveAs } from 'file-saver';
 
@@ -10,6 +10,7 @@ export default function StudentsList() {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const { studentsList, loading, error } = useStudentsData();
+  const { book_new, book_append_sheet, json_to_sheet } = utils;
    console.log(studentsList)
   
 
@@ -25,14 +26,15 @@ export default function StudentsList() {
   };
 
   const exportToExcel = () => {
-    const wb = XLSX.utils.book_new();
-    const studentsWithoutPassword = studentsList.map(({ password, ...rest }) => rest); 
-    const ws = XLSX.utils.json_to_sheet(studentsWithoutPassword);
-    XLSX.utils.book_append_sheet(wb, ws, 'Students');
-    const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
-    saveAs(blob, 'students-list.xlsx');
+    const wb = book_new(); 
+    const studentsWithoutPassword = studentsList.map(({ password, ...rest }) => rest);
+    const ws = json_to_sheet(studentsWithoutPassword); 
+    book_append_sheet(wb, ws, 'Students'); 
+    const excelBuffer = write(wb, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/octet-stream' }); 
+    saveAs(blob, 'students-list.xlsx'); 
   };
+  
 
   const filteredStudents = (studentsList || []).length > 0
   ? studentsList.filter(student => {

@@ -3,7 +3,7 @@ import { useDashboard } from "../contexts/DashboardContext";
 import "./StatsChart.css";
 
 const StatsChart = () => {
-  const { dashboardData, loading } = useDashboard();
+  const { dashboardData } = useDashboard();
   const [yearOFPlacement, setYearOFPlacement] = useState([]);
   const [barHeightMultiplier, setBarHeightMultiplier] = useState(19);
   console.log(dashboardData)
@@ -38,9 +38,7 @@ const StatsChart = () => {
     return () => window.removeEventListener("resize", updateBarHeightMultiplier);
   }, [dashboardData]);
 
-  if (loading) {
-    return <p>Loading data...</p>;
-  }
+
 
  
 

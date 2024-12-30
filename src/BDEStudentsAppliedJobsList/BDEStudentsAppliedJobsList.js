@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './BDEStudentsAppliedJobsList.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import * as XLSX from 'xlsx';
+import { writeFile, utils } from 'xlsx';
 import MultipleSelect from './MultipleSelect';
 import SkillsSelect from './SkillsSelect';
 import { useStudentsApplyData } from '../contexts/StudentsApplyContext';
@@ -25,8 +25,9 @@ const BDEStudentsAppliedJobsList = () => {
   const [selectedPercentage, setSelectedPercentage] = useState('');
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { book_new, book_append_sheet, json_to_sheet } = utils;
 
-  // Fetch applied students on component mount or when jobId changes
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -36,7 +37,6 @@ const BDEStudentsAppliedJobsList = () => {
     fetchData();
   }, [jobId, fetchAppliedStudents]);
 
-  // Handler for department selection changes
   const handleDepartmentChange = (event) => {
     const { target: { value } } = event;
     setSelectedDepartments(
@@ -44,7 +44,6 @@ const BDEStudentsAppliedJobsList = () => {
     );
   };
 
-  // Handler for skills selection changes
   const handleSkillChange = (event) => {
     const { target: { value } } = event;
     setSelectedSkills(
@@ -52,8 +51,6 @@ const BDEStudentsAppliedJobsList = () => {
     );
   };
 
-  // Filter students based on selected department, percentage, and skills
-  console.log(appliedStudents)
   const filteredStudents = appliedStudents.filter(student => {
     const departmentMatch =
       selectedDepartments.length === 0 || selectedDepartments.includes(student.department);
@@ -69,7 +66,8 @@ const BDEStudentsAppliedJobsList = () => {
     return departmentMatch && percentageMatch && skillMatch;
   });
 
-  // Function to download resumes in a zip file
+  console.log(filteredStudents)
+
   const downloadResume = async () => {
     try {
       const selectedStudentIds = filteredStudents.map(student => student.student_id);
@@ -104,17 +102,17 @@ const BDEStudentsAppliedJobsList = () => {
     }
   };
 
-  // Function to download students' data in an Excel file
+
   const downloadExcel = () => {
     const formattedStudents = filteredStudents.map(student => ({
       ...student,
       studentSkills: student.studentSkills.join(', '),
     }));
 
-    const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet(formattedStudents);
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Students');
-    XLSX.writeFile(workbook, `${excelName}.xlsx`);
+    const workbook = book_new();
+    const worksheet = json_to_sheet(formattedStudents);
+    book_append_sheet(workbook, worksheet, 'Students');
+    writeFile(workbook, `${excelName}.xlsx`);
   };
 
   // Function to accept selected students and update their status

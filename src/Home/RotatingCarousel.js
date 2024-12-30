@@ -155,7 +155,7 @@ const RotatingCarousel = () => {
             <h1>WHO IS <br /> NEXT...</h1>
           </div>
           <img src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734849454/question-mark_monpn0.webp" alt="Question Mark" className="question-mark" 
-            />
+           width="300" height="300" />
           </div>
           <div className="callback-section">
             <Link to='/talk-to-career-expert' className='request-callback'>
