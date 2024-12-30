@@ -86,7 +86,7 @@ export default function StudentProfile() {
       {loading ? (
         <p className="text-lg text-gray-500">Loading...</p>
       ) : (
-        <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-4xl">
+        <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-4xl m-4">
           <div className="flex items-center space-x-6 mb-6">
             <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xl font-bold">
               {studentDetails.name ? studentDetails.name.charAt(0).toUpperCase() : '?'}
@@ -95,47 +95,44 @@ export default function StudentProfile() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Personal Information */}
             <div className="space-y-4">
-              <h2 className="text-xl font-medium text-gray-800">Personal Information</h2>
-              <p className="text-gray-600"><span className="font-bold">Age:</span> {studentDetails.age}</p>
-              <p className="text-gray-600"><span className="font-bold">City:</span> {studentDetails.city}</p>
-              <p className="text-gray-600"><span className="font-bold">State:</span> {studentDetails.state}</p>
-              <p className="text-gray-600"><span className="font-bold">Phone Number:</span> {studentDetails.phone}</p>
-              <p className="text-gray-600"><span className="font-bold">Github:</span> <a href={studentDetails.githubLink} className="text-blue-500 hover:underline">{studentDetails.githubLink}</a></p>
+              <h2 className="text-xl  text-black font-bold">Personal Information</h2>
+              <p className="text-black"><span className="font-bold">Age:</span> {studentDetails.age}</p>
+              <p className="text-black"><span className="font-bold">City:</span> {studentDetails.city}</p>
+              <p className="text-black"><span className="font-bold">State:</span> {studentDetails.state}</p>
+              <p className="text-black"><span className="font-bold">Phone Number:</span> {studentDetails.phone}</p>
+              <p className="text-black"><span className="font-bold">Github:</span> <a href={studentDetails.githubLink} className="text-blue-500 hover:underline">{studentDetails.githubLink}</a></p>
             </div>
 
             {/* Academic Information */}
             <div className="space-y-4">
-              <h2 className="text-xl font-medium text-gray-800">Academic Information</h2>
-              <p className="text-gray-600"><span className="font-bold">College Name:</span> {studentDetails.collegeName}</p>
-              <p className="text-gray-600"><span className="font-bold">USN Number:</span> {studentDetails.collegeUSNNumber}</p>
-              <p className="text-gray-600"><span className="font-bold">Department:</span> {studentDetails.department}</p>
-              <p className="text-gray-600"><span className="font-bold">Qualification:</span> {studentDetails.qualification}</p>
-              <p className="text-gray-600"><span className="font-bold">Graduation Percentage:</span> {studentDetails.highestGraduationpercentage}%</p>
-              <p className="text-gray-600"><span className="font-bold">Year of Passing:</span> {studentDetails.yearOfPassing}</p>
+              <h2 className="text-xl  text-black font-bold">Academic Information</h2>
+              <p className="text-black"><span className="font-bold">College Name:</span> {studentDetails.collegeName}</p>
+              <p className="text-black"><span className="font-bold">USN Number:</span> {studentDetails.collegeUSNNumber}</p>
+              <p className="text-black"><span className="font-bold">Department:</span> {studentDetails.department}</p>
+              <p className="text-black"><span className="font-bold">Qualification:</span> {studentDetails.qualification}</p>
+              <p className="text-black"><span className="font-bold">Graduation Percentage:</span> {studentDetails.highestGraduationpercentage}%</p>
+              <p className="text-black"><span className="font-bold">Year of Passing:</span> {studentDetails.yearOfPassing}</p>
             </div>
           </div>
 
-          {/* Skills Section */}
           <div className="mt-6">
-            <h2 className="text-xl font-medium text-gray-800">Skills</h2>
-            <p className="text-gray-600">{studentDetails.studentskills && studentDetails.studentskills.join(', ')}</p>
+            <h2 className="text-xl  font-bold text-black">Skills</h2>
+            <p className="text-black">{studentDetails.studentSkills && studentDetails.studentSkills.join(', ')}</p>
           </div>
 
-          {/* Resume Upload Section */}
           <form encType="multipart/form-data" onSubmit={updateResume} className="mt-6">
             <div className="flex flex-col space-y-2">
-              <label className="text-gray-700 font-medium">Upload Resume:</label>
+              <label className="text-black font-bold">Upload Resume:</label>
               <input
-                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                className="block w-52 text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                 type="file"
                 onChange={handleFileChange}
               />
             </div>
             <button
               type="submit"
-              className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+              className="mt-4  bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Update Resume
             </button>

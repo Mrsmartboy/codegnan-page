@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProgramManagerSignup from './Signup/ProgramManagerSignup/ProgramManagerSignup';
 import StudentSearch from './StudentSearch/StudentSearch';
-import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
+// import StudentProfileUpdate from './StudentProfileUpdate/StudentProfileUpdate';
+import StudentProfileUpdateVV from './StudentProfileUpdate/StudentProfileUpdateVV';
 // import CompanySignup from './Signup/CompanySignup';
 import NotFound from './NotFound';
 import Navigation from './Navigation/Navigation';
@@ -133,7 +134,7 @@ export default function App() {
             path="/student-profile-update" 
             element={
               <ProtectedRoute allowedRoles={['student']}>
-                <StudentProfileUpdate />
+                <StudentProfileUpdateVV />
               </ProtectedRoute>
             } 
           />
