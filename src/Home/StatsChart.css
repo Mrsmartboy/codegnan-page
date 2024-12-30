@@ -22,8 +22,7 @@
   justify-content: space-around;
   align-items: flex-end;
   width: 80%;
-  max-width: 500px; /* Limit width for large screens */
-  margin: 0 auto;
+  max-width: 500px; 
   gap: 10px;
 }
 
@@ -33,7 +32,7 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 60px; /* Ensure bars don't become too wide */
+  min-height: 50px; 
 }
 
 .bar {
