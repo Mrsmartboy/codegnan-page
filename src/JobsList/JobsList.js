@@ -123,7 +123,7 @@ const JobsList = () => {
                                     {job.isActive && !(studentDetails?.applied_jobs || []).includes(job.job_id)
                                         ? 'Apply'
                                         : ((studentDetails?.applied_jobs || []).includes(job.job_id) ? 'Applied' : 'Timeout')}
-                                </button>
+                               </button>
                             {/*    <p className="posted-date">{job.postedDate}</p> */}
                             <p onClick={() => openModal(job)} className='view-button-student'>View More...</p>
 

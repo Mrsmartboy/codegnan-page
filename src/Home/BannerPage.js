@@ -1,18 +1,19 @@
-import React, { useState, useMemo, Suspense } from "react";
+import React, { useMemo, Suspense } from "react";
 import { useDashboard } from "../contexts/DashboardContext"; 
+import videoFile from "../videos/Placement.mp4";
 import "./BannerPage.css";
 
 const StatsChart = React.lazy(() => import("./StatsChart"));
 
 const BannerPage = () => {
   const { dashboardData, loading } = useDashboard();
-  const [isPlayerVisible, setIsPlayerVisible] = useState(false);
+  // const [isPlayerVisible, setIsPlayerVisible] = useState(false);
 
-  const handleVideoLoad = () => {
-    setIsPlayerVisible(true);
-  };
+  // const handleVideoLoad = () => {
+  //   setIsPlayerVisible(true);
+  // };
 
-  const videoId = "uTBlsOoiMQs"; 
+  // const videoId = "uTBlsOoiMQs"; 
 
   const totalStudentsPlaced = useMemo(() => {
     if (!dashboardData) return 0;
@@ -57,7 +58,7 @@ const BannerPage = () => {
             </Suspense>
           )}
 
-          <div className="video-wrapper" style={{ width: "400px", height: "225px" }}>
+          {/* <div className="video-wrapper" style={{ width: "400px", height: "225px" }}>
             {!isPlayerVisible ? (
               <img
                 src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1735540724/youtube-video_f2flg8.webp"
@@ -79,7 +80,19 @@ const BannerPage = () => {
                 allowFullScreen
               ></iframe>
             )}
-          </div>
+          </div> */}
+
+<div className="video-wrapper" style={{ width: "400px", height: "225px" }}>
+      <video
+        width="100%"
+        height="100%"
+        controls
+        poster="https://res.cloudinary.com/db2bpf0xw/image/upload/v1735540724/youtube-video_f2flg8.webp" 
+        style={{ backgroundColor: "#000" }}
+      >
+        <source src={videoFile} type="video/mp4" />
+      </video>
+    </div>
         </div>
       </div>
 
