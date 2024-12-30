@@ -9,12 +9,12 @@ export default function StudentProfile() {
   const [loading, setLoading] = useState(true);
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
-
+ 
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/getstudentdetails?student_id=${student_id}`);
-        console.log("Profile component", response.data);
+        console.log("Profile component", response);
         setStudentDetails(response.data);
         setLoading(false);
       } catch (error) {
