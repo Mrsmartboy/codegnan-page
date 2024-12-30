@@ -60,13 +60,14 @@ const BannerPage = () => {
           <div className="video-wrapper" style={{ width: "400px", height: "225px" }}>
             {!isPlayerVisible ? (
               <img
-                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1734944177/youtube-video_afamyz.jpg"
+                src="https://res.cloudinary.com/db2bpf0xw/image/upload/v1735540724/youtube-video_f2flg8.webp"
                 alt="YouTube Thumbnail"
                 className="youtube-thumbnail"
                 width="1280" 
                 height="720"
                 style={{ width: "100%", height: "100%", cursor: "pointer" }}
                 onClick={handleVideoLoad}
+                loading="lazy"
               />
             ) : (
               <iframe
