@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import { Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
 // import CartoonLogo from '../images/login-cartoon.webp';
 import  './StudentLogin.css'
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
+
 
 
 export default function StudentLogin() {

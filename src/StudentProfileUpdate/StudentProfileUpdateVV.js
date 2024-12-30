@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { useNavigate } from 'react-router-dom';
 
 export default function StudentProfile() {

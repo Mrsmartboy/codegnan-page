@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './BDEStudentsAppliedJobsList.css';
 import axios from 'axios';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { writeFile, utils } from 'xlsx';
 import MultipleSelect from './MultipleSelect';
 import SkillsSelect from './SkillsSelect';

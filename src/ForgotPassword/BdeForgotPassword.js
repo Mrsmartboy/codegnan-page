@@ -5,7 +5,7 @@ import axios from 'axios';
 // import CartoonLogo from '../images/login-cartoon.webp';
 import '../Login/StudentLogin';
 
-export default function ForgotPassword() {
+export default function BDEForgotPassword() {
   const [step, setStep] = useState(1); 
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState();
@@ -30,8 +30,10 @@ export default function ForgotPassword() {
         Swal.fire('Error', 'Email not found. Please enter a registered email.', 'error');
       }
     } catch (error) {
-      console.error('Error checking email:', error);
-      Swal.fire('Error', 'Something went wrong. Please try again later.', 'error');
+       if (error.response.status === 400) {
+              Swal.fire('Error', 'Email not found. Please enter a registered email.', 'error');
+            }
+             console.error('Error checking email:', error.response.data.error);
     }finally {
       setLoading(false); 
     }

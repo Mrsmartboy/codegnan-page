@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { Eye, EyeOff } from 'lucide-react';
 import '../Login/StudentLogin.css'; // Reuse Student Login CSS
 // import CartoonLogo from '../images/login-cartoon.webp'; // Ensure the cartoon image is available
@@ -94,7 +94,7 @@ export default function BDELogin() {
                 </button>
               </div>
               <div className="flex justify-end mt-2">
-                <Link to="/forgotPassword" className="text-sm text-[#0737EE] font-semibold  hover:underline">
+                <Link to="/bdeforgotpassword" className="text-sm text-[#0737EE] font-semibold  hover:underline">
                   Forgot Password?
                 </Link>
               </div>

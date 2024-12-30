@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './AddJob.css'
 import { useJobs } from '../contexts/JobsContext'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { useNavigate } from 'react-router-dom';
 
 export default function AddJob() {

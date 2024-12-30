@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './BDE.css';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import axios from 'axios';
 
 export default function BDELogin() {

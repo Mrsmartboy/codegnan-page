@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import './StudentProfile.css';
 import { useNavigate } from 'react-router-dom';
 import {useStudentsData} from '../contexts/StudentsListContext'
