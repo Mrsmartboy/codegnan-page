@@ -123,7 +123,7 @@ export default function StudentProfile() {
 
           <form encType="multipart/form-data" onSubmit={updateResume} className="mt-6">
             <div className="flex flex-col space-y-2">
-              <label className="text-black font-bold">Upload Resume:</label>
+              <label className="text-black font-bold">Upload Resume (100KB - pdf):</label>
               <input
                 className="block w-52 text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                 type="file"
