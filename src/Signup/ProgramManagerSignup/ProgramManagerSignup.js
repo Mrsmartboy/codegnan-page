@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import axios from "axios";
 import { useStudentsData } from "../../contexts/StudentsListContext";
-import { read, utils } from "xlsx"; // Optimized XLSX import
+import { read, utils } from "xlsx"; 
+import Papa from 'papaparse'
 import { FaUpload, FaFileExcel, FaUser, FaEnvelope, FaPhone, FaUsers, FaCalendarAlt } from "react-icons/fa"; // Optimized icons import
 
 export default function ProgramManagerSignup() {
   const navigate = useNavigate();
   const { fetchStudentsData } = useStudentsData();
 
-  // State Management
   const [formData, setFormData] = useState({
     studentId: "",
     batchNo: "",
@@ -21,53 +21,96 @@ export default function ProgramManagerSignup() {
   const [loading, setLoading] = useState(false);
   const [useExcel, setUseExcel] = useState(false);
 
-  // Handle Input Changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle File Upload
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
-    if (file && /\.(xlsx|xls)$/i.test(file.name)) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const data = new Uint8Array(event.target.result);
-        const workbook = read(data, { type: "array" });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const rows = utils.sheet_to_json(sheet, { header: 1 });
+    if (!file) return;
 
-        if (rows.length > 1) {
-          const headers = rows[0].map((header) => header.toLowerCase().trim());
-          const formattedData = rows.slice(1).map((row) => ({
-            studentId: row[headers.indexOf("studentid")]?.toString() || "",
-            batchNo: row[headers.indexOf("batchno")]?.toString() || "",
-            email: row[headers.indexOf("email")]?.toString() || "",
-            parentNumber: row[headers.indexOf("parentnumber")]?.toString() || "",
-          }));
+    const fileExtension = file.name.split(".").pop().toLowerCase();
 
-          setExcelData(formattedData);
-        } else {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const content = event.target.result;
+
+      switch (fileExtension) {
+        case "xlsx":
+        case "xls": {
+          const data = new Uint8Array(content);
+          const workbook = read(data, { type: "array" });
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+          const rows = utils.sheet_to_json(sheet, { header: 1 });
+
+          if (rows.length > 1) {
+            const headers = rows[0].map((header) => header.toLowerCase().trim());
+            const formattedData = rows.slice(1).map((row) => ({
+              studentId: row[headers.indexOf("studentid")]?.toString() || "",
+              batchNo: row[headers.indexOf("batchno")]?.toString() || "",
+              email: row[headers.indexOf("email")]?.toString() || "",
+              parentNumber: row[headers.indexOf("parentnumber")]?.toString() || "",
+            }));
+            setExcelData(formattedData);
+          } else {
+            Swal.fire({
+              title: "Invalid Excel File",
+              text: "The file is empty or missing headers.",
+              icon: "error",
+            });
+          }
+          break;
+        }
+        case "csv": {
+          Papa.parse(content, {
+            header: true,
+            skipEmptyLines: true,
+            complete: (result) => {
+              setExcelData(result.data);
+            },
+            error: () => {
+              Swal.fire({
+                title: "Invalid CSV File",
+                text: "Failed to parse CSV.",
+                icon: "error",
+              });
+            },
+          });
+          break;
+        }
+        case "json": {
+          try {
+            const jsonData = JSON.parse(content);
+            setExcelData(jsonData);
+          } catch {
+            Swal.fire({
+              title: "Invalid JSON File",
+              text: "Failed to parse JSON.",
+              icon: "error",
+            });
+          }
+          break;
+        }
+        default:
           Swal.fire({
-            title: "Invalid Excel File",
-            text: "The file is empty or missing headers.",
+            title: "Invalid File",
+            text: "Unsupported file type. Please upload Excel, CSV, or JSON files.",
             icon: "error",
           });
-        }
-      };
+          break;
+      }
+    };
+
+    if (["xlsx", "xls"].includes(fileExtension)) {
       reader.readAsArrayBuffer(file);
     } else {
-      Swal.fire({
-        title: "Invalid File",
-        text: "Please upload a valid Excel file.",
-        icon: "error",
-      });
+      reader.readAsText(file);
     }
   };
 
-  // Handle Form Submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -76,7 +119,6 @@ export default function ProgramManagerSignup() {
       const endpoint = `${process.env.REACT_APP_BACKEND_URL}/api/v1/addstudent`;
 
       if (!useExcel) {
-        // Manual Entry
         const response = await axios.post(endpoint, {
           ...formData,
           studentId: formData.studentId.toUpperCase(),
@@ -86,14 +128,12 @@ export default function ProgramManagerSignup() {
           Swal.fire({ title: "Student Enrolled Successfully", icon: "success" });
         }
       } else {
-        // Excel Upload
         const response = await axios.post(endpoint, { excelData });
         if (response.status === 200) {
           Swal.fire({ title: "Students Enrolled Successfully", icon: "success" });
         }
       }
 
-      // Refresh Data and Navigate
       await fetchStudentsData();
       navigate("/");
     } catch (error) {
@@ -114,7 +154,6 @@ export default function ProgramManagerSignup() {
           Student Enrollment
         </h1>
 
-        {/* Toggle Between Manual and Excel Entry */}
         <div className="flex justify-center gap-4 mb-6">
           <button
             className={`px-6 py-2 border rounded-md transition duration-300 text-lg font-medium flex items-center gap-2 ${

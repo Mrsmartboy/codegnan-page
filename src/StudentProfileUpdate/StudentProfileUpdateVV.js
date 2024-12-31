@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { useNavigate } from 'react-router-dom';
 
-export default function StudentProfile() {
+export default function StudentProfileUpdateVV() {
   const [studentDetails, setStudentDetails] = useState(null);
   const student_id = localStorage.getItem("student_id");
   const [loading, setLoading] = useState(true);
@@ -104,7 +104,6 @@ export default function StudentProfile() {
               <p className="text-black"><span className="font-bold">Github:</span> <a href={studentDetails.githubLink} className="text-blue-500 hover:underline">{studentDetails.githubLink}</a></p>
             </div>
 
-            {/* Academic Information */}
             <div className="space-y-4">
               <h2 className="text-xl  text-black font-bold">Academic Information</h2>
               <p className="text-black"><span className="font-bold">College Name:</span> {studentDetails.collegeName}</p>

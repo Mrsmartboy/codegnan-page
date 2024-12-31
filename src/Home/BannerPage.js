@@ -1,6 +1,5 @@
 import React, { useMemo, Suspense } from "react";
 import { useDashboard } from "../contexts/DashboardContext"; 
-import videoFile from "../videos/Placement.mp4";
 import "./BannerPage.css";
 
 const StatsChart = React.lazy(() => import("./StatsChart"));
@@ -90,7 +89,7 @@ const BannerPage = () => {
         poster="https://img.youtube.com/vi/uTBlsOoiMQs/maxresdefault.jpg" 
         style={{ backgroundColor: "#000" }}
       >
-        <source src={videoFile} type="video/mp4" />
+        <source src="https://res.cloudinary.com/db2bpf0xw/video/upload/v1735634495/Placement_tt4kwi.mp4" type="video/mp4" />
       </video>
     </div>
         </div>

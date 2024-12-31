@@ -4,7 +4,7 @@ import './StudentProfileUpdate.css';
 import Swal from 'sweetalert2/dist/sweetalert2.min.js';  
 import { useNavigate } from 'react-router-dom';
 
-export default function StudentProfile() {
+export default function StudentProfileUpdate() {
   const [studentDetails, setStudentDetails] = useState(null);
   const student_id = localStorage.getItem("student_id");
   const [loading, setLoading] = useState(true);
