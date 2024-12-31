@@ -87,7 +87,7 @@ const BannerPage = () => {
         width="100%"
         height="100%"
         controls
-        poster="https://res.cloudinary.com/db2bpf0xw/image/upload/v1735540724/youtube-video_f2flg8.webp" 
+        poster="https://img.youtube.com/vi/uTBlsOoiMQs/maxresdefault.jpg" 
         style={{ backgroundColor: "#000" }}
       >
         <source src={videoFile} type="video/mp4" />
